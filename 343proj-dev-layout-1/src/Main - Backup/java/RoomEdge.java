@@ -24,11 +24,4 @@ import java.util.*;
 public class RoomEdge extends DefaultEdge{
     protected Boolean isDoor = false;
     protected Boolean isWindow = false;
-    protected Boolean isWall = false;
-
-    public RoomEdge(Boolean isDoor, Boolean isWindow, Boolean isWall) {
-        this.isDoor = isDoor;
-        this.isWindow = isWindow;
-        this.isWall = isWall;
-    }
 }
