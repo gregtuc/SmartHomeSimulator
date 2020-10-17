@@ -249,6 +249,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602884455733" />
+    <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser" timestamp="1602903733126">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602903733126" />
     <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602884274442">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -261,38 +265,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544561750" />
-    <state width="2517" height="195" key="GridCell.Tab.0.bottom" timestamp="1602902712152">
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="195" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602902712152" />
-    <state width="2517" height="195" key="GridCell.Tab.0.center" timestamp="1602902712151">
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="195" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602902712151" />
-    <state width="2517" height="195" key="GridCell.Tab.0.left" timestamp="1602902712151">
+    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="195" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602902712151" />
-    <state width="2517" height="195" key="GridCell.Tab.0.right" timestamp="1602902712152">
+    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="195" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602902712152" />
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1602896246488">
+    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602896246488" />
-    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1602896246488">
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602896246488" />
-    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1602896246488">
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602896246488" />
-    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1602896246488">
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1602907145703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602896246488" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
     <state x="860" y="443" key="IDE.errors.dialog" timestamp="1602532617526">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -309,21 +313,21 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main/java/LayoutParser.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main/java/LayoutParser.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main/java/LayoutParser.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="grid" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

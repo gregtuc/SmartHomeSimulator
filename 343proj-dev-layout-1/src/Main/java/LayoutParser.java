@@ -48,7 +48,7 @@ public class LayoutParser {
         for (int row = 0; row < 4; row++) {
             grid.add(new ArrayList<Room>());
             for (int col = 0; col < 4; col++) {
-                grid.get(row).add(new Room(0));
+                grid.get(row).add(new Room(0, -1, -1));
             }
             System.out.println("");
         }
@@ -58,6 +58,8 @@ public class LayoutParser {
         Scanner sc = new Scanner(file);
         String currentLine = null;
         String[] words = new String[0];
+
+        //*** PARSE THE GRID ***//
         int i = 0, j = 0; // Counters for the grid iteration.
         // Iterate through each row of the grid, collect all marked room positions.
         do {
@@ -80,7 +82,7 @@ public class LayoutParser {
                     // ... parse the number into an int...
                     int number = Integer.parseInt(words[c]);
                     // ... create a Room and save it to the grid...
-                    grid.get(i).set(j, new Room(number));
+                    grid.get(i).set(j, new Room(number, j, i));
                     // ... then move to the next slot.
                     j++;
                 }
@@ -88,6 +90,47 @@ public class LayoutParser {
             j = 0; // Reset the column counter for the next row.
             i++;
         } while (sc.hasNextLine() && !currentLine.equals("}"));
+
+        //*** PARSE THE ROOM NAMES AND ATTRIBUTES ***//
+        do {
+            currentLine = sc.nextLine();
+            if (currentLine.equals("{")) {
+                continue;
+            }
+            if (currentLine.equals("}")) {
+                break;
+            }
+            words = currentLine.split(" : "); // Split the line into the room number and the room name.
+            int number = Integer.parseInt(words[0]);
+            // Search for the room number among the grid, then assign the new name.
+            for (int row = 0; row < 4; row++) {
+                for (int col = 0; col < 4; col++) {
+                    if (grid.get(row).get(col).graphNumber == number) {
+                        grid.get(row).get(col).roomName = words[1];
+                        switch (words[2]) {
+                            case "None": {
+                                break;
+                            }
+                            case "Window": {
+                                grid.get(row).get(col).window = true;
+                                break;
+                            }
+                            case "Door": {
+                                grid.get(row).get(col).door = true;
+                                break;
+                            }
+                            case "Both": {
+                                grid.get(row).get(col).door = true;
+                                grid.get(row).get(col).window = true;
+                                break;
+                            }
+
+                        }
+                    }
+                }
+            }
+        } while (sc.hasNextLine() && !currentLine.equals("}"));
+
         // Print out the grid to the console for verification.
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
@@ -95,7 +138,18 @@ public class LayoutParser {
             }
             System.out.println("");
         }
-
+        System.out.println();
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                System.out.print(
+                        "Room #"+room.graphNumber+" is the "+room.roomName
+                                +". Door: "+room.door+" | Window: "+room.window+"\n"
+                );
+            }
+        }
         System.out.println();
     }
 

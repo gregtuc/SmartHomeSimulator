@@ -5,18 +5,10 @@
 | |5|4| |
 }
 {
-1: Kitchen
-2: Living Room
-3: Dining Room
-4: Kid's Bedroom
-5: Master Bedroom
-6: Main Entrance
-}
-{
-1: Window
-2: Door
-3: Window
-4: None
-5: Window
-6: Both
+1 : Kitchen : Window
+2 : Living Room : None
+3 : Dining Room : Door
+4 : Kid's Bedroom : Window
+5 : Master Bedroom : Window
+6 : Main Entrance : Both
 }
