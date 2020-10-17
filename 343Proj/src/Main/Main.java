@@ -7,9 +7,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * The type Main.
+ */
 public class Main extends Application{
+    /**
+     * The Primary stage.
+     */
     static Stage primaryStage;
+    /**
+     * The Edit time stage.
+     */
     static Stage editTimeStage;
+    /**
+     * The Edit profile stage.
+     */
     static Stage editProfileStage;
 
     //Create and display the primary application window (Home.fxml).
@@ -22,8 +34,10 @@ public class Main extends Application{
         primaryStage.show();
     }
 
-    //Display the window that lets users edit the time parameter (Clock.fxml).
-    //This method is called from HomeController.
+    /**
+     * Display the window that lets users edit the time parameter (Clock.fxml).
+     * This method is called from HomeController.
+     */
     public static void showEditTime(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Clock.fxml"));
@@ -37,8 +51,10 @@ public class Main extends Application{
         }
     }
 
-    //Close the window that lets users edit the time parameter (Clock.fxml).
-    //This method is called from ClockController.
+    /**
+     * Close the window that lets users edit the time parameter (Clock.fxml).
+     * This method is called from ClockController.
+     */
     public static void closeEditTime(){
         try {
             Main.editTimeStage.close();
@@ -47,8 +63,10 @@ public class Main extends Application{
         }
     }
 
-    //Display the window that lets users edit the profile parameter (Profile.fxml).
-    //This method is called from HomeController.
+    /**
+     * Display the window that lets users edit the profile parameter (Profile.fxml).
+     * This method is called from HomeController.
+     */
     public static void showEditProfile(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Profile.fxml"));
@@ -62,8 +80,10 @@ public class Main extends Application{
         }
     }
 
-    //Close the window that lets users edit the profile parameter (Profile.fxml).
-    //This method is called from ProfileController.
+    /**
+     * Close the window that lets users edit the profile parameter (Profile.fxml).
+     * This method is called from ProfileController.
+     */
     public static void closeEditProfile(){
         try {
             Main.editProfileStage.close();
@@ -72,7 +92,11 @@ public class Main extends Application{
         }
     }
 
-    //Begins the execution.
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

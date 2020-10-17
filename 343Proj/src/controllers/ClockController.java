@@ -14,22 +14,45 @@ import java.util.concurrent.atomic.AtomicReference;
 import main.Main;
 import models.Clock;
 
+/**
+ * The type Clock controller.
+ * The ClockController class contains methods related to Clocks in the application. It controls the Clock.fxml page.
+ * The HomeController class can communicate with the ClockController class by creating an instance of ClockController and using the available public methods.
+ * The static Clock attribute creates a singular static clock for the whole system, as there can only be one active clock at a time.
+ */
 public class ClockController extends Label {
-    //Creating an instance of the Clock class. There exists a single constant clock, so it must remain static.
+    /**
+     * Creating an instance of the Clock class. There exists a single constant clock, so it must remain static.
+     */
     static Clock clock = new Clock();
-
-    //Declaring a currentTime string to facilitate easier formatting.
+    /**
+     * currentTime AtomicReference String to facilitate easier formatting.
+     */
     AtomicReference<String> currentTime = new AtomicReference<>(clock.getHour() + " : " + clock.getMinute() + " : " + clock.getSecond());
-
-    //Declaring a Timeline object as an attribute so that it can be paused/played in any method.
+    /**
+     * Timeline object that can be paused/played in any method.
+     */
     Timeline timeline;
-
-    //Fetching fxml elements.  The name of the variable must correlate with the id assigned in the fxml document.
+    /**
+     * The Hour TextField input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public TextField hourInput = new TextField();
+    /**
+     * The Minute TextField input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public TextField minuteInput = new TextField();
+    /**
+     * The Second TextField input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public TextField secondInput = new TextField();
 
-    //Begins a new Timeline object that updates the clock once every second.
+    /**
+     * Begins a new Timeline object that updates the clock once every second.
+     * @param timeLabel the time label
+     */
     public void beginTime(Label timeLabel){
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
@@ -68,7 +91,11 @@ public class ClockController extends Label {
             timeline.play();
     }
 
-    //Stop the existing timeline.
+    /**
+     * Stop the existing timeline.
+     *
+     * @param timeLabel the time label
+     */
     public void stopTime(Label timeLabel){
         clock.setHour(0);
         clock.setMinute(0);
@@ -78,17 +105,26 @@ public class ClockController extends Label {
         timeline.stop();
     }
 
-    //Resume the existing timeline.
+    /**
+     * Resume the existing timeline.
+     */
     public void resumeTime(){
         timeline.play();
     }
 
-    //Pause the existing timeline.
+    /**
+     * Pause the existing timeline.
+     */
     public void pauseTime(){
         timeline.pause();
     }
 
-    //Change the static time attributes according to user input.
+    /**
+     * Change the static time attributes according to user input.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
     public void editTime(MouseEvent mouseEvent) throws IOException {
         //Set the time variables to the inputted values.
         clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));

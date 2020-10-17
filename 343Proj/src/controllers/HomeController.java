@@ -15,17 +15,41 @@ import java.util.ResourceBundle;
 import javafx.util.Duration;
 import main.Main;
 
+/**
+ * The type Home controller.
+ * The HomeController class contains general methods related to the broader application. It controls the Home.fxml page.
+ * The HomeController class acts as a primary router and may call on other controller classes to complete actions when necessary.
+ */
 public class HomeController extends Label implements Initializable {
+    /**
+     * Declaring a Timeline object as an attribute so that it can be paused/played in any method.
+     */
     Timeline timeline;
-
-    //Creating an instance of the ClockController class.
+    /**
+     * Instance of the ClockController class.
+     * This will let us access public methods and attributes from that controller.
+     */
     ClockController clockController = new ClockController();
+    /**
+     * Instance of the ProfileController class.
+     * This will let us access public methods and attributes from that controller.
+     */
     ProfileController profileController = new ProfileController();
 
-    //Declaring elements that must be changed or read. The name of the object must correlate with the id assigned in the fxml document.
-    //This correlation creates an association between the variable and the fxml element.
+    /**
+     * The timeLabel Label Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public Label timeLabel = new Label();
+    /**
+     * The userLabel Label Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public Label userLabel = new Label();
+    /**
+     * The startStopButton Button Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
     public Button startStopButton = new Button();
 
     //Initialize runs immediately when the page loads.
@@ -43,8 +67,10 @@ public class HomeController extends Label implements Initializable {
         timeline.play();
     }
 
-    //Handles the button for starting and stopping the simulator.
-    //TODO: Make this more concrete by not using button text for conditions.
+    /**
+     * Handles the button for starting and stopping the simulator.
+     * @param mouseEvent the mouse event
+     */
     public void startStopSimulator(MouseEvent mouseEvent){
         System.out.println("startSimulator input registered.");
         //If the simulator is stopped, button click will start the simulator.
@@ -58,26 +84,43 @@ public class HomeController extends Label implements Initializable {
         }
     }
 
-    //Handles the button for pausing the simulator. (currently only pauses the clock).
+    /**
+     * Handles the button for pausing the simulator. (currently only pauses the clock).
+     *
+     * @param mouseEvent the mouse event
+     */
     public void pauseSimulation(MouseEvent mouseEvent){
         System.out.println("pauseSimulation input registered.");
         clockController.pauseTime();
     }
 
-    //Handles the button for resuming the simulator. (currently only resumes the clock).
+    /**
+     * Handles the button for resuming the simulator. (currently only resumes the clock).
+     *
+     * @param mouseEvent the mouse event
+     */
     public void resumeSimulation(MouseEvent mouseEvent){
         System.out.println("resumeSimulation input registered.");
         clockController.resumeTime();
     }
 
-    //Opens the edit time window. Calls method showEditTime from class Main.
+    /**
+     * Opens the edit time window. Calls method showEditTime from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
     @FXML
     public void editTimeClicked(MouseEvent mouseEvent) throws IOException {
         System.out.println("editTimeClicked input registered.");
         Main.showEditTime();
     }
 
-    //Opens the edit profile window. Calls method showEditProfile from class Main.
+    /**
+     * Opens the edit profile window. Calls method showEditProfile from class Main.
+     *
+     * @param mouseEvent the mouse event
+     */
     @FXML
     public void editProfileClicked(MouseEvent mouseEvent) {
         Main.showEditProfile();
