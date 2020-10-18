@@ -1,0 +1,15 @@
+0: List of rooms (string of ints between 1 and 16, separated by single spaces)
+{
+1: Room number (single integer)
+2: Features (string of ints between 1 and 32, separated by single spaces)
+// A "feature" represents either a window or a door.
+// If we are on room 1, and we say that rooms 2 + 5 + 32 have features,
+// then there is a door between 1 and 2, as well as 1 and 5.
+// There is also a window between 1 and 32, since the two cells are not linked by an edge.
+// If there isn't a feature between two rooms with an edge, there is just a wall.
+3: Number of lights (single integer)
+4: Room's temperature (single double)
+5: Doors to the outside (string of ints between 1 and 32, separated by single spaces)
+}
+
+Repeat above for each room (1 through 16 possibly)

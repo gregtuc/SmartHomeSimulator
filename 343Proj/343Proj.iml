@@ -7,7 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -18,5 +17,6 @@
         <jarDirectory url="jar://$MODULE_DIR$/mongodb-driver-3.4.3-javadoc.jar!/" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib" level="application" />
   </component>
 </module>
