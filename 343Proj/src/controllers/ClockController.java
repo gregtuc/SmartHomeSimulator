@@ -11,7 +11,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
-import main.Main;
+import Main.Main;
 import models.Clock;
 
 /**
@@ -126,7 +126,7 @@ public class ClockController extends Label {
      * @throws IOException the io exception
      */
     public void editTime(MouseEvent mouseEvent) throws IOException {
-        //Set the time variables to the inputted values.
+        //Set the time variables to the inputed values.
         clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         clock.setMinute(Integer.parseInt(String.valueOf(minuteInput.getText())));
         clock.setSecond(Integer.parseInt(String.valueOf(secondInput.getText())));

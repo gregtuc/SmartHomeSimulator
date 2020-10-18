@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.util.Duration;
-import main.Main;
+import Main.Main;
 
 /**
  * The type Home controller.
@@ -34,8 +34,12 @@ public class HomeController extends Label implements Initializable {
      * Instance of the ProfileController class.
      * This will let us access public methods and attributes from that controller.
      */
+    OutsideTemperatureController OutsideTemperatureController = new OutsideTemperatureController();
+    /**
+     * Instance of the OutsideTemperatureController class.
+     * This will let us access public methods and attributes from that controller.
+     */
     ProfileController profileController = new ProfileController();
-
     /**
      * The timeLabel Label Input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
@@ -46,6 +50,11 @@ public class HomeController extends Label implements Initializable {
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
     public Label userLabel = new Label();
+    /**
+     * The outsideTemperatureLabel Label Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
+    public Label outsideTemperatureLabel = new Label();
     /**
      * The startStopButton Button Input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
@@ -59,6 +68,7 @@ public class HomeController extends Label implements Initializable {
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
                     userLabel.setText(profileController.getActiveProfileName());
+                    outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
                 })
         );
         //Run the timeline indefinitely or until paused/stopped manually.
@@ -115,7 +125,19 @@ public class HomeController extends Label implements Initializable {
         System.out.println("editTimeClicked input registered.");
         Main.showEditTime();
     }
-
+    
+    /**
+     * Opens the edit time window. Calls method showEditTime from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
+    @FXML
+    public void editOutsideTemperatureClicked(MouseEvent mouseEvent) throws IOException {
+        System.out.println("editOutsideTemperatureClicked input registered.");
+        Main.showEditOutsideTemperature();
+    }
+    
     /**
      * Opens the edit profile window. Calls method showEditProfile from class Main.
      *
