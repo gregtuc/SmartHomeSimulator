@@ -123,7 +123,7 @@
                    <Label prefHeight="17.0" prefWidth="32.0" text="Time:" GridPane.rowIndex="1" />
                    <Label fx:id="timeLabel" prefHeight="17.0" prefWidth="125.0" text="HH:MM:SS" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                    <Label prefHeight="17.0" prefWidth="52.0" text="Location:" GridPane.rowIndex="2" />
-                   <Label prefHeight="17.0" prefWidth="52.0" text="None" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                   <Label fx:id="locationLabel" prefHeight="17.0" prefWidth="84.0" text="None" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                <Label fx:id="userLabel" prefHeight="26.0" prefWidth="97.0" GridPane.columnIndex="1" />
                <Label text="Outside Temp" GridPane.rowIndex="3" />
                <Label fx:id="outsideTemperatureLabel" text="N./A." GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -135,6 +135,7 @@
                <Button layoutX="38.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#pauseSimulation" prefHeight="25.0" prefWidth="119.0" text="Pause Simulator" />
                <Button layoutX="38.0" layoutY="462.0" mnemonicParsing="false" onMouseClicked="#resumeSimulation" prefHeight="25.0" prefWidth="120.0" text="Resume Simulator" />
             <Button fx:id="tempButton" layoutX="73.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#editOutsideTemperatureClicked" text="Temp" />
+            <Button layoutX="67.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#editLocationClicked" text="Location" />
            </AnchorPane>
        </TitledPane>
    </children>

@@ -30,13 +30,21 @@ public class HomeController extends Label implements Initializable {
      * This will let us access public methods and attributes from that controller.
      */
     ClockController clockController = new ClockController();
+  
     /**
-     * Instance of the ProfileController class.
+     * Instance of the OutsideTemperatureController class.
      * This will let us access public methods and attributes from that controller.
      */
     OutsideTemperatureController OutsideTemperatureController = new OutsideTemperatureController();
+    
     /**
-     * Instance of the OutsideTemperatureController class.
+     * Instance of the LocationController class.
+     * This will let us access public methods and attributes from that controller.
+     */
+    LocationController locationController = new LocationController();
+    
+    /**
+     * Instance of the ProfileController class.
      * This will let us access public methods and attributes from that controller.
      */
     ProfileController profileController = new ProfileController();
@@ -60,6 +68,13 @@ public class HomeController extends Label implements Initializable {
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
     public Button startStopButton = new Button();
+    
+    /**
+     * The locationLabel Label Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
+    public Label locationLabel = new Label();
+    
 
     //Initialize runs immediately when the page loads.
     @Override
@@ -69,6 +84,7 @@ public class HomeController extends Label implements Initializable {
                 new KeyFrame(Duration.seconds(1), e -> {
                     userLabel.setText(profileController.getActiveProfileName());
                     outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
+                    locationLabel.setText(locationController.getUserLocation());
                 })
         );
         //Run the timeline indefinitely or until paused/stopped manually.
@@ -136,6 +152,18 @@ public class HomeController extends Label implements Initializable {
     public void editOutsideTemperatureClicked(MouseEvent mouseEvent) throws IOException {
         System.out.println("editOutsideTemperatureClicked input registered.");
         Main.showEditOutsideTemperature();
+    }
+    
+    /**
+     * Opens the edit Location. Calls method showEditLocation from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
+    @FXML
+    public void editLocationClicked(MouseEvent mouseEvent) throws IOException {
+        System.out.println("editLocationClicked input registered.");
+        Main.showEditLocation();
     }
     
     /**
