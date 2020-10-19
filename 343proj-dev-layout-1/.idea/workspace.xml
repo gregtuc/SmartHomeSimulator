@@ -107,7 +107,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jgrapht-1.5.0/lib/jgrapht-core-1.5.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -122,7 +122,7 @@
       <recent name="C:\Users\akama\Documents\GitHub\SmartHomeSimulator\343proj-dev-layout-1\src\Main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ToConsole">
+  <component name="RunManager" selected="Application.LayoutParser">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -148,6 +148,13 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
+    <configuration name="LayoutParser" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main.java.LayoutParser" />
+      <module name="343proj-dev-layout-1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main.java.Main" />
       <module name="343proj-dev-layout-1" />
@@ -160,13 +167,6 @@
       </extension>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ToConsole" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main.java.ToConsole" />
-      <module name="343proj-dev-layout-1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,17 +208,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Remote">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="functionName" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.ToConsole" />
+      <item itemvalue="Application.LayoutParser" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -246,20 +238,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602548088625">
+    <state x="734" y="355" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602884455733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548088625" />
-    <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602548079460">
+    <state x="734" y="355" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602884455733" />
+    <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser" timestamp="1602903733126">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548079460" />
+    <state x="1085" y="384" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602903733126" />
+    <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602884274442">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602884274442" />
     <state x="1110" y="410" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1602544943032">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -268,22 +265,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544561750" />
-    <state width="1234" height="196" key="GridCell.Tab.0.bottom" timestamp="1602548389349">
+    <state width="2517" height="195" key="GridCell.Tab.0.bottom" timestamp="1602907197455">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="196" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548389349" />
-    <state width="1234" height="196" key="GridCell.Tab.0.center" timestamp="1602548389349">
+    <state width="2517" height="195" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907197455" />
+    <state width="2517" height="195" key="GridCell.Tab.0.center" timestamp="1602907197454">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="196" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548389349" />
-    <state width="1234" height="196" key="GridCell.Tab.0.left" timestamp="1602548389349">
+    <state width="2517" height="195" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907197454" />
+    <state width="2517" height="195" key="GridCell.Tab.0.left" timestamp="1602907197454">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="196" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548389349" />
-    <state width="1234" height="196" key="GridCell.Tab.0.right" timestamp="1602548389349">
+    <state width="2517" height="195" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907197454" />
+    <state width="2517" height="195" key="GridCell.Tab.0.right" timestamp="1602907197454">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="196" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602548389349" />
+    <state width="2517" height="195" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907197454" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1602907145703">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1602907145703">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1602907145703">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1602907145703">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602907145703" />
     <state x="860" y="443" key="IDE.errors.dialog" timestamp="1602532617526">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -292,5 +305,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544974035" />
+    <state x="804" y="436" width="951" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602884970233">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="804" y="436" width="951" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602884970233" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main/java/LayoutParser.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="grid" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -1,0 +1,14 @@
+{
+| | | | |
+| |1|3| |
+|6|2| | |
+| |5|4| |
+}
+{
+1 : Kitchen : Window
+2 : Living Room : None
+3 : Dining Room : Door
+4 : Kid's Bedroom : Window
+5 : Master Bedroom : Window
+6 : Main Entrance : Both
+}
