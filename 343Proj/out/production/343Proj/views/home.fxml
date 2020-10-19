@@ -123,7 +123,7 @@
                    <Label prefHeight="17.0" prefWidth="32.0" text="Time:" GridPane.rowIndex="1" />
                    <Label fx:id="timeLabel" prefHeight="17.0" prefWidth="125.0" text="HH:MM:SS" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                    <Label prefHeight="17.0" prefWidth="52.0" text="Location:" GridPane.rowIndex="2" />
-                   <Label fx:id="locationLabel" prefHeight="17.0" prefWidth="52.0" text="None" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                   <Label fx:id="locationLabel" prefHeight="17.0" prefWidth="84.0" text="None" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                <Label fx:id="userLabel" prefHeight="26.0" prefWidth="97.0" GridPane.columnIndex="1" />
                <Label text="Outside Temp" GridPane.rowIndex="3" />
                <Label fx:id="outsideTemperatureLabel" text="N./A." GridPane.columnIndex="1" GridPane.rowIndex="3" />
