@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Label;
 
@@ -14,6 +15,7 @@ import java.util.ResourceBundle;
 
 import javafx.util.Duration;
 import Main.Main;
+import Main.LayoutParser;
 
 /**
  * The type Home controller.
@@ -52,6 +54,7 @@ public class HomeController extends Label implements Initializable {
      * The timeLabel Label Input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
+
     public Label timeLabel = new Label();
     /**
      * The userLabel Label Input.
@@ -74,17 +77,101 @@ public class HomeController extends Label implements Initializable {
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
     public Label locationLabel = new Label();
-    
+
+    /**
+     * The oldLocationLabel.
+     * Keep a value of the old location. This is essentially a helper-variable for when the active user changes locations
+     * and we want to clean up the old location that they were at.
+     */
+    public static String oldLocationLabel = "";
+
+    /**
+     * The panes 2D array.
+     * Hold references to all the House-Layout FXML elements.
+     */
+    TextArea[][] panes = new TextArea[4][4];
+
+    /**
+     * TextArea FXML elements.
+     */
+    public TextArea sq22 = new TextArea();
+    public TextArea sq23 = new TextArea();
+    public TextArea sq24 = new TextArea();
+    public TextArea sq25 = new TextArea();
+    public TextArea sq26 = new TextArea();
+    public TextArea sq32 = new TextArea();
+    public TextArea sq33 = new TextArea();
+    public TextArea sq34 = new TextArea();
+    public TextArea sq35 = new TextArea();
+    public TextArea sq36 = new TextArea();
+    public TextArea sq42 = new TextArea();
+    public TextArea sq43 = new TextArea();
+    public TextArea sq44 = new TextArea();
+    public TextArea sq45 = new TextArea();
+    public TextArea sq46 = new TextArea();
+    public TextArea sq52 = new TextArea();
+    public TextArea sq53 = new TextArea();
+    public TextArea sq54 = new TextArea();
+    public TextArea sq55 = new TextArea();
+    public TextArea sq56 = new TextArea();
 
     //Initialize runs immediately when the page loads.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //Assign all the FXML Pane Elements to a 2D Array.
+        //Col 0
+        panes[0][0] = sq22;
+        panes[0][1] = sq23;
+        panes[0][2] = sq24;
+        panes[0][3] = sq25;
+        //Col 1
+        panes[1][0] = sq32;
+        panes[1][1] = sq33;
+        panes[1][2] = sq34;
+        panes[1][3] = sq35;
+        //Col 2
+        panes[2][0] = sq42;
+        panes[2][1] = sq43;
+        panes[2][2] = sq44;
+        panes[2][3] = sq45;
+        //Col 3
+        panes[3][0] = sq52;
+        panes[3][1] = sq53;
+        panes[3][2] = sq54;
+        panes[3][3] = sq55;
+
+        /*
+        Parse the house-layout file by calling the LayoutParser class object.
+        2D Array panes is passed to the method as a parameter to be able to dynamically inject the room details into the
+        appropriate TextAreas on the grid.
+        */
+        try {
+            LayoutParser.parseLayout(panes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //Check for new activeUsers in intervals of 1 second.
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
-                    userLabel.setText(profileController.getActiveProfileName());
-                    outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
-                    locationLabel.setText(locationController.getUserLocation());
+                    //Change current profile name if the name has been changed.
+                    if(!profileController.getActiveProfileName().equals(userLabel.getText())){
+                        userLabel.setText(profileController.getActiveProfileName());
+                    }
+                    //Change outside temperature if the name has been changed.
+                    if(!OutsideTemperatureController.getOutsideTemperature().equals(outsideTemperatureLabel.getText())){
+                        outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
+                    }
+                    //Change active user location if the name has been changed.
+                    if(!locationController.getUserLocation().equals(locationLabel.getText())){
+                        locationLabel.setText(locationController.getUserLocation());
+                        LayoutParser.insertProfile(locationController.getUserLocation(), oldLocationLabel, panes);
+                    }
+                    //Change person location if the name has been changed.
+                    if(!locationController.getPeopleLocation().equals("None")){
+
+                        LayoutParser.insertPerson(locationController.getPeopleLocation(), panes);
+                    }
                 })
         );
         //Run the timeline indefinitely or until paused/stopped manually.
@@ -98,7 +185,6 @@ public class HomeController extends Label implements Initializable {
      * @param mouseEvent the mouse event
      */
     public void startStopSimulator(MouseEvent mouseEvent){
-        System.out.println("startSimulator input registered.");
         //If the simulator is stopped, button click will start the simulator.
         if(startStopButton.getText().equals("Start Simulator")){
             startStopButton.setText("Stop Simulator");
@@ -116,8 +202,10 @@ public class HomeController extends Label implements Initializable {
      * @param mouseEvent the mouse event
      */
     public void pauseSimulation(MouseEvent mouseEvent){
-        System.out.println("pauseSimulation input registered.");
-        clockController.pauseTime();
+        //Pause Time only if the simulation has started.
+        if(!timeLabel.getText().equals("HH:MM:SS")) {
+            clockController.pauseTime();
+        }
     }
 
     /**
@@ -126,8 +214,10 @@ public class HomeController extends Label implements Initializable {
      * @param mouseEvent the mouse event
      */
     public void resumeSimulation(MouseEvent mouseEvent){
-        System.out.println("resumeSimulation input registered.");
-        clockController.resumeTime();
+        //Resume Time only if the simulation has started.
+        if(!timeLabel.getText().equals("HH:MM:SS")){
+            clockController.resumeTime();
+        }
     }
 
     /**
@@ -138,7 +228,6 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editTimeClicked(MouseEvent mouseEvent) throws IOException {
-        System.out.println("editTimeClicked input registered.");
         Main.showEditTime();
     }
     
@@ -150,7 +239,6 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editOutsideTemperatureClicked(MouseEvent mouseEvent) throws IOException {
-        System.out.println("editOutsideTemperatureClicked input registered.");
         Main.showEditOutsideTemperature();
     }
     
@@ -162,7 +250,7 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editLocationClicked(MouseEvent mouseEvent) throws IOException {
-        System.out.println("editLocationClicked input registered.");
+        oldLocationLabel = locationLabel.getText();
         Main.showEditLocation();
     }
     

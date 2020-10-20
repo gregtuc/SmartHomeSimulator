@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343proj-dev-layout-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/343proj-dev-layout-1.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,13 +110,16 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -222,11 +230,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1603150621254" duration="426000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -245,6 +254,10 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="504" y="117" key="#Project_Structure" timestamp="1603150664315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="504" y="117" key="#Project_Structure/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1603150664315" />
     <state x="734" y="355" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602884455733">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -257,13 +270,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1009" y="514" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602884274442" />
-    <state x="1110" y="410" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1602544943032">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="833" y="302" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1603150905007">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="833" y="302" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1603150905007" />
     <state x="1110" y="410" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544943032" />
-    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1602544561750">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="740" y="328" key="FileChooserDialogImpl" timestamp="1603151039561">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="740" y="328" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1603151039561" />
     <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544561750" />
     <state width="2517" height="195" key="GridCell.Tab.0.bottom" timestamp="1602907197455">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -301,9 +316,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="860" y="443" key="IDE.errors.dialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602532617526" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1602544974035">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="570" y="189" key="SettingsEditor" timestamp="1603151040196">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="570" y="189" key="SettingsEditor/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1603151040196" />
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1602544974035" />
     <state x="804" y="436" width="951" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602884970233">
       <screen x="0" y="0" width="2560" height="1400" />
