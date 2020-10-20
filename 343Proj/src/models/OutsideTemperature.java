@@ -1,21 +1,21 @@
 package models;
 /**
- * The type Clock.
+ * The type OutsideTemperature.
  */
 public class OutsideTemperature {
     /**
-     * Declaring private Clock attributes.
+     * Declaring private temperature attributes.
      */
     private double temperature;
 
     /**
-     * Instantiates a new Clock.
+     * Instantiates a new temperature.
      */
     public OutsideTemperature(){
         this.temperature = 0.0;
     }
     /**
-     * Instantiates a new Clock.
+     * Instantiates a new temperature.
      *
      * @param customOutsideTemperature   the custom temperature
      */

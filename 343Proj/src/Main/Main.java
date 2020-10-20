@@ -1,6 +1,4 @@
 package Main;
-
-import controllers.HomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +25,11 @@ public class Main extends Application{
      * The Edit outside temperature stage.
      */
     static Stage editOutsideTemperatureStage;
-
+    /**
+     * The Edit Location stage.
+     */
+    static Stage editLocationStage;
+    
     //Create and display the primary application window (Home.fxml).
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -123,7 +125,35 @@ public class Main extends Application{
             e.printStackTrace();
         }
     }
-
+    /**
+     * Display the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
+     * This method is called from HomeController.
+     */
+    public static void showEditLocation(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Location.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editLocationStage = new Stage();
+            Main.editLocationStage = editLocationStage;
+            editLocationStage.setScene(new Scene(root));
+            editLocationStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Close the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
+     * This method is called from LocationController.
+     */
+    public static void closeEditLocation(){
+        try {
+            Main.editLocationStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     /**
      * Display the window that lets users edit the profile parameter (Profile.fxml).
      * This method is called from HomeController.

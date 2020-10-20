@@ -1,18 +1,11 @@
 package controllers;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Duration;
-
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
-
 import Main.Main;
-import models.Clock;
 import models.OutsideTemperature;
 
 /**
