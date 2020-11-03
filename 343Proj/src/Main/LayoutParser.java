@@ -1,19 +1,18 @@
 package Main;
 
 
-import java.io.*;
-import java.util.*;
-
-import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import models.Room;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LayoutParser {
 
@@ -44,9 +43,8 @@ public class LayoutParser {
             }
             System.out.println("");
         }
-
         File file =
-                new File("src/layout.txt");
+                new File("343Proj/src/layout.txt");
         Scanner sc = new Scanner(file);
         String currentLine = null;
         String[] words = new String[0];

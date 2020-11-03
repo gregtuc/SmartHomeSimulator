@@ -1,11 +1,12 @@
 package controllers;
 
+import Main.Main;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import Main.Main;
-import models.Profile;
+import models.*;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -18,18 +19,6 @@ import java.util.ResourceBundle;
  * The HomeController class can communicate with the ProfileController class by fetching values via the getActiveProfileName() and getAllProfiles() methods.
  */
 public class ProfileController implements Initializable {
-
-    /**
-     * Create an activeProfile attribute to know which profile is currently logged in.
-     */
-    static Profile activeProfile = new Profile();
-
-    /**
-     * Static ArrayList to store objects of type Profile.
-     * This attribute allows the storage of all Profiles created in runtime. The static property will
-     * force a single instance to exist and ensure all references to "profiles" will reference the same instance.
-     */
-    static ArrayList<Profile> profiles = new ArrayList<Profile>();
 
     /**
      * The createUsernameInput TextField.
@@ -56,20 +45,10 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Populate createUserTypeInput ComboBox.
-        createUserTypeInput.getItems().add("Adult");
+        createUserTypeInput.getItems().add("Parent");
         createUserTypeInput.getItems().add("Child");
         createUserTypeInput.getItems().add("Guest");
         createUserTypeInput.getItems().add("Stranger");
-
-        //Populate editUserInput ComboBox.
-        for (Profile value : profiles) {
-            editUserInput.getItems().add(value.getProfileName());
-        }
-
-        //Populate loginUserInput ComboBox.
-        for (Profile profile : profiles) {
-            loginUserInput.getItems().add(profile.getProfileName());
-        }
     }
 
     /**
@@ -81,12 +60,32 @@ public class ProfileController implements Initializable {
      * @throws ClassNotFoundException the class not found exception
      */
     public void createProfile(MouseEvent mouseEvent) throws IOException, SQLException, ClassNotFoundException {
-        //Create temporary newProfile variable.
-        Profile newProfile = new Profile(createUsernameInput.getText(), createUserTypeInput.getValue());
-        //Store newProfile to the profiles ArrayList.
-        profiles.add(newProfile);
-        //Sign the new user in.
-        activeProfile = newProfile;
+        switch (createUserTypeInput.getValue()) {
+            case "Parent":
+                Parent parent = new Parent(createUsernameInput.getText());
+                //Assign the active user's name to the singleton instance.
+                ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
+                //TODO: Save the new object to the text file.
+                break;
+            case "Child":
+                Child child = new Child(createUsernameInput.getText());
+                //Assign the active user's name to the singleton instance.
+                ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
+                //TODO: Save the new object to the text file.
+                break;
+            case "Guest":
+                Guest guest = new Guest(createUsernameInput.getText());
+                //Assign the active user's name to the singleton instance.
+                ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
+                //TODO: Save the new object to the text file.
+                break;
+            case "Stranger":
+                Stranger stranger = new Stranger(createUsernameInput.getText());
+                //Assign the active user's name to the singleton instance.
+                ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
+                //TODO: Save the new object to the text file.
+                break;
+        }
         //Call closeEditProfile from Main and return to the primary stage.
         Main.closeEditProfile();
     }
@@ -99,14 +98,12 @@ public class ProfileController implements Initializable {
     public void editProfile(MouseEvent mouseEvent){
         //Get the selected username value from the input form.
         String usernameToDelete = (String) editUserInput.getValue();
-        //Remove the selected user from the profiles ArrayList if it exists.
-        profiles.removeIf(obj -> obj.getProfileName().equals(usernameToDelete));
-        //Reset the activeProfile if it matches the deleted user.
-        if(activeProfile.getProfileName().equals(usernameToDelete)) activeProfile = new Profile();
+
+        //TODO: Check if the username to be deleted actually exists in the text file.
+
         //Call closeEditProfile from Main and return to the primary stage.
         Main.closeEditProfile();
     }
-
 
     /**
      * Set the activeProfile attribute to a specified user profile.
@@ -116,28 +113,10 @@ public class ProfileController implements Initializable {
     public void loginProfile(MouseEvent mouseEvent){
         //Get the selected username value from the input form.
         String usernameToLogin = loginUserInput.getValue();
-        //Set the activeProfile attribute to the matching user.
-        activeProfile = profiles.stream()
-                .filter(p -> p.getProfileName().equals(usernameToLogin)).findFirst().orElse(null);
+
+        //TODO: Check if the login username actually exists in the text file.
+
         //Call closeEditProfile from Main and return to the primary stage.
         Main.closeEditProfile();
-    }
-
-    /**
-     * Get active profile name string.
-     *
-     * @return the string
-     */
-    public String getActiveProfileName(){
-        return activeProfile.getProfileName();
-    }
-
-    /**
-     * Get all profiles array list.
-     *
-     * @return the array list
-     */
-    public ArrayList<Profile> getAllProfiles(){
-        return profiles;
     }
 }

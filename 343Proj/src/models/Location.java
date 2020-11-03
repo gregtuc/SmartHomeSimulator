@@ -33,10 +33,9 @@ public class Location {
     /**
      * Sets location.
      *
-     * @param second the outside temperature
+     * @param location the location
      */
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
 }
