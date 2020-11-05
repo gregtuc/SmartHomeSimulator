@@ -19,27 +19,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx-swt.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.base.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.controls.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.fxml.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.graphics.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.media.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.swing.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/javafx-sdk-15/lib/javafx.web.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/antlr4-runtime-4.8-1.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/commons-lang3-3.9.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/commons-text-1.8.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/fastutil-8.3.1.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/guava-28.2-jre.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-core-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-demo-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-ext-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-guava-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-io-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgrapht-opt-1.5.0.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jgraphx-4.0.5.jar"/>
-	<classpathentry kind="lib" path="343proj-dev-layout-1/jgrapht-1.5.0/lib/jheaps-0.13.jar"/>
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx-swt.jar"/>
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx.base.jar"/>
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx.controls.jar"/>
@@ -48,6 +27,5 @@
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx.media.jar"/>
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx.swing.jar"/>
 	<classpathentry kind="lib" path="343Proj/javafx-sdk-15/lib/javafx.web.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
 	<classpathentry kind="output" path="343Proj/out/production/343Proj"/>
 </classpath>
