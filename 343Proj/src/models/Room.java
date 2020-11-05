@@ -14,6 +14,7 @@ public class Room{
     public Boolean windowLocked = false; // Whether this rooms window is locked or unlocked.
 
     //Light Variables
+    public Window window; 
     public boolean lights = false; // Lights off (false) or on (true) in the room.
     public int lightsOnTime = 0;
     public int lightsOffTime = 0;
@@ -33,13 +34,13 @@ public class Room{
     // Same logic as windows is applied to doors.
 
     // Complete constructor for Room class.
-    public Room(String roomName, int graphNumber, int gridCol, int gridRow, Boolean door, Boolean window, Boolean lights, double initialTemp) {
+    public Room(String roomName, int graphNumber, int gridCol, int gridRow, Boolean door, Boolean windowExists, Boolean lights, double initialTemp) {
         this.roomName = roomName;
         this.graphNumber = graphNumber;
         this.gridCol = gridCol;
         this.gridRow = gridRow;
         this.door = door;
-        this.window = window;
+        this.window = new Window(windowExists);
         this.lights = lights;
         // this.numLights = numLights;
         this.initialTemp = initialTemp;
@@ -50,44 +51,87 @@ public class Room{
         this.graphNumber = graphNumber;
         this.gridCol = gridCol;
         this.gridRow = gridRow;
+        this.window = new Window(false);
     }
-
+    /**
+     * return the roomName attribute
+     * @return
+     */
     public String getRoomName() {
         return roomName;
     }
-
+    /**
+     * setter for roomName attribute
+     * @param roomName
+     */
     public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
 
+    /**
+     * getter for graphNumber attribute
+     * 
+     * @return
+     */
     public int getGraphNumber() {
         return graphNumber;
     }
-
+    /**
+     * setter for graphNumber attribute
+     * @param graphNumber
+     */
     public void setGraphNumber(int graphNumber) {
         this.graphNumber = graphNumber;
     }
-
+    /**
+     * getter for door attribute
+     * @return
+     */
     public Boolean getDoor() {
         return door;
     }
-
+    /**
+     * setter for door attribute
+     * @param door
+     */
     public void setDoor(Boolean door) {
         this.door = door;
     }
-
-    public Boolean getWindow() {
-        return window;
+    public void setWindowExists(boolean exists) {
+    	window.setWindowExist(exists);
     }
-
-    public void setWindow(Boolean window) {
-        this.window = window;
+    /**
+     * getter for window.getWindowExist()
+     * @return
+     */
+    public Boolean getWindowExists() {
+        return window.getWindowExist();
     }
-
+    /**
+     * setter for window.getWindowExist()
+     * @param isOpen
+     */
+    public void setWindowStatus(boolean isOpen) {
+    	window.setWindowIsOpen(isOpen);
+    }
+    /**
+     * getter for window.getWindowIsopen()
+     * @return
+     */
+    public Boolean getWindowStatus() {
+        return window.getWindowIsOpen();
+    }
+    /**
+     * getter for light attribute 
+     * @return
+     */
     public Boolean getLights() {
         return lights;
     }
-
+    /**
+     * setter for lights attributes
+     * @param lights
+     */
     public void setLights(Boolean lights) {
         this.lights = lights;
     }
@@ -100,14 +144,21 @@ public class Room{
 
     public void setLightsOnTime(int lightsOnTime){ this.lightsOnTime = lightsOnTime; }
 
+    /**
+     * getter for intialTemp
+     * @return
+     */
     public double getInitialTemp() {
         return initialTemp;
     }
-
+    /**
+     * setter for intialTemp
+     * @param initialTemp
+     */
     public void setInitialTemp(double initialTemp) {
         this.initialTemp = initialTemp;
     }
-
+    
     // toString() method for printing purposes.
     public String toString() {
         return ("[" + this.graphNumber + "]");

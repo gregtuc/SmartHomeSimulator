@@ -104,7 +104,7 @@ public class LayoutParser {
                                 break;
                             }
                             case "Window": {
-                                grid.get(row).get(col).window = true;
+                                grid.get(row).get(col).setWindowExists(true);
                                 break;
                             }
                             case "Door": {
@@ -113,7 +113,7 @@ public class LayoutParser {
                             }
                             case "Both": {
                                 grid.get(row).get(col).door = true;
-                                grid.get(row).get(col).window = true;
+                                grid.get(row).get(col).setWindowExists(true);
                                 break;
                             }
 
@@ -195,5 +195,8 @@ public class LayoutParser {
 
     public ArrayList<ArrayList<Room>> getGrid(){
         return grid;
+    }
+    public static ArrayList<ArrayList<Room>> getGridRooms () {
+    	return grid;
     }
 }
