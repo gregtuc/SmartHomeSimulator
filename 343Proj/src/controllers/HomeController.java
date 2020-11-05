@@ -67,9 +67,15 @@ public class HomeController extends Label implements Initializable {
      */
     public Label outsideTemperatureLabel = new Label();
     /**
+     * The speed Label Input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
+    public Label simulationSpeedLabel = new Label();
+    /**
      * The startStopButton Button Input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
+    
     public Button startStopButton = new Button();
     
     /**

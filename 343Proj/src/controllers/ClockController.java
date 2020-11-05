@@ -48,6 +48,11 @@ public class ClockController extends Label {
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
     public TextField secondInput = new TextField();
+    /**
+     * The third TextField input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
+    public TextField speedInput = new TextField();
 
     /**
      * Begins a new Timeline object that updates the clock once every second.
@@ -57,7 +62,7 @@ public class ClockController extends Label {
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
             timeline = new Timeline(
-                    new KeyFrame(Duration.seconds(1), e -> {
+                    new KeyFrame(Duration.seconds(1/clock.getSpeed()), e -> {
                         //Condition blocks to manage the time variables.
                         if (clock.getSecond() >= 60) {
                             //At 60s, return seconds to 0.
@@ -130,6 +135,7 @@ public class ClockController extends Label {
         clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         clock.setMinute(Integer.parseInt(String.valueOf(minuteInput.getText())));
         clock.setSecond(Integer.parseInt(String.valueOf(secondInput.getText())));
+        clock.setSpeed(Double.parseDouble(String.valueOf(speedInput.getText())));
         //Call closeEditTime from Main and return to the primary stage.
         Main.closeEditTime();
     }
