@@ -7,14 +7,13 @@ public class Room{
     public int gridCol = -1; // The column coordinate of the room in the grid.
     public int gridRow = -1; // The row coordinate of the room in the grid.
 
-    //Room description variables
-    public Boolean door = false; // Whether this room's door to the outside is closed or open.
-    public Boolean doorLocked = false; // Whether this rooms door is locked or unlocked.
-    public Boolean window = false; // Whether this room's window to the outside is closed or open.
-    public Boolean windowLocked = false; // Whether this rooms window is locked or unlocked.
+    //Room door variables
+    public Door door;
 
-    //Light Variables
-    public Window window; 
+    //Room window object
+    public Window window;
+
+    //Room light Variables
     public boolean lights = false; // Lights off (false) or on (true) in the room.
     public int lightsOnTime = 0;
     public int lightsOffTime = 0;
@@ -39,10 +38,9 @@ public class Room{
         this.graphNumber = graphNumber;
         this.gridCol = gridCol;
         this.gridRow = gridRow;
-        this.door = door;
         this.window = new Window(windowExists);
+        this.door = new Door(true);
         this.lights = lights;
-        // this.numLights = numLights;
         this.initialTemp = initialTemp;
     }
 
@@ -52,6 +50,7 @@ public class Room{
         this.gridCol = gridCol;
         this.gridRow = gridRow;
         this.window = new Window(false);
+        this.door = new Door(false);
     }
     /**
      * return the roomName attribute
@@ -83,55 +82,42 @@ public class Room{
     public void setGraphNumber(int graphNumber) {
         this.graphNumber = graphNumber;
     }
-    /**
-     * getter for door attribute
-     * @return
-     */
-    public Boolean getDoor() {
-        return door;
+
+    public void setDoorExists(boolean exists){
+        door.setDoorExists(exists);
     }
-    /**
-     * setter for door attribute
-     * @param door
-     */
-    public void setDoor(Boolean door) {
-        this.door = door;
+
+    public Boolean getDoorExists(){
+        return door.getDoorExists();
     }
+
+    public void setDoorStatus(Boolean isOpen) {
+        door.setDoorIsOpen(isOpen);
+    }
+    public Boolean getDoorStatus(){
+        return door.getDoorIsOpen();
+    }
+
     public void setWindowExists(boolean exists) {
-    	window.setWindowExist(exists);
+    	window.setWindowExists(exists);
     }
-    /**
-     * getter for window.getWindowExist()
-     * @return
-     */
+
     public Boolean getWindowExists() {
-        return window.getWindowExist();
+        return window.getWindowExists();
     }
-    /**
-     * setter for window.getWindowExist()
-     * @param isOpen
-     */
+
     public void setWindowStatus(boolean isOpen) {
     	window.setWindowIsOpen(isOpen);
     }
-    /**
-     * getter for window.getWindowIsopen()
-     * @return
-     */
+
     public Boolean getWindowStatus() {
         return window.getWindowIsOpen();
     }
-    /**
-     * getter for light attribute 
-     * @return
-     */
+
     public Boolean getLights() {
         return lights;
     }
-    /**
-     * setter for lights attributes
-     * @param lights
-     */
+
     public void setLights(Boolean lights) {
         this.lights = lights;
     }

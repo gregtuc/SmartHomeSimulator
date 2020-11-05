@@ -12,8 +12,8 @@ public class WindowManager {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.window){
-                    room.windowLocked = false;
+                if(room.window.getWindowExists()){
+                    room.window.setWindowIsOpen(true);
                 }
             }
         }
@@ -26,8 +26,8 @@ public class WindowManager {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.window){
-                    room.windowLocked = true;
+                if(room.window.getWindowExists()){
+                    room.window.setWindowIsOpen(false);
                 }
             }
         }
@@ -41,8 +41,8 @@ public class WindowManager {
                 if (room.graphNumber == 0)
                     continue;
                 if(location.equals(room.roomName)){
-                    if(room.window){
-                        room.windowLocked = false;
+                    if(room.window.getWindowExists()){
+                        room.window.setWindowIsOpen(true);
                     }
                 }
             }
@@ -57,8 +57,8 @@ public class WindowManager {
                 if (room.graphNumber == 0)
                     continue;
                 if(location.equals(room.roomName)){
-                    if(room.window){
-                        room.windowLocked = true;
+                    if(room.window.getWindowExists()){
+                        room.window.setWindowIsOpen(false);
                     }
                 }
             }

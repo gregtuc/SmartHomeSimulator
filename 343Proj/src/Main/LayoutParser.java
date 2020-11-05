@@ -46,7 +46,7 @@ public class LayoutParser {
             System.out.println("");
         }
         File file =
-                new File("343Proj/src/layout.txt");
+                new File("layout.txt");
         Scanner sc = new Scanner(file);
         String currentLine = null;
         String[] words = new String[0];
@@ -108,11 +108,11 @@ public class LayoutParser {
                                 break;
                             }
                             case "Door": {
-                                grid.get(row).get(col).door = true;
+                                grid.get(row).get(col).setDoorExists(true);
                                 break;
                             }
                             case "Both": {
-                                grid.get(row).get(col).door = true;
+                                grid.get(row).get(col).setDoorExists(true);
                                 grid.get(row).get(col).setWindowExists(true);
                                 break;
                             }
@@ -139,11 +139,11 @@ public class LayoutParser {
 
                 //Dynamically update the grid with the room names.
                 panes[col][row].setText("Room #"+room.graphNumber+" is the "+room.roomName
-                        +". Door: "+room.door+" | Window: "+room.window+"\n");
+                        +". Door: "+room.getDoorExists()+" | Window: "+room.getWindowExists()+"\n");
 
                 System.out.print(
                         "Room #"+room.graphNumber+" is the "+room.roomName
-                                +". Door: "+room.door+" | Window: "+room.window+"\n"
+                                +". Door: "+room.getDoorExists()+" | Window: "+room.getWindowExists()+"\n"
                 );
             }
         }

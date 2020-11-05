@@ -12,8 +12,8 @@ public class DoorManager {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.door){
-                    room.doorLocked = false;
+                if(room.door.getDoorExists()){
+                    room.door.setDoorIsOpen(true);
                 }
             }
         }
@@ -26,38 +26,38 @@ public class DoorManager {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.door){
-                    room.doorLocked = true;
+                if(room.door.getDoorExists()){
+                    room.door.setDoorIsOpen(false);
                 }
             }
         }
     }
 
     //Method for unlocking a single door in the house.
-    public static void unlockWindow(String location, TextArea[][] panes){
+    public static void unlockDoor(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
                 if(location.equals(room.roomName)){
-                    if(room.door){
-                        room.doorLocked = false;
+                    if(room.door.getDoorExists()){
+                        room.door.setDoorIsOpen(false);
                     }
                 }
             }
         }
     }
 
-    //Method for locking a single window in the house.
-    public static void lockWindow(String location, TextArea[][] panes){
+    //Method for locking a single door in the house.
+    public static void lockDoor(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.window){
-                    room.windowLocked = true;
+                if(room.door.getDoorExists()){
+                    room.door.setDoorIsOpen(true);
                 }
             }
         }

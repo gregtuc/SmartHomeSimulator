@@ -2,8 +2,6 @@ package controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -13,25 +11,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.util.Duration;
-import models.Profile;
 import models.Room;
 import Main.Main;
 import Main.LayoutParser;
 import models.ActiveUser;
-import utility.CommandLogger;
-import utility.PermissionChecker;
+import utility.*;
 
 /**
  * The type Home controller.
@@ -52,9 +44,6 @@ public class HomeController extends Label implements Initializable {
     public Label awayModeLabel = new Label();
 
     public Button startStopButton = new Button();
-    public Button openBackyardButton = new Button();
-    public Button openGarageButton = new Button();
-    public Button openMainButton = new Button();
     public Button awayModeButton = new Button();
 
     public TextArea outputConsoleText = new TextArea();
@@ -70,7 +59,7 @@ public class HomeController extends Label implements Initializable {
     /**
      * ListView to hold all Rooms with either windows, doors or lights
      */
-    public ListView<String> RoomsList = new ListView<>();
+    public ListView<String> roomList = new ListView<>();
     /**
      * ArrayList to hold the grid from LayoutParser class
      */
@@ -304,91 +293,64 @@ public class HomeController extends Label implements Initializable {
     }
 
     @FXML
-    public void backyardButtonClicked(MouseEvent mouseEvent) throws IOException {
+    public void openItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
         if(PermissionChecker.checkCorePerms()){
-            //Change Button text
-            if(openBackyardButton.getText().equals("Open")){
-                openBackyardButton.setText("Close");
-                //Logging.
-                try {
-                    CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has opened the backyard door.", outputConsoleText);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            } else {
-                openBackyardButton.setText("Open");
-                //Logging.
-                try {
-                    CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has closed the backyard door.", outputConsoleText);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+            switch (itemList.getSelectionModel().getSelectedItem()) {
+                case "Windows":
+                    WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Doors":
+                    DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Lights":
+                    LightManager.turnOnLight(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+            }
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to open/on.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
             successfulPermissionsAlert();
-            //TODO - Add functionality for backyard.
         } else {
             badPermissionsAlert();
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to open the backyard door but was not allowed.", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off but was denied!", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
         }
     }
     @FXML
-    public void garageButtonClicked(MouseEvent mouseEvent) throws IOException {
+    public void closeItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
         if(PermissionChecker.checkCorePerms()){
-            //Change Button text
-            if(openGarageButton.getText().equals("Open")){
-                openGarageButton.setText("Close");
-                //Logging.
-                try {
-                    CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has closed the garage.", outputConsoleText);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            } else {
-                openGarageButton.setText("Open");
-                //Logging.
-                try {
-                    CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has opened the garage.", outputConsoleText);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+            switch (itemList.getSelectionModel().getSelectedItem()) {
+                case "Windows":
+                    WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Doors":
+                    DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Lights":
+                    LightManager.turnOffLight(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+            }
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
             successfulPermissionsAlert();
-            //TODO - Add functionality for garage.
         } else {
             badPermissionsAlert();
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to open the garage but was not allowed.", outputConsoleText);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        }
-    }
-    @FXML
-    public void mainButtonClicked(MouseEvent mouseEvent) throws IOException {
-        //Permission Validation. If active user does not have permission, an alert box will appear.
-        if(PermissionChecker.checkCorePerms()){
-            //User has permission.
-            successfulPermissionsAlert();
-            //TODO - Add functionality for main.
-            //Logging.
-            try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has opened the main door.", outputConsoleText);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        } else {
-            badPermissionsAlert();
-            //Logging.
-            try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to open the main door but was not allowed.", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off but was denied!", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -467,7 +429,7 @@ public class HomeController extends Label implements Initializable {
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
     }
-}
+
     /**
      * Loads the Items into the ItemList ListView
      */
@@ -482,7 +444,7 @@ public class HomeController extends Label implements Initializable {
      * @throws IOException
      */
     public void DisplayRooms (MouseEvent mouseEvent) throws IOException {
-    	RoomsList.getItems().clear();
+    	roomList.getItems().clear();
         String item = itemList.getSelectionModel().getSelectedItem();
         ArrayList<String> rooms = new ArrayList<String>();
         rooms.removeAll(rooms);
@@ -506,7 +468,6 @@ public class HomeController extends Label implements Initializable {
         	}
         	
         }
-        
         else if(item.equals("Lights")) {
         	for (int row = 0; row < 4; row++) {
         		for (int col = 0; col < 4; col++) {
@@ -515,9 +476,8 @@ public class HomeController extends Label implements Initializable {
         			}
         		}
         	}
-        	
         }
-        RoomsList.getItems().addAll(rooms);    
+        roomList.getItems().addAll(rooms);
     }
     
 }
