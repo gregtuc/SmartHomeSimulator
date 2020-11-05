@@ -2,18 +2,25 @@ package controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.util.Duration;
+import models.Profile;
+import models.Room;
 import Main.Main;
 import Main.LayoutParser;
 
@@ -90,7 +97,18 @@ public class HomeController extends Label implements Initializable {
      * Hold references to all the House-Layout FXML elements.
      */
     TextArea[][] panes = new TextArea[4][4];
-
+    /**
+     * ListView to hold all items such as windows, doors and lights
+     */
+    public ListView<String> itemList = new ListView<>();
+    /**
+     * ListView to hold all Rooms with either windows, doors or lights
+     */
+    public ListView<String> RoomsList = new ListView<>();
+    /**
+     * ArrayList to hold the grid from LayoutParser class
+     */
+    ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
     /**
      * TextArea FXML elements.
      */
@@ -178,6 +196,7 @@ public class HomeController extends Label implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         //Play the timeline.
         timeline.play();
+        loadItems();
     }
 
     /**
@@ -263,4 +282,56 @@ public class HomeController extends Label implements Initializable {
     public void editProfileClicked(MouseEvent mouseEvent) {
         Main.showEditProfile();
     }
+    /**
+     * Loads the Items into the ItemList ListView
+     */
+    public void loadItems() {
+    	itemList.getItems().add("Lights");
+    	itemList.getItems().add("Doors");
+    	itemList.getItems().add("Windows");
+    }
+    /**
+     * The function Displays the Rooms with either lights, Doors or windows in them.
+     * @param mouseEvent
+     * @throws IOException
+     */
+    public void DisplayRooms (MouseEvent mouseEvent) throws IOException {
+    	RoomsList.getItems().clear();
+        String item = itemList.getSelectionModel().getSelectedItem();
+        ArrayList<String> rooms = new ArrayList<String>();
+        rooms.removeAll(rooms);
+        //RoomsList.getItems().add(item);
+        if(item.equals("Windows")) {
+        	for (int row = 0; row < 4; row++) {
+        		for (int col = 0; col < 4; col++) {
+        			if (roomGrid.get(row).get(col).getWindowExists() == true && roomGrid.get(row).get(col) != null) {
+        				rooms.add(roomGrid.get(row).get(col).roomName);
+        			}
+        		}
+        	}
+        }
+        else if(item.equals("Doors")) {
+        	for (int row = 0; row < 4; row++) {
+        		for (int col = 0; col < 4; col++) {
+        			if (!roomGrid.get(row).get(col).roomName.equals("Unnamed")) {
+        				rooms.add(roomGrid.get(row).get(col).roomName);
+        			}
+        		}
+        	}
+        	
+        }
+        
+        else if(item.equals("Lights")) {
+        	for (int row = 0; row < 4; row++) {
+        		for (int col = 0; col < 4; col++) {
+        			if (!roomGrid.get(row).get(col).roomName.equals("Unnamed")) {
+        				rooms.add(roomGrid.get(row).get(col).roomName);
+        			}
+        		}
+        	}
+        	
+        }
+        RoomsList.getItems().addAll(rooms);    
+    }
+    
 }
