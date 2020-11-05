@@ -166,7 +166,11 @@ public class HomeController extends Label implements Initializable {
                     }
                     //Change outside temperature if the name has been changed.
                     if(!OutsideTemperatureController.getOutsideTemperature().equals(outsideTemperatureLabel.getText())){
-                        outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
+                        outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());                        
+                    }
+                    //Change simulation speed if the name has been changed.
+                    if(!clockController.getSimulationSpeed().equals(simulationSpeedLabel.getText())){
+                    	simulationSpeedLabel.setText(clockController.getSimulationSpeed());
                     }
                     //Change active user location if the name has been changed.
                     if(!locationController.getUserLocation().equals(locationLabel.getText())){

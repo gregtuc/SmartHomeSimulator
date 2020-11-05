@@ -66,7 +66,7 @@ public class Clock {
     /**
      * Gets speed.
      *
-     * @return the hour
+     * @return the speed
      */
     public double getSpeed() {
         return speed;

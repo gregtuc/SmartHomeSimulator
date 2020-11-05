@@ -38,7 +38,6 @@ public class OutsideTemperatureController extends Label{
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
         //Set the temperature variable to the inputed value.
     	outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
-        //clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }

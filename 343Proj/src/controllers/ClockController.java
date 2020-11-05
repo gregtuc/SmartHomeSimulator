@@ -61,6 +61,10 @@ public class ClockController extends Label {
     public void beginTime(Label timeLabel){
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
+    	//This checks if the simulation speed is set to zero and sets it to one if it is so that there aren't any divide by zero errors
+    		if (clock.getSpeed() == 0) {
+    			clock.setSpeed(1.0);
+    		}
             timeline = new Timeline(
                     new KeyFrame(Duration.seconds(1/clock.getSpeed()), e -> {
                         //Condition blocks to manage the time variables.
@@ -138,5 +142,13 @@ public class ClockController extends Label {
         clock.setSpeed(Double.parseDouble(String.valueOf(speedInput.getText())));
         //Call closeEditTime from Main and return to the primary stage.
         Main.closeEditTime();
+    }
+    /**
+     * Gets simulation speed.
+     *
+     * @return the simulation speed in a string
+     */
+    public String getSimulationSpeed(){
+        return String.valueOf(clock.getSpeed());
     }
 }
