@@ -8,6 +8,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import models.ActiveUser;
 import models.Room;
 
 import java.io.File;
@@ -36,6 +37,7 @@ public class LayoutParser {
      */
 
     public static void parseLayout(TextArea[][] panes) throws Exception {
+        //*** INITIALIZE THE GRID ***//
         for (int row = 0; row < 4; row++) {
             grid.add(new ArrayList<Room>());
             for (int col = 0; col < 4; col++) {
@@ -148,24 +150,34 @@ public class LayoutParser {
         System.out.println();
     }
 
-    public static void insertProfile(String location, String oldLocation, TextArea[][] panes){
+
+    //Method for modifying the visual representation of the user profile.
+    public static void insertProfile(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
-                }
-                if(oldLocation.equals(room.roomName)){
+                //Revert the old room back to normal.
+                if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
+                    room.activeProfileIsHere = false;
+                    //Change the color on the house representation.
                     Pane test = (Pane)panes[col][row].getParent();
                     test.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
+                //Update the room with the active users presence.
+                if(location.equals(room.roomName)){
+                    room.activeProfileIsHere = true;
+                    //Change the color on the house representation.
+                    Pane test = (Pane)panes[col][row].getParent();
+                    test.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+
             }
         }
     }
 
+    //Method for modifying the visual representation of the location of person objects.
     public static void insertPerson(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {

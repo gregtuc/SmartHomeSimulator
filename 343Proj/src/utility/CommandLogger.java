@@ -11,7 +11,7 @@ public class CommandLogger {
     private static volatile PermissionChecker instance = null;
 
     public static void logCommand(String sender, String message, TextArea textarea) throws IOException {
-
+        //Creating log message.
         String output = "["+sender+"] "+message;
         //Write to output file.
         try(FileWriter fw = new FileWriter("343Proj/src/commandlog.txt", true);
@@ -20,7 +20,7 @@ public class CommandLogger {
         {
             out.println(output);
         } catch (IOException e) {
-            //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
         //Write to visual console.
         textarea.setText(textarea.getText()+"\n"+output);

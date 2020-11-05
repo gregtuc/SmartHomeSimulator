@@ -1,15 +1,28 @@
 package models;
 
-public class Room {
+public class Room{
+    //Room property variables
     public String roomName = "Unnamed";
     public int graphNumber = 0;
-    public Boolean door = false; // Whether this room's door to the outside is closed or open.
-    public Boolean window = false; // Whether this room's window to the outside is closed or open.
-    public boolean lights = false; // Lights off (false) or on (true) in the room.
-    // int numLights = 0; // Total number of lights in the room.
-    public double initialTemp = 23.5; // The starting temperature of the room in Celsius.
     public int gridCol = -1; // The column coordinate of the room in the grid.
     public int gridRow = -1; // The row coordinate of the room in the grid.
+
+    //Room description variables
+    public Boolean door = false; // Whether this room's door to the outside is closed or open.
+    public Boolean doorLocked = false; // Whether this rooms door is locked or unlocked.
+    public Boolean window = false; // Whether this room's window to the outside is closed or open.
+    public Boolean windowLocked = false; // Whether this rooms window is locked or unlocked.
+
+    //Light Variables
+    public boolean lights = false; // Lights off (false) or on (true) in the room.
+    public int lightsOnTime = 0;
+    public int lightsOffTime = 0;
+
+    //Temperature variables
+    public double initialTemp = 23.5; // The starting temperature of the room in Celsius.
+
+    //Room User Details
+    public Boolean activeProfileIsHere; //Boolean saying whether the active user is in this room.
 
     //ArrayList<ArrayList<Integer>> windows = new ArrayList<ArrayList<Integer>>(); // windows[which cell?][closed or open?]
     // This ArrayList checks the current room (see graphNumber) against every other cell (free space or other room).
@@ -78,6 +91,14 @@ public class Room {
     public void setLights(Boolean lights) {
         this.lights = lights;
     }
+
+    public int getLightsOffTime(){ return lightsOffTime; }
+
+    public void setLightsOffTime(int lightsOffTime){ this.lightsOffTime = lightsOffTime; }
+
+    public int getLightsOnTime(){ return lightsOnTime; }
+
+    public void setLightsOnTime(int lightsOnTime){ this.lightsOnTime = lightsOnTime; }
 
     public double getInitialTemp() {
         return initialTemp;

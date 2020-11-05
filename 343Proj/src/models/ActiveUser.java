@@ -5,6 +5,7 @@ public class ActiveUser {
     private static String profileName = "";
     private static String profileType = "";
     private static String profileLocation = "";
+    private static String oldProfileLocation = "";
     private static Boolean awayMode = false;
     private ActiveUser() {}
 
@@ -26,6 +27,7 @@ public class ActiveUser {
         ActiveUser.profileType = type;
     }
     public static void setActiveUserLocation(String location){
+        oldProfileLocation = profileLocation;
         ActiveUser.profileLocation = location;
     }
     public static void setActiveUserAwayMode(){
@@ -36,5 +38,6 @@ public class ActiveUser {
     }
     public static String getActiveUserType(){return profileType;}
     public static String getActiveUserLocation(){return profileLocation;}
+    public static String getOldProfileLocation(){return oldProfileLocation;}
     public static Boolean getActiveUserAwayMode(){return awayMode;}
 }

@@ -180,12 +180,7 @@
                      <children>
                         <TitledPane animated="false" layoutX="11.0" layoutY="14.0" prefHeight="164.0" prefWidth="341.0" text="Item">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="337.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="97.0" text="Windows" />
-                                    <Label layoutX="14.0" layoutY="52.0" prefHeight="17.0" prefWidth="97.0" text="Lights" />
-                                    <Label layoutX="14.0" layoutY="93.0" prefHeight="17.0" prefWidth="97.0" text="Doors" />
-                                 </children></AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="337.0" />
                            </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="11.0" layoutY="183.0" prefHeight="180.0" prefWidth="341.0" text="Open/Close">
@@ -307,18 +302,14 @@
             <Label fx:id="awayModeLabel" layoutX="89.0" layoutY="119.0" prefHeight="17.0" prefWidth="99.0" style="-fx-background-color: #CDCDCD;" />
            </AnchorPane>
        </TitledPane>
-      <ScrollPane layoutX="212.0" layoutY="438.0" prefHeight="126.0" prefWidth="746.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="745.0">
-               <children>
-                  <TextArea fx:id="outputConsoleText" prefHeight="110.0" prefWidth="731.0">
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </TextArea>
-               </children>
-            </AnchorPane>
-        </content>
+      <ScrollPane layoutX="222.0" layoutY="438.0" prefHeight="119.0" prefWidth="729.0">
+         <content>
+            <TextArea fx:id="outputConsoleText" editable="false" prefHeight="110.0" prefWidth="729.0">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </TextArea>
+         </content>
       </ScrollPane>
    </children>
 </Pane>

@@ -45,22 +45,10 @@ public class HomeController extends Label implements Initializable {
 
     public TextArea outputConsoleText = new TextArea();
 
-    /**
-     * The oldLocationLabel.
-     * Keep a value of the old location. This is essentially a helper-variable for when the active user changes locations
-     * and we want to clean up the old location that they were at.
-     */
-    public static String oldLocationLabel = "";
-
-    /**
-     * The panes 2D array.
-     * Hold references to all the House-Layout FXML elements.
-     */
+    //Panes matching up with the house layout file.
     TextArea[][] panes = new TextArea[4][4];
 
-    /**
-     * TextArea FXML elements.
-     */
+    //TextArea FXML elements.
     public TextArea sq22 = new TextArea();
     public TextArea sq23 = new TextArea();
     public TextArea sq24 = new TextArea();
@@ -118,7 +106,7 @@ public class HomeController extends Label implements Initializable {
             e.printStackTrace();
         }
 
-        //Check for new activeUsers in intervals of 1 second.
+        //Timeline that runs in intervals of 1 second. It is used for a variety of things from updating fxml elements to checking for new values.
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
                     //Change current profile name if the name has been changed.
@@ -144,7 +132,7 @@ public class HomeController extends Label implements Initializable {
                     //Change active user location if the name has been changed.
                     if(!ActiveUser.getActiveUserLocation().equals(locationLabel.getText())){
                         locationLabel.setText(ActiveUser.getActiveUserLocation());
-                        LayoutParser.insertProfile(ActiveUser.getActiveUserLocation(), oldLocationLabel, panes);
+                        LayoutParser.insertProfile(ActiveUser.getActiveUserLocation(), panes);
                         //Logging.
                         try {
                             CommandLogger.logCommand("Context", ActiveUser.getActiveUsername()+" has changed locations to "+ActiveUser.getActiveUserLocation(), outputConsoleText);
@@ -276,7 +264,6 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editLocationClicked(MouseEvent mouseEvent) throws IOException {
-        oldLocationLabel = locationLabel.getText();
         //Logging.
         try {
             CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has pressed the edit location button.", outputConsoleText);
