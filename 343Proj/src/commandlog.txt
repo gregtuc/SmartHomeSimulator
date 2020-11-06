@@ -1,0 +1,177 @@
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Core]  tried to open the garage but was not allowed.
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Core] Adrien has opened the main door.
+[Core] Adrien has opened the main door.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has stopped the simulator.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Dashboard] Adrien pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Dashboard] Adrien pressed the edit profile button.
+[Dashboard] Adrien pressed the edit profile button.
+[Dashboard] Adrien pressed the edit profile button.
+[Dashboard] Adrien pressed the edit profile button.
+[Parameter] Account Nicolas has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Greg has logged in.
+[Dashboard] Greg pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Dashboard] Adrien pressed the edit profile button.
+[Parameter] Account  has logged in.
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Niky has logged in.
+[Dashboard] Niky pressed the edit profile button.
+[Parameter] Account  has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Dashboard]  pressed the edit profile button.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Dashboard] Adrien has pressed the edit location button.
+[Context] Adrien has changed locations to Master Bedroom
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard]  pressed the edit profile button.
+[Parameter] Account Nicolas has logged in.
+[Dashboard] Nicolas has pressed the edit location button.
+[Context] Nicolas has changed locations to Kitchen
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Greg has logged in.
+[Dashboard] Greg pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Matthew has logged in.
+[Dashboard] Matthew pressed the edit profile button.
+[Parameter] Account  has logged in.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Matthew has logged in.
+[Dashboard] Matthew pressed the edit profile button.
+[Parameter] The active user has been logged out due to account deletion.
+[Parameter]  has changed the temperature to OutsideTemperatureController.getOutsideTemperature().
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Matthew has logged in.
+[Dashboard] Matthew pressed the edit profile button.
+[Parameter] The active user has been logged out due to account deletion.
