@@ -54,6 +54,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -64,6 +67,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1j45Pre63LOuG6hhrDztyczQmrl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -73,7 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-20200518.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -88,13 +94,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="SmartHomeSimulator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -104,6 +103,13 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="SmartHomeSimulator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,10 +152,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1603051195604" />
-    <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604326186085">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="679" y="128" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604599701576">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604326186085" />
+    <state x="679" y="128" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604599701576" />
     <state x="830" y="285" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604325748349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -179,47 +186,74 @@
     </state>
     <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
     <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
-    <state width="1877" height="143" key="GridCell.Tab.0.bottom" timestamp="1604370233681">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="305" key="GridCell.Tab.0.bottom" timestamp="1604628527265">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="143" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604370233681" />
-    <state width="1877" height="143" key="GridCell.Tab.0.center" timestamp="1604370233681">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="305" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604628527265" />
+    <state width="2517" height="305" key="GridCell.Tab.0.center" timestamp="1604628527265">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="143" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604370233681" />
-    <state width="1877" height="143" key="GridCell.Tab.0.left" timestamp="1604370233681">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="305" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604628527265" />
+    <state width="2517" height="305" key="GridCell.Tab.0.left" timestamp="1604628527265">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="143" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604370233681" />
-    <state width="1877" height="143" key="GridCell.Tab.0.right" timestamp="1604370233681">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="305" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604628527265" />
+    <state width="2517" height="305" key="GridCell.Tab.0.right" timestamp="1604628527265">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="143" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604370233681" />
-    <state width="1877" height="340" key="GridCell.Tab.1.bottom" timestamp="1604344157499">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="305" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604628527265" />
+    <state width="2517" height="604" key="GridCell.Tab.1.bottom" timestamp="1604624679182">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
-    <state width="1877" height="340" key="GridCell.Tab.1.center" timestamp="1604344157499">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="604" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604624679182" />
+    <state width="2517" height="604" key="GridCell.Tab.1.center" timestamp="1604624679182">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
-    <state width="1877" height="340" key="GridCell.Tab.1.left" timestamp="1604344157498">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="604" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604624679182" />
+    <state width="2517" height="604" key="GridCell.Tab.1.left" timestamp="1604624679181">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157498" />
-    <state width="1877" height="340" key="GridCell.Tab.1.right" timestamp="1604344157499">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="604" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604624679181" />
+    <state width="2517" height="604" key="GridCell.Tab.1.right" timestamp="1604624679182">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
+    <state width="2517" height="604" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604624679182" />
     <state x="514" y="166" key="SettingsEditor" timestamp="1604343523278">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603052494952" />
     <state x="514" y="166" key="SettingsEditor/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604343523278" />
+    <state x="825" y="436" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604609988107">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="825" y="436" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604609988107" />
+    <state x="936" y="330" key="run.anything.popup" timestamp="1604605106744">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1604605106744" />
     <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1604334131486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604334131486" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jgrapht$All_in_SmartHomeSimulator__1_.ic" NAME="All in SmartHomeSimulator (1) Coverage Results" MODIFIED="1603052563090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
