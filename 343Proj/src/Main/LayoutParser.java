@@ -1,12 +1,11 @@
 package Main;
 
 
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import models.ActiveUser;
 import models.Room;
@@ -138,13 +137,9 @@ public class LayoutParser {
                     continue;
 
                 //Dynamically update the grid with the room names.
-                panes[col][row].setText("Room #"+room.graphNumber+" is the "+room.roomName
-                        +". Door: "+room.getDoorExists()+" | Window: "+room.getWindowExists()+"\n");
+                panes[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
+                        +"\nDoor: "+room.getDoorExists()+"\nWindow: "+room.getWindowExists()+"\n");
 
-                System.out.print(
-                        "Room #"+room.graphNumber+" is the "+room.roomName
-                                +". Door: "+room.getDoorExists()+" | Window: "+room.getWindowExists()+"\n"
-                );
             }
         }
         System.out.println();
@@ -162,15 +157,15 @@ public class LayoutParser {
                 if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
                     room.activeProfileIsHere = false;
                     //Change the color on the house representation.
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
                 //Update the room with the active users presence.
                 if(location.equals(room.roomName)){
                     room.activeProfileIsHere = true;
                     //Change the color on the house representation.
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
 
             }
@@ -185,8 +180,8 @@ public class LayoutParser {
                 if (room.graphNumber == 0)
                     continue;
                 if(location.equals(room.roomName)){
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, CornerRadii.EMPTY, Insets.EMPTY)));
                     break;
                 }
             }

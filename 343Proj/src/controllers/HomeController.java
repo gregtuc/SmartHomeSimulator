@@ -171,7 +171,7 @@ public class HomeController extends Label implements Initializable {
                         outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
                         //Logging.
                         try {
-                            CommandLogger.logCommand("Parameter", ActiveUser.getActiveUsername()+" has changed the temperature to OutsideTemperatureController.getOutsideTemperature().", outputConsoleText);
+                            CommandLogger.logCommand("Parameter", ActiveUser.getActiveUsername()+" has changed the temperature to "+ OutsideTemperatureController.getOutsideTemperature(), outputConsoleText);
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }
@@ -338,7 +338,7 @@ public class HomeController extends Label implements Initializable {
             }
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to open/on.", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to open/on.", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -347,7 +347,7 @@ public class HomeController extends Label implements Initializable {
             badPermissionsAlert();
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off but was denied!", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -370,7 +370,7 @@ public class HomeController extends Label implements Initializable {
             }
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off.", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off.", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -379,7 +379,7 @@ public class HomeController extends Label implements Initializable {
             badPermissionsAlert();
             //Logging.
             try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+"to closed/off but was denied!", outputConsoleText);
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -387,12 +387,20 @@ public class HomeController extends Label implements Initializable {
     }
     @FXML
     public void awayModeButtonClicked(MouseEvent mouseEvent) throws IOException {
+        //TODO: Make it so that this button can only be clicked when users are not at home.
         //Permission Validation. If active user does not have permission, an alert box will appear.
         if(PermissionChecker.checkSecurityPerms()){
 
             //If away mode is currently deactivated
-            if(ActiveUser.getActiveUserAwayMode()){
+            if(!ActiveUser.getActiveUserAwayMode()){
+                //Change the status of away mode.
                 ActiveUser.setActiveUserAwayMode();
+
+                //Lock all windows and doors.
+                WindowManager.lockAllWindows(panes);
+                LightManager.turnOffAllLights(panes);
+
+                //Change the label text.
                 awayModeButton.setText("Activate");
                 awayModeLabel.setText("Not Active");
                 //Logging.
@@ -513,8 +521,7 @@ public class HomeController extends Label implements Initializable {
         }
         roomList.getItems().addAll(rooms);
     }
-    
-}
+
     public TextArea getHomeTextArea() {
         return outputConsoleText;
     }

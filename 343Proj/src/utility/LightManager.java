@@ -3,10 +3,7 @@ package utility;
 import Main.LayoutParser;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import models.Room;
 
@@ -21,8 +18,8 @@ public class LightManager {
                 //Turn the lights on in the room.
                 room.lights = true;
                 //Change the color on the house representation.
-                Pane test = (Pane)panes[col][row].getParent();
-                test.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+                Region content = (Region) panes[col][row].lookup(".content");
+                content.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         }
     }
@@ -38,8 +35,8 @@ public class LightManager {
                 if(location.equals(room.roomName)){
                     room.lights = true;
                     //Change the color on the house representation.
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
         }
@@ -55,8 +52,8 @@ public class LightManager {
                 //Turn the lights on in the room.
                 room.lights = false;
                 //Change the color on the house representation.
-                Pane test = (Pane)panes[col][row].getParent();
-                test.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+                Region content = (Region) panes[col][row].lookup(".content");
+                content.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         }
     }
@@ -72,8 +69,8 @@ public class LightManager {
                 if(location.equals(room.roomName)){
                     room.lights = false;
                     //Change the color on the house representation.
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
         }
