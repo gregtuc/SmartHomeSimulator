@@ -56,6 +56,9 @@ public class HomeController extends Label implements Initializable {
      * ListView to hold all items such as windows, doors and lights
      */
     public ListView<String> itemList = new ListView<>();
+    public static String oldLocationLabel = "";
+    public static int oldNumberOfProfiles = ProfileController.profileList.size();
+
     /**
      * ListView to hold all Rooms with either windows, doors or lights
      */
@@ -129,13 +132,39 @@ public class HomeController extends Label implements Initializable {
                 new KeyFrame(Duration.seconds(1), e -> {
                     //Change current profile name if the name has been changed.
                     if(!ActiveUser.getActiveUsername().equals(userLabel.getText())){
-                        userLabel.setText(ActiveUser.getActiveUsername());
+                        if (ActiveUser.getActiveUsername().equals("")) {
+                            userLabel.setText(ActiveUser.getActiveUsername());
+                            //Logging.
+                            try {
+                                CommandLogger.logCommand("Parameter", "The active user has been logged out due to account deletion.", outputConsoleText);
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            }
+                        }
+                        else {
+                            userLabel.setText(ActiveUser.getActiveUsername());
+                            //Logging.
+                            try {
+                                CommandLogger.logCommand("Parameter", "Account " + ActiveUser.getActiveUsername() + " has logged in.", outputConsoleText);
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            }
+                        }
+                    }
+                    // If a user has been deleted, log it.
+                    if(ProfileController.profileList.size() < oldNumberOfProfiles){
                         //Logging.
                         try {
-                            CommandLogger.logCommand("Parameter", "Account "+ActiveUser.getActiveUsername()+" has logged in.", outputConsoleText);
+                            if (ActiveUser.getActiveUsername().equals("")){
+                                CommandLogger.logCommand("Dashboard", "A non-logged-in user has deleted an account", outputConsoleText);
+                            }
+                            else {
+                                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + "has deleted an account.", outputConsoleText);
+                            }
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }
+                        oldNumberOfProfiles = ProfileController.profileList.size();
                     }
                     //Change outside temperature if the name has been changed.
                     if(!OutsideTemperatureController.getOutsideTemperature().equals(outsideTemperatureLabel.getText())){
@@ -404,10 +433,15 @@ public class HomeController extends Label implements Initializable {
      * @param mouseEvent the mouse event
      */
     @FXML
-    public void editProfileClicked(MouseEvent mouseEvent) {
+    public void editProfileClicked(MouseEvent mouseEvent) throws Exception{
         //Logging.
         try {
-            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" pressed the edit profile button.", outputConsoleText);
+            if (ActiveUser.getActiveUsername().equals("")){
+                CommandLogger.logCommand("Dashboard", "A non-logged-in user pressed the edit profile button.", outputConsoleText);
+            }
+            else {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + " pressed the edit profile button.", outputConsoleText);
+            }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -480,4 +514,8 @@ public class HomeController extends Label implements Initializable {
         roomList.getItems().addAll(rooms);
     }
     
+}
+    public TextArea getHomeTextArea() {
+        return outputConsoleText;
+    }
 }
