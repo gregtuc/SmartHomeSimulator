@@ -30,14 +30,14 @@ public class Window {
 	 * getter for windowExists
 	 * @return
 	 */
-	public boolean getWindowExist() {
+	public boolean getWindowExists() {
 		return windowExists;
 	}
 	/**
 	 * setter for windowExists
-	 * @param exist
+	 * @param exista
 	 */
-	public void setWindowExist (boolean exist) {
+	public void setWindowExists (boolean exist) {
 		this.windowExists = exist;
 	}
 

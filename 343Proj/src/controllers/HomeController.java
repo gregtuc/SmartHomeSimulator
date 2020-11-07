@@ -2,27 +2,28 @@ package controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.util.Duration;
-import models.Profile;
 import models.Room;
 import Main.Main;
 import Main.LayoutParser;
+import models.ActiveUser;
+import utility.*;
 
 /**
  * The type Home controller.
@@ -30,81 +31,38 @@ import Main.LayoutParser;
  * The HomeController class acts as a primary router and may call on other controller classes to complete actions when necessary.
  */
 public class HomeController extends Label implements Initializable {
-    /**
-     * Declaring a Timeline object as an attribute so that it can be paused/played in any method.
-     */
     Timeline timeline;
-    /**
-     * Instance of the ClockController class.
-     * This will let us access public methods and attributes from that controller.
-     */
+
     ClockController clockController = new ClockController();
-  
-    /**
-     * Instance of the OutsideTemperatureController class.
-     * This will let us access public methods and attributes from that controller.
-     */
     OutsideTemperatureController OutsideTemperatureController = new OutsideTemperatureController();
-    
-    /**
-     * Instance of the LocationController class.
-     * This will let us access public methods and attributes from that controller.
-     */
     LocationController locationController = new LocationController();
-    
-    /**
-     * Instance of the ProfileController class.
-     * This will let us access public methods and attributes from that controller.
-     */
-    ProfileController profileController = new ProfileController();
-    /**
-     * The timeLabel Label Input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
 
     public Label timeLabel = new Label();
-    /**
-     * The userLabel Label Input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
     public Label userLabel = new Label();
-    /**
-     * The outsideTemperatureLabel Label Input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
     public Label outsideTemperatureLabel = new Label();
-    /**
-     * The startStopButton Button Input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
-    public Button startStopButton = new Button();
-    
-    /**
-     * The locationLabel Label Input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
     public Label locationLabel = new Label();
+    public Label awayModeLabel = new Label();
 
-    /**
-     * The oldLocationLabel.
-     * Keep a value of the old location. This is essentially a helper-variable for when the active user changes locations
-     * and we want to clean up the old location that they were at.
-     */
-    public static String oldLocationLabel = "";
+    public Button startStopButton = new Button();
+    public Button awayModeButton = new Button();
 
-    /**
-     * The panes 2D array.
-     * Hold references to all the House-Layout FXML elements.
-     */
+    public TextArea outputConsoleText = new TextArea();
+
+    //Panes matching up with the house layout file.
     TextArea[][] panes = new TextArea[4][4];
+
+    //TextArea FXML elements.
     /**
      * ListView to hold all items such as windows, doors and lights
      */
     public ListView<String> itemList = new ListView<>();
+    public static String oldLocationLabel = "";
+    public static int oldNumberOfProfiles = ProfileController.profileList.size();
+
     /**
      * ListView to hold all Rooms with either windows, doors or lights
      */
-    public ListView<String> RoomsList = new ListView<>();
+    public ListView<String> roomList = new ListView<>();
     /**
      * ArrayList to hold the grid from LayoutParser class
      */
@@ -169,26 +127,75 @@ public class HomeController extends Label implements Initializable {
             e.printStackTrace();
         }
 
-        //Check for new activeUsers in intervals of 1 second.
+        //Timeline that runs in intervals of 1 second. It is used for a variety of things from updating fxml elements to checking for new values.
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
                     //Change current profile name if the name has been changed.
-                    if(!profileController.getActiveProfileName().equals(userLabel.getText())){
-                        userLabel.setText(profileController.getActiveProfileName());
+                    if(!ActiveUser.getActiveUsername().equals(userLabel.getText())){
+                        if (ActiveUser.getActiveUsername().equals("")) {
+                            userLabel.setText(ActiveUser.getActiveUsername());
+                            //Logging.
+                            try {
+                                CommandLogger.logCommand("Parameter", "The active user has been logged out due to account deletion.", outputConsoleText);
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            }
+                        }
+                        else {
+                            userLabel.setText(ActiveUser.getActiveUsername());
+                            //Logging.
+                            try {
+                                CommandLogger.logCommand("Parameter", "Account " + ActiveUser.getActiveUsername() + " has logged in.", outputConsoleText);
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            }
+                        }
+                    }
+                    // If a user has been deleted, log it.
+                    if(ProfileController.profileList.size() < oldNumberOfProfiles){
+                        //Logging.
+                        try {
+                            if (ActiveUser.getActiveUsername().equals("")){
+                                CommandLogger.logCommand("Dashboard", "A non-logged-in user has deleted an account", outputConsoleText);
+                            }
+                            else {
+                                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + "has deleted an account.", outputConsoleText);
+                            }
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                        oldNumberOfProfiles = ProfileController.profileList.size();
                     }
                     //Change outside temperature if the name has been changed.
                     if(!OutsideTemperatureController.getOutsideTemperature().equals(outsideTemperatureLabel.getText())){
                         outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
+                        //Logging.
+                        try {
+                            CommandLogger.logCommand("Parameter", ActiveUser.getActiveUsername()+" has changed the temperature to "+ OutsideTemperatureController.getOutsideTemperature(), outputConsoleText);
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
                     }
                     //Change active user location if the name has been changed.
-                    if(!locationController.getUserLocation().equals(locationLabel.getText())){
-                        locationLabel.setText(locationController.getUserLocation());
-                        LayoutParser.insertProfile(locationController.getUserLocation(), oldLocationLabel, panes);
+                    if(!ActiveUser.getActiveUserLocation().equals(locationLabel.getText())){
+                        locationLabel.setText(ActiveUser.getActiveUserLocation());
+                        LayoutParser.insertProfile(ActiveUser.getActiveUserLocation(), panes);
+                        //Logging.
+                        try {
+                            CommandLogger.logCommand("Context", ActiveUser.getActiveUsername()+" has changed locations to "+ActiveUser.getActiveUserLocation(), outputConsoleText);
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
                     }
                     //Change person location if the name has been changed.
                     if(!locationController.getPeopleLocation().equals("None")){
-
                         LayoutParser.insertPerson(locationController.getPeopleLocation(), panes);
+                        //Logging.
+                        try {
+                            CommandLogger.logCommand("Context", ActiveUser.getActiveUsername()+" has inserted a person at "+locationController.getPeopleLocation(), outputConsoleText);
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
                     }
                 })
         );
@@ -208,10 +215,22 @@ public class HomeController extends Label implements Initializable {
         if(startStopButton.getText().equals("Start Simulator")){
             startStopButton.setText("Stop Simulator");
             clockController.beginTime(timeLabel);
+            //Logging.
+            try {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has started the simulator.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
             clockController.stopTime(timeLabel);
+            //Logging.
+            try {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has stopped the simulator.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
     }
 
@@ -224,6 +243,12 @@ public class HomeController extends Label implements Initializable {
         //Pause Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
+            //Logging.
+            try {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has paused the simulator.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
     }
 
@@ -236,6 +261,12 @@ public class HomeController extends Label implements Initializable {
         //Resume Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")){
             clockController.resumeTime();
+            //Logging.
+            try {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has resumed the simulator.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
     }
 
@@ -247,6 +278,12 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editTimeClicked(MouseEvent mouseEvent) throws IOException {
+        //Logging.
+        try {
+            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has pressed the edit time button.", outputConsoleText);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         Main.showEditTime();
     }
     
@@ -258,6 +295,12 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editOutsideTemperatureClicked(MouseEvent mouseEvent) throws IOException {
+        //Logging.
+        try {
+            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has pressed the edit outside temperature button.", outputConsoleText);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         Main.showEditOutsideTemperature();
     }
     
@@ -269,19 +312,166 @@ public class HomeController extends Label implements Initializable {
      */
     @FXML
     public void editLocationClicked(MouseEvent mouseEvent) throws IOException {
-        oldLocationLabel = locationLabel.getText();
+        //Logging.
+        try {
+            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has pressed the edit location button.", outputConsoleText);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         Main.showEditLocation();
     }
-    
+
+    @FXML
+    public void openItemButtonClicked(MouseEvent mouseEvent) throws IOException {
+        //Permission Validation. If active user does not have permission, an alert box will appear.
+        if(PermissionChecker.checkCorePerms()){
+            switch (itemList.getSelectionModel().getSelectedItem()) {
+                case "Windows":
+                    WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Doors":
+                    DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Lights":
+                    LightManager.turnOnLight(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+            }
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to open/on.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            successfulPermissionsAlert();
+        } else {
+            badPermissionsAlert();
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+    }
+    @FXML
+    public void closeItemButtonClicked(MouseEvent mouseEvent) throws IOException {
+        //Permission Validation. If active user does not have permission, an alert box will appear.
+        if(PermissionChecker.checkCorePerms()){
+            switch (itemList.getSelectionModel().getSelectedItem()) {
+                case "Windows":
+                    WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Doors":
+                    DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+                case "Lights":
+                    LightManager.turnOffLight(roomList.getSelectionModel().getSelectedItem(), panes);
+                    break;
+            }
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            successfulPermissionsAlert();
+        } else {
+            badPermissionsAlert();
+            //Logging.
+            try {
+                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+    }
+    @FXML
+    public void awayModeButtonClicked(MouseEvent mouseEvent) throws IOException {
+        //TODO: Make it so that this button can only be clicked when users are not at home.
+        //Permission Validation. If active user does not have permission, an alert box will appear.
+        if(PermissionChecker.checkSecurityPerms()){
+
+            //If away mode is currently deactivated
+            if(!ActiveUser.getActiveUserAwayMode()){
+                //Change the status of away mode.
+                ActiveUser.setActiveUserAwayMode();
+
+                //Lock all windows and doors.
+                WindowManager.lockAllWindows(panes);
+                LightManager.turnOffAllLights(panes);
+
+                //Change the label text.
+                awayModeButton.setText("Activate");
+                awayModeLabel.setText("Not Active");
+                //Logging.
+                try {
+                    CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername()+" deactivated away mode.", outputConsoleText);
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            } else {
+                //If away mode is currently activated.
+                ActiveUser.setActiveUserAwayMode();
+                awayModeButton.setText("Deactivate");
+                awayModeLabel.setText("Active");
+                //Logging.
+                try {
+                    CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername()+" activated away mode.", outputConsoleText);
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            //Alert the user of the success.
+            successfulPermissionsAlert();
+        } else {
+            //Alert the user of the failure.
+            badPermissionsAlert();
+            //Logging.
+            try {
+                CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername()+" failed to edit away mode.", outputConsoleText);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+    }
+
     /**
      * Opens the edit profile window. Calls method showEditProfile from class Main.
      *
      * @param mouseEvent the mouse event
      */
     @FXML
-    public void editProfileClicked(MouseEvent mouseEvent) {
+    public void editProfileClicked(MouseEvent mouseEvent) throws Exception{
+        //Logging.
+        try {
+            if (ActiveUser.getActiveUsername().equals("")){
+                CommandLogger.logCommand("Dashboard", "A non-logged-in user pressed the edit profile button.", outputConsoleText);
+            }
+            else {
+                CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + " pressed the edit profile button.", outputConsoleText);
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         Main.showEditProfile();
     }
+
+    public void successfulPermissionsAlert(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                "Success!",
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+    }
+
+    public void badPermissionsAlert(){
+        Alert alert = new Alert(Alert.AlertType.WARNING,
+                "You do not have permission to execute this command.",
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+    }
+
     /**
      * Loads the Items into the ItemList ListView
      */
@@ -296,7 +486,7 @@ public class HomeController extends Label implements Initializable {
      * @throws IOException
      */
     public void DisplayRooms (MouseEvent mouseEvent) throws IOException {
-    	RoomsList.getItems().clear();
+    	roomList.getItems().clear();
         String item = itemList.getSelectionModel().getSelectedItem();
         ArrayList<String> rooms = new ArrayList<String>();
         rooms.removeAll(rooms);
@@ -320,7 +510,6 @@ public class HomeController extends Label implements Initializable {
         	}
         	
         }
-        
         else if(item.equals("Lights")) {
         	for (int row = 0; row < 4; row++) {
         		for (int col = 0; col < 4; col++) {
@@ -329,9 +518,11 @@ public class HomeController extends Label implements Initializable {
         			}
         		}
         	}
-        	
         }
-        RoomsList.getItems().addAll(rooms);    
+        roomList.getItems().addAll(rooms);
     }
-    
+
+    public TextArea getHomeTextArea() {
+        return outputConsoleText;
+    }
 }
