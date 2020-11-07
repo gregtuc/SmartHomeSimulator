@@ -10,7 +10,7 @@ public class Clock {
     private int hour;
     private int minute;
     private int second;
-    private double speed;
+    private double simulationSpeed;
 
     /**
      * Instantiates a new Clock.
@@ -19,7 +19,7 @@ public class Clock {
         this.hour = 0;
         this.minute = 0;
         this.second = 0;
-        this.speed = 1.0;
+        this.simulationSpeed = 1.0;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Clock {
         this.hour = customHour;
         this.minute = customMinute;
         this.second = customSecond;
-        this.speed = 1.0;
+        this.simulationSpeed = 1.0;
     }
 
     /**
@@ -53,6 +53,24 @@ public class Clock {
     public void setHour(int hour) {
         this.hour = hour;
     }
+    
+    /**
+     * gets simulation speed.
+     *
+     * @return the simulation speed
+     */
+    public double getSimulationSpeed() {
+        return simulationSpeed;
+    }
+
+    /**
+     * Sets simulation speed.
+     *
+     * @param simulationSpeed the simulation speed
+     */
+    public void setSimulationSpeed(double simulationSpeed) {
+        this.simulationSpeed = simulationSpeed;
+    }
 
     /**
      * Gets minute.
@@ -62,25 +80,7 @@ public class Clock {
     public int getMinute() {
         return minute;
     }
-    
-    /**
-     * Gets speed.
-     *
-     * @return the speed
-     */
-    public double getSpeed() {
-        return speed;
-    }
-    
-    /**
-     * Sets speed.
-     *
-     * @param speeed the speed of the simulation
-     */
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-    
+
     /**
      * Sets minute.
      *

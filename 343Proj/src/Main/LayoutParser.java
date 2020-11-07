@@ -1,19 +1,18 @@
 package Main;
 
 
-import java.io.*;
-import java.util.*;
-
-import javafx.beans.binding.Bindings;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
+import models.ActiveUser;
 import models.Room;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LayoutParser {
 
@@ -37,6 +36,7 @@ public class LayoutParser {
      */
 
     public static void parseLayout(TextArea[][] panes) throws Exception {
+        //*** INITIALIZE THE GRID ***//
         for (int row = 0; row < 4; row++) {
             grid.add(new ArrayList<Room>());
             for (int col = 0; col < 4; col++) {
@@ -44,9 +44,8 @@ public class LayoutParser {
             }
             System.out.println("");
         }
-
         File file =
-                new File("src/layout.txt");
+                new File("layout.txt");
         Scanner sc = new Scanner(file);
         String currentLine = null;
         String[] words = new String[0];
@@ -104,16 +103,16 @@ public class LayoutParser {
                                 break;
                             }
                             case "Window": {
-                                grid.get(row).get(col).window = true;
+                                grid.get(row).get(col).setWindowExists(true);
                                 break;
                             }
                             case "Door": {
-                                grid.get(row).get(col).door = true;
+                                grid.get(row).get(col).setDoorExists(true);
                                 break;
                             }
                             case "Both": {
-                                grid.get(row).get(col).door = true;
-                                grid.get(row).get(col).window = true;
+                                grid.get(row).get(col).setDoorExists(true);
+                                grid.get(row).get(col).setWindowExists(true);
                                 break;
                             }
 
@@ -138,36 +137,42 @@ public class LayoutParser {
                     continue;
 
                 //Dynamically update the grid with the room names.
-                panes[col][row].setText("Room #"+room.graphNumber+" is the "+room.roomName
-                        +". Door: "+room.door+" | Window: "+room.window+"\n");
+                panes[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
+                        +"\nDoor: "+room.getDoorExists()+"\nWindow: "+room.getWindowExists()+"\n");
 
-                System.out.print(
-                        "Room #"+room.graphNumber+" is the "+room.roomName
-                                +". Door: "+room.door+" | Window: "+room.window+"\n"
-                );
             }
         }
         System.out.println();
     }
 
-    public static void insertProfile(String location, String oldLocation, TextArea[][] panes){
+
+    //Method for modifying the visual representation of the user profile.
+    public static void insertProfile(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
+                //Revert the old room back to normal.
+                if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
+                    room.activeProfileIsHere = false;
+                    //Change the color on the house representation.
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                //Update the room with the active users presence.
                 if(location.equals(room.roomName)){
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
+                    room.activeProfileIsHere = true;
+                    //Change the color on the house representation.
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
-                if(oldLocation.equals(room.roomName)){
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-                }
+
             }
         }
     }
 
+    //Method for modifying the visual representation of the location of person objects.
     public static void insertPerson(String location, TextArea[][] panes){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
@@ -175,8 +180,8 @@ public class LayoutParser {
                 if (room.graphNumber == 0)
                     continue;
                 if(location.equals(room.roomName)){
-                    Pane test = (Pane)panes[col][row].getParent();
-                    test.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, CornerRadii.EMPTY, Insets.EMPTY)));
+                    Region content = (Region) panes[col][row].lookup(".content");
+                    content.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, CornerRadii.EMPTY, Insets.EMPTY)));
                     break;
                 }
             }
@@ -185,5 +190,8 @@ public class LayoutParser {
 
     public ArrayList<ArrayList<Room>> getGrid(){
         return grid;
+    }
+    public static ArrayList<ArrayList<Room>> getGridRooms () {
+    	return grid;
     }
 }

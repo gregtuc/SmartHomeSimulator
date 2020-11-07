@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
+
+import models.ActiveUser;
 import models.Location;
 import Main.Main;
 
@@ -20,16 +22,10 @@ import Main.Main;
 public class LocationController extends Label implements Initializable {
 
 	 /**
-     * Creating an instance of the Location class. There exists a single constant UserLocation, so it must remain static.
-     */
-	static Location userLocation = new Location();
-
-	 /**
      * Creating an instance of the Location class. There exists a single constant PeopleLocation, so it must remain static.
      */
 	static Location peopleLocation = new Location();
-	
-	AtomicReference<String> currentUserLocation = new AtomicReference<>(userLocation.getLocation());
+
 	AtomicReference<String> currentPeopleLocation = new AtomicReference<>(peopleLocation.getLocation());
 	
 	/**
@@ -73,7 +69,7 @@ public class LocationController extends Label implements Initializable {
      **/
 	public void editUserLocation(MouseEvent mouseEvent) throws IOException {
 		//Set the temperature variable to the inputted value.
-	    userLocation.setLocation((String) userLocationInput.getValue());
+		ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
 	    //Call closeEditTemperature from Main and return to the primary stage.
 	    Main.closeEditLocation();
 	 }
@@ -91,14 +87,6 @@ public class LocationController extends Label implements Initializable {
         Main.closeEditLocation();
 	}
 	/**
-     * Get active User Location string.
-     *
-     * @return the string
-     */
-	public String getUserLocation(){
-		return String.valueOf(userLocation.getLocation());
-	}
-	/**
      * Get active People Location string.
      *
      * @return the string
@@ -106,6 +94,4 @@ public class LocationController extends Label implements Initializable {
 	public String getPeopleLocation(){
 		return String.valueOf(peopleLocation.getLocation());
 	}
-
-
 }

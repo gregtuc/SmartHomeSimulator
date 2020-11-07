@@ -1,3 +1,5 @@
+
+
 package Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +36,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
         Main.primaryStage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../views/Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/home.fxml"));
         primaryStage.setTitle("Smart Home Simulator");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

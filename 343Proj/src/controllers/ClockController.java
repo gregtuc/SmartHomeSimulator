@@ -47,12 +47,12 @@ public class ClockController extends Label {
      * The Second TextField input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
-    public TextField secondInput = new TextField();
+    public TextField simulationSpeedInput = new TextField();
     /**
-     * The third TextField input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     * Begins a new Timeline object that updates the clock once every second.
+     * @param timeLabel the time label
      */
-    public TextField speedInput = new TextField();
+    public TextField secondInput = new TextField();
 
     /**
      * Begins a new Timeline object that updates the clock once every second.
@@ -61,12 +61,12 @@ public class ClockController extends Label {
     public void beginTime(Label timeLabel){
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
-    	//This checks if the simulation speed is set to zero and sets it to one if it is so that there aren't any divide by zero errors
-    		if (clock.getSpeed() == 0) {
-    			clock.setSpeed(1.0);
-    		}
+		//Sets the simulation speed to 1 if value is too low
+    	if (clock.getSimulationSpeed() < 0.001) {
+			clock.setSimulationSpeed(1.0);
+		}
             timeline = new Timeline(
-                    new KeyFrame(Duration.seconds(1/clock.getSpeed()), e -> {
+                    new KeyFrame(Duration.seconds(1/clock.getSimulationSpeed()), e -> {
                         //Condition blocks to manage the time variables.
                         if (clock.getSecond() >= 60) {
                             //At 60s, return seconds to 0.
@@ -139,16 +139,11 @@ public class ClockController extends Label {
         clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         clock.setMinute(Integer.parseInt(String.valueOf(minuteInput.getText())));
         clock.setSecond(Integer.parseInt(String.valueOf(secondInput.getText())));
-        clock.setSpeed(Double.parseDouble(String.valueOf(speedInput.getText())));
+        clock.setSimulationSpeed(Double.parseDouble(String.valueOf(simulationSpeedInput.getText())));
         //Call closeEditTime from Main and return to the primary stage.
         Main.closeEditTime();
     }
-    /**
-     * Gets simulation speed.
-     *
-     * @return the simulation speed in a string
-     */
     public String getSimulationSpeed(){
-        return String.valueOf(clock.getSpeed());
+        return String.valueOf(clock.getSimulationSpeed());
     }
 }
