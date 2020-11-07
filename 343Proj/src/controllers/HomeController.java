@@ -42,6 +42,7 @@ public class HomeController extends Label implements Initializable {
     public Label outsideTemperatureLabel = new Label();
     public Label locationLabel = new Label();
     public Label awayModeLabel = new Label();
+    public Label simulationSpeedLabel = new Label();
 
     public Button startStopButton = new Button();
     public Button awayModeButton = new Button();
@@ -172,6 +173,16 @@ public class HomeController extends Label implements Initializable {
                         //Logging.
                         try {
                             CommandLogger.logCommand("Parameter", ActiveUser.getActiveUsername()+" has changed the temperature to "+ OutsideTemperatureController.getOutsideTemperature(), outputConsoleText);
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                    }
+                    //Change the speed if the name has been changed.
+                    if(!clockController.getSimulationSpeed().equals(simulationSpeedLabel.getText())){
+                    	simulationSpeedLabel.setText(clockController.getSimulationSpeed());
+                        //Logging.
+                        try {
+                            CommandLogger.logCommand("Parameter", ActiveUser.getActiveUsername()+" has changed the simulation speed to "+ clockController.getSimulationSpeed(), outputConsoleText);
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                         }

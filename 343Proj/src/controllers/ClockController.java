@@ -48,7 +48,12 @@ public class ClockController extends Label {
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
     public TextField secondInput = new TextField();
-
+    /**
+     * The speed TextField input.
+     * FXML element. The variable name matches the id of the fxml element and creates an association.
+     */
+    public TextField simulationSpeedInput = new TextField();
+    
     /**
      * Begins a new Timeline object that updates the clock once every second.
      * @param timeLabel the time label
@@ -56,8 +61,12 @@ public class ClockController extends Label {
     public void beginTime(Label timeLabel){
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
+    	//This checks if the simulation speed is set to a very low number, zero or a negative number, it'll set it to 1.0
+		if (clock.getSpeed() < 0.001) {
+			clock.setSpeed(1.0);
+		}
             timeline = new Timeline(
-                    new KeyFrame(Duration.seconds(1), e -> {
+                    new KeyFrame(Duration.seconds(1/clock.getSpeed()), e -> {
                         //Condition blocks to manage the time variables.
                         if (clock.getSecond() >= 60) {
                             //At 60s, return seconds to 0.
@@ -130,7 +139,11 @@ public class ClockController extends Label {
         clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         clock.setMinute(Integer.parseInt(String.valueOf(minuteInput.getText())));
         clock.setSecond(Integer.parseInt(String.valueOf(secondInput.getText())));
+        clock.setSpeed(Double.parseDouble(String.valueOf(simulationSpeedInput.getText())));
         //Call closeEditTime from Main and return to the primary stage.
         Main.closeEditTime();
+    }
+    public String getSimulationSpeed(){
+        return String.valueOf(clock.getSpeed());
     }
 }
