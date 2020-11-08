@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
     <children>
       <GridPane gridLinesVisible="true" layoutX="596.0" layoutY="54.0" prefHeight="763.0" prefWidth="792.0">
         <columnConstraints>
@@ -120,10 +120,23 @@
                                                         <ListView fx:id="roomList" />
                                                     </children></VBox>
                                                 <Button fx:id="openItemButton" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#openItemButtonClicked" text="Open" />
-                                                <Button fx:id="closeItemButton" layoutX="73.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#closeItemButtonClicked" text="CLose" />
+                                                <Button fx:id="closeItemButton" layoutX="73.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#closeItemButtonClicked" text="Close" />
                                             </children></AnchorPane>
                                     </content>
                                 </TitledPane>
+                        <TitledPane animated="false" layoutX="11.0" layoutY="368.0" prefHeight="127.0" prefWidth="341.0" text="All Rooms">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="19.0" layoutY="8.0" prefHeight="84.0" prefWidth="302.0">
+                                       <children>
+                                          <ListView fx:id="allRoomList" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
                             </children></AnchorPane>
                     </content>
                 </Tab>

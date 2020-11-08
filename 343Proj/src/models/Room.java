@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room{
     //Room property variables
     public String roomName = "Unnamed";
