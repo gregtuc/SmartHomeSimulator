@@ -4,20 +4,16 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import javafx.util.Duration;
 import models.Room;
 import Main.Main;
@@ -373,9 +369,9 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            successfulPermissionsAlert();
+            AlertManager.successfulPermissionsAlert();
         } else {
-            badPermissionsAlert();
+            AlertManager.badPermissionsAlert();
             //Logging.
             try {
                 CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
@@ -405,9 +401,9 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            successfulPermissionsAlert();
+            AlertManager.successfulPermissionsAlert();
         } else {
-            badPermissionsAlert();
+            AlertManager.badPermissionsAlert();
             //Logging.
             try {
                 CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!", outputConsoleText);
@@ -453,10 +449,10 @@ public class HomeController extends Label implements Initializable {
                 }
             }
             //Alert the user of the success.
-            successfulPermissionsAlert();
+            AlertManager.successfulPermissionsAlert();
         } else {
             //Alert the user of the failure.
-            badPermissionsAlert();
+            AlertManager.badPermissionsAlert();
             //Logging.
             try {
                 CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername()+" failed to edit away mode.", outputConsoleText);
@@ -485,22 +481,6 @@ public class HomeController extends Label implements Initializable {
             ioException.printStackTrace();
         }
         Main.showEditProfile();
-    }
-
-    public void successfulPermissionsAlert(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-                "Success!",
-                ButtonType.CLOSE);
-        alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
-    }
-
-    public void badPermissionsAlert(){
-        Alert alert = new Alert(Alert.AlertType.WARNING,
-                "You do not have permission to execute this command.",
-                ButtonType.CLOSE);
-        alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
     }
 
     /**
@@ -554,9 +534,6 @@ public class HomeController extends Label implements Initializable {
     }
     
     
-    
- 
-
     public TextArea getHomeTextArea() {
         return outputConsoleText;
     }

@@ -23,4 +23,13 @@ public class PermissionChecker {
         }
         return ActiveUser.getActiveUserType().equals("Parent") || ActiveUser.getActiveUserType().equals("Child");
     }
+    public static Boolean checkActiveUserIsLoggedIn() {
+    	String userName = ActiveUser.getActiveUsername();
+        if(userName.equals("")) {
+        	return false;
+        }
+        else {
+        	return true;
+        }
+    }
 }
