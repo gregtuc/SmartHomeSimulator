@@ -10,6 +10,7 @@ public class Clock {
     private int hour;
     private int minute;
     private int second;
+    private double speed;
 
     /**
      * Instantiates a new Clock.
@@ -18,6 +19,7 @@ public class Clock {
         this.hour = 0;
         this.minute = 0;
         this.second = 0;
+        this.speed = 1.0;
     }
 
     /**
@@ -31,8 +33,27 @@ public class Clock {
         this.hour = customHour;
         this.minute = customMinute;
         this.second = customSecond;
+        this.speed = 1.0;
     }
 
+    /**
+     * Gets speed.
+     *
+     * @return the speed
+     */
+    public double getSpeed() {
+        return speed;
+    }
+    
+    /**
+     * Sets speed.
+     *
+     * @param speeed the speed of the simulation
+     */
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+    
     /**
      * Gets hour.
      *
