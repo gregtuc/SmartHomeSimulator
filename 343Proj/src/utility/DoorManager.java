@@ -18,6 +18,21 @@ public class DoorManager {
             }
         }
     }
+    public static void automaticLockForAwayMode(TextArea [][] panes) {
+    	for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(room.getRoomName().equals("Main Entrance")||
+                		room.getRoomName().equals("Backyard") ||
+                		room.getRoomName().equals("Garage"))
+                {
+                    room.door.setDoorIsOpen(false);
+                }
+            }
+        }
+    }
 
     //Method for locking all doors in the house.
     public static void lockAllDoors(TextArea[][] panes){

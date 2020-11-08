@@ -1,0 +1,94 @@
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Context]  has changed locations to Kitchen
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Dashboard]  has pressed the edit location button.
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Context]  has changed locations to Main Entrance
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Dashboard] Adrien has pressed the edit location button.
+[Context] Adrien has changed locations to Dining Room
+[Dashboard] Adrien pressed the edit profile button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[SHP]  failed to edit away mode.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Dashboard]  has pressed the edit location button.
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Core]  tried to set Doors in Dining Room to closed/off but was denied!
+[Core]  tried to set Windows in null to closed/off but was denied!
+[Core]  tried to set Windows in Kitchen to closed/off but was denied!
+[Dashboard]  has pressed the edit location button.
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Context]  has inserted a person at Dining Room
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.
+[Core]  tried to set Lights in Dining Room to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Parameter] Account Adrien has logged in.
+[Core] Adrien has set Lights in Kitchen to open/on.
+[Core] Adrien has set Lightsin Kitchen to closed/off.
+[Core] Adrien has set Lights in Kitchen to open/on.
+[Core] Adrien has set Lights in Dining Room to open/on.
+[Core] Adrien has set Lights in Living Room to open/on.
+[Core] Adrien has set Windows in Master Bedroom to open/on.
+[Dashboard] Adrien has pressed the edit location button.
+[Context] Adrien has changed locations to Kitchen
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Parameter]  has changed the temperature to 0.0
+[Parameter]  has changed the simulation speed to 1.0
+[Context]  has changed locations to 
+[Dashboard]  has pressed the edit location button.

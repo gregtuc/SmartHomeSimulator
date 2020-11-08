@@ -8,8 +8,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import models.*;
-import utility.CommandLogger;
-
 import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;

@@ -5,11 +5,15 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
-
 import models.ActiveUser;
 import models.Location;
+import models.Room;
+import utility.AlertManager;
+import utility.PermissionChecker;
+import Main.LayoutParser;
 import Main.Main;
 
 /**
@@ -32,32 +36,35 @@ public class LocationController extends Label implements Initializable {
      * The UserLocation TextField input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
-	public ComboBox userLocationInput = new ComboBox();
+	public ComboBox<String> userLocationInput = new ComboBox<String>();
 
 	/**
      * The PeopleLocation TextField input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
-	public ComboBox peopleLocationInput = new ComboBox();
+	public ComboBox<String> peopleLocationInput = new ComboBox<String>();
+	
+	/**
+     * ArrayList to hold the grid from LayoutParser class
+     */
+    ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		//Populate userLocationInput ComboBox
-		userLocationInput.getItems().add("Kitchen");
-		userLocationInput.getItems().add("Living Room");
-		userLocationInput.getItems().add("Dining Room");
-		userLocationInput.getItems().add("Kid's Bedroom");
-		userLocationInput.getItems().add("Master Bedroom");
-		userLocationInput.getItems().add("Main Entrance");
+		ArrayList<String> rooms = new ArrayList<String>();
+		for (int row = 0; row < 4; row++) {
+    		for (int col = 0; col < 4; col++) {
+    			if (!roomGrid.get(row).get(col).roomName.equals("Unnamed")) {
+    				rooms.add(roomGrid.get(row).get(col).roomName);
+    			}
+    		}
+    	}
+		userLocationInput.getItems().addAll(rooms);
 		userLocationInput.getItems().add("None");
 
 		//Populate peopleLocationInput ComboBox
-		peopleLocationInput.getItems().add("Kitchen");
-		peopleLocationInput.getItems().add("Living Room");
-		peopleLocationInput.getItems().add("Dining Room");
-		peopleLocationInput.getItems().add("Kid's Bedroom");
-		peopleLocationInput.getItems().add("Master Bedroom");
-		peopleLocationInput.getItems().add("Main Entrance");
+		peopleLocationInput.getItems().addAll(rooms);
 
 	}
 
@@ -68,9 +75,13 @@ public class LocationController extends Label implements Initializable {
      * @throws IOException the io exception
      **/
 	public void editUserLocation(MouseEvent mouseEvent) throws IOException {
-		//Set the temperature variable to the inputted value.
-		ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
-	    //Call closeEditTemperature from Main and return to the primary stage.
+		if(PermissionChecker.checkActiveUserIsLoggedIn()){
+			ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
+			AlertManager.successfulPermissionsAlert();
+		}
+		else {
+			AlertManager.badPermissionsAlert();
+		}
 	    Main.closeEditLocation();
 	 }
 	/**
@@ -80,10 +91,13 @@ public class LocationController extends Label implements Initializable {
      * @throws IOException the io exception
      **/
 	public void editPeopleLocation(MouseEvent mouseEvent) throws IOException {
-        //Set the temperature variable to the inputted value.
-    	peopleLocation.setLocation((String) peopleLocationInput.getValue());
-        //clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
-        //Call closeEditTemperature from Main and return to the primary stage.
+		if(PermissionChecker.checkActiveUserIsLoggedIn()){
+			peopleLocation.setLocation((String) peopleLocationInput.getValue());
+			AlertManager.successfulPermissionsAlert();
+		}
+		else {
+			AlertManager.badPermissionsAlert();
+		}
         Main.closeEditLocation();
 	}
 	/**
