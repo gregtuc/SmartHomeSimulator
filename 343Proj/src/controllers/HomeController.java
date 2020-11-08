@@ -64,6 +64,12 @@ public class HomeController extends Label implements Initializable {
      * ListView to hold all Rooms with either windows, doors or lights
      */
     public ListView<String> roomList = new ListView<>();
+    
+    /**
+     * ListView to hold all available Rooms 
+     */
+    public ListView<String> allRoomList = new ListView<>();
+    
     /**
      * ArrayList to hold the grid from LayoutParser class
      */
@@ -92,6 +98,19 @@ public class HomeController extends Label implements Initializable {
     public TextArea sq55 = new TextArea();
     public TextArea sq56 = new TextArea();
 
+    
+    public void allRooms() {
+    	ArrayList<String> rooms = new ArrayList<String>();
+        rooms.removeAll(rooms);
+        for (int row = 0; row < 4; row++) {
+    		for (int col = 0; col < 4; col++) {
+    			if (!roomGrid.get(row).get(col).roomName.equals("Unnamed") && roomGrid.get(row).get(col) != null) {
+    				rooms.add(roomGrid.get(row).get(col).roomName);
+    			}
+    		}
+    	}
+        allRoomList.getItems().addAll(rooms);
+    }
     //Initialize runs immediately when the page loads.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -128,6 +147,7 @@ public class HomeController extends Label implements Initializable {
             e.printStackTrace();
         }
 
+        allRooms();
         //Timeline that runs in intervals of 1 second. It is used for a variety of things from updating fxml elements to checking for new values.
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
@@ -532,6 +552,10 @@ public class HomeController extends Label implements Initializable {
         }
         roomList.getItems().addAll(rooms);
     }
+    
+    
+    
+ 
 
     public TextArea getHomeTextArea() {
         return outputConsoleText;

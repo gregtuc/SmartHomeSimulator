@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-core/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-core/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-demo/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-demo/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-ext/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-ext/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-guava/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-guava/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-io/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-io/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-opt/src/main/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/jgrapht-1.5.0/source/jgrapht-opt/src/test/java"/>
-	<classpathentry kind="src" path="343proj-dev-layout-1/src"/>
 	<classpathentry kind="src" path="343Proj/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>

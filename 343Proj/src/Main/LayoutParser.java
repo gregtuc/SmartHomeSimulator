@@ -11,6 +11,7 @@ import models.ActiveUser;
 import models.Room;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -143,8 +144,10 @@ public class LayoutParser {
             }
         }
         System.out.println();
+        sc.close();
     }
-
+    
+    
 
     //Method for modifying the visual representation of the user profile.
     public static void insertProfile(String location, TextArea[][] panes){
