@@ -426,6 +426,8 @@ public class HomeController extends Label implements Initializable {
                 //Lock all windows and doors.
                 WindowManager.lockAllWindows(panes);
                 LightManager.turnOffAllLights(panes);
+                //Locking  building entrance, backyard and garage
+                DoorManager.automaticLockForAwayMode(panes);
 
                 //Change the label text.
                 awayModeButton.setText("Activate");
