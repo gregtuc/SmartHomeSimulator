@@ -90,6 +90,7 @@ public class ClockController extends Label {
                         }
                         //Set the currentTime variable to a string with integers that have two digits (for the leading 0's format).
                         currentTime.set(String.format("%02d", clock.getHour()) + " : " + String.format("%02d", clock.getMinute()) + " : " + String.format("%02d", clock.getSecond()));
+                        //Modify Lights if necessary
                         //Set the text of the Label (which was passed as a parameter to this method) to the variable currentTime.
                         timeLabel.setText(currentTime.get());
                     })
@@ -145,5 +146,8 @@ public class ClockController extends Label {
     }
     public String getSimulationSpeed(){
         return String.valueOf(clock.getSpeed());
+    }
+    public static String getCurrentTime(){
+        return String.format("%02d", clock.getHour()) + " : " + String.format("%02d", clock.getMinute()) + " : " + String.format("%02d", clock.getSecond());
     }
 }

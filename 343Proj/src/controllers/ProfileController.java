@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import models.*;
+import utility.CommandLogger;
+
 import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
@@ -105,6 +107,7 @@ public class ProfileController implements Initializable {
                 createProfileFile(createUsernameInput.getText());
                 break;
         }
+        CommandLogger.logCommand("SHC","New profile created called "+ActiveUser.getActiveUsername()+" and it has been signed in.");
         // Update the ComboBoxes with the new profiles.
         refreshProfileList();
         editUserInput.setItems(ProfileController.profileList);
@@ -143,6 +146,7 @@ public class ProfileController implements Initializable {
             refreshProfileList();
             editUserInput.setItems(ProfileController.profileList);
             loginUserInput.setItems(ProfileController.profileList);
+            CommandLogger.logCommand("SHC","Profile deleted called "+usernameToDelete+".");
         }
         catch (Exception e) {
             System.out.println("An error occurred during when attempting to delete a profile.");
@@ -181,6 +185,7 @@ public class ProfileController implements Initializable {
                         break;
                     }
                 }
+                CommandLogger.logCommand("SHC","Profile logged in. Username is "+ActiveUser.getActiveUsername()+".");
                 // Update the ComboBoxes with the new profiles.
                 refreshProfileList();
                 editUserInput.setItems(ProfileController.profileList);
@@ -220,6 +225,7 @@ public class ProfileController implements Initializable {
                 FileWriter myWriter = new FileWriter("343Proj/src/profiles/"+createUsernameInput.getText()+".txt", false);
                 myWriter.write("Type "+createUserTypeInput.getValue()+"\n");
                 myWriter.close();
+                CommandLogger.logCommand("SHC","New profile file has been created called "+name+".txt.");
             }
             catch (IOException e) {
                 System.out.println("An error occurred during the output process.");

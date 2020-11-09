@@ -6,6 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import security.AlarmSystem;
+import utility.CommandLogger;
+import utility.DoorManager;
+import utility.LightManager;
+import utility.WindowManager;
 
 /**
  * The type Main.
@@ -31,6 +36,8 @@ public class Main extends Application{
      * The Edit Location stage.
      */
     static Stage editLocationStage;
+
+    static Stage editLightStage;
     
     //Create and display the primary application window (Home.fxml).
     @Override
@@ -154,6 +161,30 @@ public class Main extends Application{
             e.printStackTrace();
         }
     }
+    public static void showConfigureTime(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/LightConfigurer.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editLightStage = new Stage();
+            Main.editLightStage = editLightStage;
+            editLightStage.setScene(new Scene(root));
+            editLightStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Close the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
+     * This method is called from LocationController.
+     */
+    public static void closeConfigureTime(){
+        try {
+            Main.editLightStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     
     
     /**

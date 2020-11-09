@@ -92,3 +92,40 @@
 [Parameter]  has changed the simulation speed to 1.0
 [Context]  has changed locations to 
 [Dashboard]  has pressed the edit location button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Todd.
+[Dashboard] Todd has pressed the edit location button.
+[SHC] Active User has moved to Main Entrance.
+[SHP] Todd failed to edit away mode.
+[Dashboard] Todd has pressed the edit location button.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Todd activated away mode.
+[Dashboard] Todd has pressed the edit location button.
+[SHC] Person added to Living Room
+[SHP] Motion detectors have been triggered! Alarm activated. Authorities and Home-Owner have been contacted.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHC] All lights turned on in the house
+[SHP] Todd deactivated away mode.
+[SHC] Light turned off in Kitchen
+[SHC] Light turned off in Dining Room
+[SHC] Light turned off in Main Entrance
+[SHC] Light turned off in Living Room
+[SHC] Light turned off in Master Bedroom
+[SHC] Light turned off in Kid's Bedroom
+[Core] Todd has set Lightsin Kitchen to closed/off.
+[SHC] Light turned off in Kitchen
+[SHC] Light turned off in Dining Room
+[SHC] Light turned off in Main Entrance
+[SHC] Light turned off in Living Room
+[SHC] Light turned off in Master Bedroom
+[SHC] Light turned off in Kid's Bedroom
+[Core] Todd has set Lightsin Dining Room to closed/off.
+[SHC] Light turned off in Kitchen
+[SHC] Light turned off in Dining Room
+[SHC] Light turned off in Main Entrance
+[SHC] Light turned off in Living Room
+[SHC] Light turned off in Master Bedroom
+[SHC] Light turned off in Kid's Bedroom
+[Core] Todd has set Lightsin Main Entrance to closed/off.
