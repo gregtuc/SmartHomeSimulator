@@ -20,10 +20,6 @@ public class OutsideTemperatureController extends Label{
      */
     static OutsideTemperature outsideTemperature = new OutsideTemperature();
     /**
-     * currentOutsideTemperature AtomicReference String to facilitate easier formatting. Only showing two decimal places for now.
-     */
-    AtomicReference<String> currentOutsideTemperature = new AtomicReference<>(outsideTemperature.getTemperature() + " ");
-    /**
      * The OutsideTemperature TextField input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.
      */
@@ -36,9 +32,8 @@ public class OutsideTemperatureController extends Label{
      * @throws IOException the io exception
      **/
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
-        //Set the temperature variable to the inputed value.
+        //Set the temperature variable to the inputted value.
     	outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
-        //clock.setHour(Integer.parseInt(String.valueOf(hourInput.getText())));
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }

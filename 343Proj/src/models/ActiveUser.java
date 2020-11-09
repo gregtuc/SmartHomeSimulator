@@ -30,8 +30,11 @@ public class ActiveUser {
         oldProfileLocation = profileLocation;
         ActiveUser.profileLocation = location;
     }
-    public static void setActiveUserAwayMode(){
-        awayMode = !awayMode;
+    public static void turnOnAwayMode(){
+        awayMode = true;
+    }
+    public static void turnOffAwayMode(){
+        awayMode = false;
     }
     public static String getActiveUsername(){
         return profileName;

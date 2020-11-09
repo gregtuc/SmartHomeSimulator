@@ -1,23 +1,18 @@
 package Main;
 
 
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import models.ActiveUser;
 import models.Room;
+import utility.UniversalElements;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LayoutParser {
 
     public static ArrayList<ArrayList<Room>> grid = new ArrayList<ArrayList<Room>>();
+    //public static AlarmSystem alarmSystem = new AlarmSystem();
 
     /*
     THIS IS HOW THE LAYOUT GRID SYSTEM WORKS:
@@ -130,65 +125,19 @@ public class LayoutParser {
             }
             System.out.println("");
         }
-        System.out.println();
+
+        //Dynamically update the house layout visual, and subscribe each room to the observer alarm system.
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-
-                //Dynamically update the grid with the room names.
                 panes[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                        +"\nDoor: "+room.getDoorExists()+"\nWindow: "+room.getWindowExists()+"\n");
+                        +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
 
             }
         }
-        System.out.println();
         sc.close();
-    }
-    
-    
-
-    //Method for modifying the visual representation of the user profile.
-    public static void insertProfile(String location, TextArea[][] panes){
-        for (int row = 0; row < 4; row++) {
-            for (int col = 0; col < 4; col++) {
-                Room room = grid.get(row).get(col);
-                if (room.graphNumber == 0)
-                    continue;
-                //Revert the old room back to normal.
-                if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
-                    room.activeProfileIsHere = false;
-                    //Change the color on the house representation.
-                    Region content = (Region) panes[col][row].lookup(".content");
-                    content.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-                }
-                //Update the room with the active users presence.
-                if(location.equals(room.roomName)){
-                    room.activeProfileIsHere = true;
-                    //Change the color on the house representation.
-                    Region content = (Region) panes[col][row].lookup(".content");
-                    content.setBackground(new Background(new BackgroundFill(Color.AQUA, CornerRadii.EMPTY, Insets.EMPTY)));
-                }
-
-            }
-        }
-    }
-
-    //Method for modifying the visual representation of the location of person objects.
-    public static void insertPerson(String location, TextArea[][] panes){
-        for (int row = 0; row < 4; row++) {
-            for (int col = 0; col < 4; col++) {
-                Room room = grid.get(row).get(col);
-                if (room.graphNumber == 0)
-                    continue;
-                if(location.equals(room.roomName)){
-                    Region content = (Region) panes[col][row].lookup(".content");
-                    content.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, CornerRadii.EMPTY, Insets.EMPTY)));
-                    break;
-                }
-            }
-        }
     }
 
     public ArrayList<ArrayList<Room>> getGrid(){

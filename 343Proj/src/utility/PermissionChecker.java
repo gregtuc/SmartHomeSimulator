@@ -32,4 +32,10 @@ public class PermissionChecker {
         	return true;
         }
     }
+    public static Boolean checkAllowedAwayMode() {
+        if(ActiveUser.getActiveUserLocation().length()>0 && !ActiveUser.getActiveUserLocation().equals("None")){
+            return false;
+        }
+        return ActiveUser.getActiveUserType().equals("Parent") || ActiveUser.getActiveUserType().equals("Child");
+    }
 }

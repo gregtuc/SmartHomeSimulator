@@ -1,20 +1,23 @@
 package controllers;
+
+import Main.LayoutParser;
+import Main.Main;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import models.ActiveUser;
+import models.Location;
+import models.Room;
+import utility.AlertManager;
+import utility.PeopleLocationManager;
+import utility.PermissionChecker;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
-import models.ActiveUser;
-import models.Location;
-import models.Room;
-import utility.AlertManager;
-import utility.PermissionChecker;
-import Main.LayoutParser;
-import Main.Main;
 
 /**
  * The type Location controller.
@@ -68,12 +71,6 @@ public class LocationController extends Label implements Initializable {
 
 	}
 
-	/**
-     * Change the static UserLocation attribute according to user input.
-     *
-     * @param mouseEvent the mouse event
-     * @throws IOException the io exception
-     **/
 	public void editUserLocation(MouseEvent mouseEvent) throws IOException {
 		if(PermissionChecker.checkActiveUserIsLoggedIn()){
 			ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
@@ -82,14 +79,10 @@ public class LocationController extends Label implements Initializable {
 		else {
 			AlertManager.badPermissionsAlert();
 		}
+		ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
+		PeopleLocationManager.insertProfile(ActiveUser.getActiveUserLocation());
 	    Main.closeEditLocation();
 	 }
-	/**
-     * Change the static PeopleLocation attribute according to user input.
-     *
-     * @param mouseEvent the mouse event
-     * @throws IOException the io exception
-     **/
 	public void editPeopleLocation(MouseEvent mouseEvent) throws IOException {
 		if(PermissionChecker.checkActiveUserIsLoggedIn()){
 			peopleLocation.setLocation((String) peopleLocationInput.getValue());
@@ -98,14 +91,7 @@ public class LocationController extends Label implements Initializable {
 		else {
 			AlertManager.badPermissionsAlert();
 		}
+		PeopleLocationManager.insertPerson(peopleLocation.getLocation());
         Main.closeEditLocation();
-	}
-	/**
-     * Get active People Location string.
-     *
-     * @return the string
-     */
-	public String getPeopleLocation(){
-		return String.valueOf(peopleLocation.getLocation());
 	}
 }
