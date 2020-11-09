@@ -300,7 +300,7 @@ public class HomeController extends Label implements Initializable {
     @FXML
     public void openItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
-        if(PermissionChecker.checkCorePerms()){
+        if(PermissionChecker.checkCorePerms(roomList.getSelectionModel().getSelectedItem())){
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
@@ -332,7 +332,7 @@ public class HomeController extends Label implements Initializable {
     @FXML
     public void closeItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
-        if(PermissionChecker.checkCorePerms()){
+        if(PermissionChecker.checkCorePerms(roomList.getSelectionModel().getSelectedItem())){
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem());
@@ -365,7 +365,7 @@ public class HomeController extends Label implements Initializable {
     public void awayModeButtonClicked(MouseEvent mouseEvent) throws IOException {
         //TODO: Make it so that this button can only be clicked when users are not at home.
         //Permission Validation. If active user does not have permission, an alert box will appear.
-        if(PermissionChecker.checkAllowedAwayMode()){
+        if(PermissionChecker.checkSecurityPerms()){
 
             //If away mode is currently deactivated
             if(!ActiveUser.getActiveUserAwayMode()){

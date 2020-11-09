@@ -23,32 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/343Proj/src/controllers/LightConfigurerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/profiles/Todd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/profiles/Yeet.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/security/AlarmSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/security/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/utility/PeopleLocationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/utility/UniversalElements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/views/LightConfigurer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/Main/LayoutParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/Main/LayoutParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ClockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ClockController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/models/ActiveUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/ActiveUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/CommandLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/CommandLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Adrien.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Deep.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Greg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/profiles/Greg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Nicolas.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Todd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/profiles/Todd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Yeet.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/WindowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/WindowManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/views/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/views/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/views/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/views/Profile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,13 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,6 +119,7 @@
       <workItem from="1604590548034" duration="942000" />
       <workItem from="1604596341358" duration="7782000" />
       <workItem from="1604938921324" duration="8540000" />
+      <workItem from="1604955674901" duration="5000" />
     </task>
     <servers />
   </component>
