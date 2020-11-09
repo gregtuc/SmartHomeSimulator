@@ -1,41 +1,26 @@
 package utility;
 
+import controllers.ProfileController;
 import models.ActiveUser;
 
 public class PermissionChecker {
     private static volatile PermissionChecker instance = null;
 
-    public static Boolean checkCorePerms(){
-        String userType = ActiveUser.getActiveUserType();
-        String location = ActiveUser.getActiveUserLocation();
-        if(userType.equals("Parent")){
+    public static Boolean checkCorePerms(String requestedRoom){
+        if(ProfileController.userHasCorePermissions(ActiveUser.getActiveUsername())){
+            if(ActiveUser.getActiveUserType().equals("Child") || ActiveUser.getActiveUserType().equals("Guest")){
+                return ActiveUser.getActiveUserLocation().equals(requestedRoom);
+            }
             return true;
-        } else if(userType.equals("Child") || userType.equals("Guest")){
-            return !location.equals("");
-        } else {
-            return false;
         }
+        return false;
     }
 
     public static Boolean checkSecurityPerms(){
-        if(ActiveUser.getActiveUserLocation().length()<=0){
-            return false;
-        }
-        return ActiveUser.getActiveUserType().equals("Parent") || ActiveUser.getActiveUserType().equals("Child");
+        return ProfileController.userHasSecurityPermissions();
     }
     public static Boolean checkActiveUserIsLoggedIn() {
     	String userName = ActiveUser.getActiveUsername();
-        if(userName.equals("")) {
-        	return false;
-        }
-        else {
-        	return true;
-        }
-    }
-    public static Boolean checkAllowedAwayMode() {
-        if(ActiveUser.getActiveUserLocation().length()>0 && !ActiveUser.getActiveUserLocation().equals("None")){
-            return false;
-        }
-        return ActiveUser.getActiveUserType().equals("Parent") || ActiveUser.getActiveUserType().equals("Child");
+        return !userName.equals("");
     }
 }

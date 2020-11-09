@@ -57,8 +57,8 @@ public class LightManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 //Turn the lights on in the room.
-                CommandLogger.logCommand("SHC","Light turned on in "+room.roomName);
                 if(location.equals(room.roomName)){
+                    CommandLogger.logCommand("SHC","Light turned on in "+room.roomName);
                     room.lights = true;
                     //Change the color on the house representation.
                     Region content = (Region) UniversalElements.getPanes()[col][row].lookup(".content");
@@ -93,8 +93,8 @@ public class LightManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 //Turn the lights off in the room.
-                CommandLogger.logCommand("SHC","Light turned off in "+room.roomName);
                 if(location.equals(room.roomName)){
+                    CommandLogger.logCommand("SHC","Light turned off in "+room.roomName);
                     room.lights = false;
                     //Change the color on the house representation.
                     Region content = (Region) UniversalElements.getPanes()[col][row].lookup(".content");
