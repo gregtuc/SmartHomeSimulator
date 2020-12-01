@@ -312,15 +312,7 @@ public class HomeController extends Label implements Initializable {
                     LightManager.turnOnLight(roomList.getSelectionModel().getSelectedItem());
                     break;
             }
-            //Logging.
-            try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to open/on.");
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-            AlertManager.successfulPermissionsAlert();
         } else {
-            AlertManager.badPermissionsAlert();
             //Logging.
             try {
                 CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!");
@@ -344,15 +336,7 @@ public class HomeController extends Label implements Initializable {
                     LightManager.turnOffLight(roomList.getSelectionModel().getSelectedItem());
                     break;
             }
-            //Logging.
-            try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" has set "+itemList.getSelectionModel().getSelectedItem()+"in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off.");
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-            AlertManager.successfulPermissionsAlert();
         } else {
-            AlertManager.badPermissionsAlert();
             //Logging.
             try {
                 CommandLogger.logCommand("Core", ActiveUser.getActiveUsername()+" tried to set "+itemList.getSelectionModel().getSelectedItem()+" in "+roomList.getSelectionModel().getSelectedItem()+" to closed/off but was denied!");
@@ -372,9 +356,14 @@ public class HomeController extends Label implements Initializable {
                 //Turn on away mode.
                 ActiveUser.turnOnAwayMode();
 
-                //Lock all windows and doors.
+                //Lock all windows and doors and turn off all lights.
+                LightManager.turnOffAllLights();
                 WindowManager.lockAllWindows();
                 DoorManager.lockAllDoors();
+
+                //Prevent further commands to windows and doors!
+                WindowManager.turnOnLockdownMode();
+                DoorManager.turnOnLockdownMode();
 
                 //Change the label text.
                 awayModeButton.setText("Deactivate");
@@ -390,6 +379,10 @@ public class HomeController extends Label implements Initializable {
                 ActiveUser.turnOffAwayMode();
                 awayModeButton.setText("Activate");
                 awayModeLabel.setText("Not active");
+
+                //Deactivate lockdown mode for the Window and Door managers
+                WindowManager.turnOffLockdownMode();
+                DoorManager.turnOffLockdownMode();
                 //Logging.
                 try {
                     CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername()+" deactivated away mode.");
