@@ -204,13 +204,13 @@ public class Main extends Application{
      */
     public static void showRoomInformation(Room clickedRoom){
         try {
+            roomSelectedFromLayout = clickedRoom;
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/RoomInformation.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage roomInformationStage = new Stage();
             Main.roomInformationStage = roomInformationStage;
             roomInformationStage.setScene(new Scene(root));
             // TODO: Get the selected room object the layout to the room information controller.
-            roomSelectedFromLayout = clickedRoom;
             roomInformationStage.show();
         } catch(Exception e) {
             e.printStackTrace();

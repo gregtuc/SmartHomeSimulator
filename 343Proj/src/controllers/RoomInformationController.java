@@ -45,7 +45,7 @@ public class RoomInformationController extends Label implements Initializable {
         selectedRoom = Main.roomSelectedFromLayout;
         roomNumber.setText(Integer.toString(selectedRoom.getGraphNumber()));
         roomName.setText(selectedRoom.getRoomName());
-        roomTemperature.setText(Double.toString(selectedRoom.getGraphNumber()));
+        roomTemperature.setText(Double.toString(selectedRoom.getInitialTemp()));
         // TODO: Create "Zone" attribute for Room objects, set it here.
         roomDoor.setText(Boolean.toString(selectedRoom.getDoorExists()));
         roomDoorOpen.setText(Boolean.toString(selectedRoom.getDoorStatus()));
