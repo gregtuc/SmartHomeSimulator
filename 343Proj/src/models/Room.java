@@ -39,6 +39,8 @@ public class Room{
         this.door = new Door(false);
     }
 
+    public Room(){};
+
     // Complete constructor for Room class.
     public Room(String roomName, int graphNumber, int gridCol, int gridRow, Boolean door, Boolean windowExists, Boolean lights, double initialTemp) {
         this.roomName = roomName;

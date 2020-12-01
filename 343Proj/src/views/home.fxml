@@ -161,16 +161,20 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="411.0">
                             <children>
-                                <TitledPane animated="false" layoutX="11.0" layoutY="14.0" prefHeight="164.0" prefWidth="341.0" text="Item">
-                                    <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="337.0" />
-                                    </content>
-                                </TitledPane>
-                                <TitledPane animated="false" layoutX="11.0" layoutY="183.0" prefHeight="180.0" prefWidth="341.0" text="Open/Close">
-                                    <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="168.0" prefWidth="339.0" />
-                                    </content>
-                                </TitledPane>
+                        <TitledPane animated="false" layoutX="11.0" layoutY="14.0" prefHeight="180.0" prefWidth="341.0" text="Set Temperature">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="168.0" prefWidth="339.0">
+                                 <children>
+                                    <VBox layoutX="19.6" layoutY="19.6" prefHeight="107.0" prefWidth="320.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <ListView fx:id="temperatureRoomList" />
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="openItemButton1" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#openItemButtonClicked" text="Select" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
                             </children></AnchorPane>
                     </content>
                 </Tab>

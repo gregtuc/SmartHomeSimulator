@@ -58,6 +58,7 @@ public class HomeController extends Label implements Initializable {
     public ListView<String> itemList = new ListView<>();
     public ListView<String> roomList = new ListView<>();
     public ListView<String> allRoomList = new ListView<>();
+    public ListView<String> temperatureRoomList = new ListView<>();
     ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
     //Old Profiles.
@@ -482,8 +483,6 @@ public class HomeController extends Label implements Initializable {
         }
         roomList.getItems().addAll(rooms);
     }
-    
-    
 
     //Method to fill the rooms container in the SHC tab.
     public void allRooms() {
@@ -497,6 +496,7 @@ public class HomeController extends Label implements Initializable {
         }
         allRoomList.getItems().addAll(rooms);
         roomList.getItems().addAll(rooms);
+        temperatureRoomList.getItems().addAll(rooms);
     }
 
     public void manageAutomaticLights() throws IOException {

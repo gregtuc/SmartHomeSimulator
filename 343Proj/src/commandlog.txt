@@ -1,0 +1,34 @@
+[Dashboard]  has started the simulator.
+[Dashboard]  has paused the simulator.
+[Dashboard]  has resumed the simulator.
+[Dashboard]  has stopped the simulator.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Adrien.txt.
+[SHC] New profile created called Adrien and it has been signed in.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Core]  tried to set null in Kitchen to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Door unlocked in Kitchen
+[Core] Adrien has set Doors in Kitchen to open/on.
+[SHC] Light turned on in Living Room
+[Core] Adrien has set Lights in Living Room to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[Dashboard]  has pressed the edit outside temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien pressed the edit profile button.
+[Dashboard] Adrien has stopped the simulator.
+[Core]  tried to set null in null to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.

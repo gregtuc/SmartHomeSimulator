@@ -1,7 +1,9 @@
 package Main;
 
 
+import javafx.event.EventHandler;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import models.Room;
 import utility.UniversalElements;
 
@@ -132,8 +134,21 @@ public class LayoutParser {
                 Room room = grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                panes[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                        +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
+
+                // REFACTORING
+                panes[col][row].setText("#"+room.graphNumber+"\n"+room.roomName);
+                panes[col][row].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        System.out.println("Clicked on room "+room.getRoomName());
+                        // TODO: Get the selected room object the layout to the room information controller.
+                        Main.showRoomInformation(room);
+                    }
+                });
+
+                //panes[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
+                //        +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()
+                //        +" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
 
             }
         }
