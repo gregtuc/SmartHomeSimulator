@@ -1,12 +1,15 @@
 package controllers;
 
 import Main.Main;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import models.Room;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * The type OutsideTemperature controller.
@@ -14,7 +17,7 @@ import java.io.IOException;
  * The HomeController class can communicate with the OutsideTemperatureController class by creating an instance of OutsideTemperatureController and using the available public methods.
  * The static OutsideTemperature attribute creates a singular static OutsideTemperature for the whole system, as there can only be one active OutsideTemperature at a time.
  */
-public class RoomInformationController extends Label{
+public class RoomInformationController extends Label implements Initializable {
     /**
      * Creating an instance of the OutsideTemperature class. There exists a single constant OutsideTemperature, so it must remain static.
      */
@@ -25,6 +28,7 @@ public class RoomInformationController extends Label{
 
     public Room selectedRoom = new Room();
 
+    //Initialize runs immediately when the page loads.
     public Text roomNumber = new Text();
     public Text roomName = new Text();
     public Text roomTemperature = new Text();
@@ -35,6 +39,23 @@ public class RoomInformationController extends Label{
     public Text roomWindowOpen = new Text();
     public Text roomActiveUser = new Text();
     public Text roomPersonObject = new Text();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+        selectedRoom = Main.roomSelectedFromLayout;
+        roomNumber.setText(Integer.toString(selectedRoom.getGraphNumber()));
+        roomName.setText(selectedRoom.getRoomName());
+        roomTemperature.setText(Double.toString(selectedRoom.getGraphNumber()));
+        // TODO: Create "Zone" attribute for Room objects, set it here.
+        roomDoor.setText(Boolean.toString(selectedRoom.getDoorExists()));
+        roomDoorOpen.setText(Boolean.toString(selectedRoom.getDoorStatus()));
+        roomWindow.setText(Boolean.toString(selectedRoom.getWindowExists()));
+        roomWindowOpen.setText(Boolean.toString(selectedRoom.getWindowStatus()));
+        roomActiveUser.setText(Boolean.toString(selectedRoom.getActiveProfileIsHere()));
+        roomPersonObject.setText(Boolean.toString(selectedRoom.getPersonIsHere()));
+    }
+
+
 
     // TODO: Get the selected room object the layout to the room information controller.
 
