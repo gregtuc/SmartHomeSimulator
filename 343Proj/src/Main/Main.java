@@ -1,6 +1,7 @@
 
 
 package Main;
+import controllers.RoomInformationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import utility.CommandLogger;
 import utility.DoorManager;
 import utility.LightManager;
 import utility.WindowManager;
+import models.Room;
 
 /**
  * The type Main.
@@ -38,6 +40,16 @@ public class Main extends Application{
     static Stage editLocationStage;
 
     static Stage editLightStage;
+    /**
+     * The Room Information stage.
+     */
+    static Stage roomInformationStage;
+
+    // REFACTORING
+    public static Room roomSelectedFromLayout = new Room();
+    public static Room getRoomSelectedFromLayout() {
+        return roomSelectedFromLayout;
+    }
     
     //Create and display the primary application window (Home.fxml).
     @Override
@@ -180,6 +192,37 @@ public class Main extends Application{
     public static void closeConfigureTime(){
         try {
             Main.editLightStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // REFACTORING
+    /**
+     * Display the window that lets users see the clicked room's information (RoomInformation.fxml).
+     * This method is called from HomeController.
+     */
+    public static void showRoomInformation(Room clickedRoom){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/RoomInformation.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage roomInformationStage = new Stage();
+            Main.roomInformationStage = roomInformationStage;
+            roomInformationStage.setScene(new Scene(root));
+            // TODO: Get the selected room object the layout to the room information controller.
+            roomSelectedFromLayout = clickedRoom;
+            roomInformationStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Close the window that lets users see the clicked room's information (RoomInformation.fxml).
+     * This method is called from LocationController.
+     */
+    public static void closeRoomInformation(){
+        try {
+            Main.roomInformationStage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
