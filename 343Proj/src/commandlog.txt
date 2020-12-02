@@ -45,3 +45,34 @@
 [SHH] Greg is editing the Dining Room's temperature.
 [SHC] Door unlocked in Dining Room
 [Core] Greg has set Doors in Dining Room to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Main Entrance's temperature.
+[SHH] Greg has changed the temperature of the Main Entrance from 40.0°C to 40.0°C.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Dining Room's temperature.
+[SHH] Adrien has changed the temperature of the Dining Room from 23.5°C to 40.0°C.
+[Core]  tried to set Lights in Kitchen to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Light turned on in Kitchen
+[Core] Adrien has set Lights in Kitchen to open/on.
+[SHC] Light turned on in Dining Room
+[Core] Adrien has set Lights in Dining Room to open/on.
+[SHC] Light turned on in Main Entrance
+[Core] Adrien has set Lights in Main Entrance to open/on.
+[SHC] Light turned on in Living Room
+[Core] Adrien has set Lights in Living Room to open/on.
+[SHC] Light turned off in Living Room
+[Core] Adrien has set Lightsin Living Room to closed/off.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHC] Door unlocked in Dining Room
+[Core] Greg has set Doors in Dining Room to open/on.
+[SHC] Door locked in Dining Room
+[Core] Greg has set Doorsin Dining Room to closed/off.
+[SHC] Door unlocked in Dining Room
+[Core] Greg has set Doors in Dining Room to open/on.
+[SHC] Door unlocked in Living Room
+[Core] Greg has set Doors in Living Room to open/on.

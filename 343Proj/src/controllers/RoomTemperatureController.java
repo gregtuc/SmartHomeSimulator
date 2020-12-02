@@ -4,11 +4,13 @@ import Main.Main;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import models.ActiveUser;
 import models.OutsideTemperature;
 import models.Room;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import utility.AlertManager;
+import utility.CommandLogger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,7 +33,7 @@ public class RoomTemperatureController extends Label implements Initializable{
      */
     public TextField roomTemperatureInput = new TextField();
     public Room selectedRoom = new Room();
-    
+    Double oldTemperature = selectedRoom.getInitialTemp();
     /**
      * Change the static outside temperature attribute according to user input.
      *
@@ -48,6 +50,13 @@ public class RoomTemperatureController extends Label implements Initializable{
         selectedRoom.setInitialTemp(Double.parseDouble(roomTemperatureInput.getText()));
         //Call closeEditTemperature from Main and return to the primary stage.
         AlertManager.successfulPermissionsAlert();
+        //Logging.
+        try {
+            CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" has changed the temperature of the "
+                    +selectedRoom.getRoomName()+" from " + oldTemperature + "°C to " + selectedRoom.getInitialTemp() + "°C.");
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
         Main.closeEditRoomTemperature();
     }
 }
