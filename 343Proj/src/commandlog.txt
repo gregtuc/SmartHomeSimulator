@@ -32,3 +32,16 @@
 [Core]  tried to set null in null to closed/off but was denied!
 [Dashboard] A non-logged-in user pressed the edit profile button.
 [SHC] Profile logged in. Username is Adrien.
+[Core]  tried to set null in null to closed/off but was denied!
+[SHH]  tried to edit the Dining Room's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Dining Room's temperature.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Dining Room's temperature.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Dining Room's temperature.
+[SHC] Door unlocked in Dining Room
+[Core] Greg has set Doors in Dining Room to open/on.

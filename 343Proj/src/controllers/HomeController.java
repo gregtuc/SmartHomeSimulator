@@ -362,6 +362,31 @@ public class HomeController extends Label implements Initializable {
             }
         }
     }
+
+    // This opens the "Edit Room Temperature" window, for the room selected in the SHH tab.
+    @FXML
+    public void editRoomTempButtonClicked(MouseEvent mouseEvent) throws IOException {
+        // Permission Validation. If active user does not have permission, an alert box will appear.
+        if(PermissionChecker.checkCorePerms(temperatureRoomList.getSelectionModel().getSelectedItem())){
+            // Open the editRoomTemperature window:
+            Main.showEditRoomTemperature(temperatureRoomList.getSelectionModel().getSelectedItem());
+            //Logging.
+            try {
+                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" is editing the "+temperatureRoomList.getSelectionModel().getSelectedItem()+"'s temperature.");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        } else {
+            AlertManager.badPermissionsAlert();
+            //Logging.
+            try {
+                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" tried to edit the "+temperatureRoomList.getSelectionModel().getSelectedItem()+"'s temperature but was denied!");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+    }
+
     @FXML
     public void awayModeButtonClicked(MouseEvent mouseEvent) throws IOException {
         //TODO: Make it so that this button can only be clicked when users are not at home.
