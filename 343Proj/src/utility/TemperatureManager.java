@@ -57,9 +57,12 @@ public class TemperatureManager implements WindowObserver {
                                 // Adjust upwards or downwards by 0.1 degrees Celsius every second until they're both equal.
                                 new KeyFrame(Duration.seconds(1), e -> {
                                     if (targetTemperature > room.getInitialTemp()) {
-                                        room.setInitialTemp(room.getInitialTemp() + 0.1);
+                                        //room.setInitialTemp(room.getInitialTemp() + 0.1);
+                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()+0.1));
+                                        room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     } else if (targetTemperature < room.getInitialTemp()) {
-                                        room.setInitialTemp(room.getInitialTemp() - 0.1);
+                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()-0.1));
+                                        room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }
                                 })
                         );
