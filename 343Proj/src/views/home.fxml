@@ -170,7 +170,7 @@
                                           <ListView fx:id="temperatureRoomList" />
                                        </children>
                                     </VBox>
-                                    <Button fx:id="openItemButton1" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#openItemButtonClicked" text="Select" />
+                                    <Button fx:id="editRoomTempButton" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#editRoomTempButtonClicked" text="Select" />
                                  </children>
                               </AnchorPane>
                            </content>

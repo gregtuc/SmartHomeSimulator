@@ -32,9 +32,6 @@ public class WindowManager implements Observer {
                     continue;
                 if(room.getWindowExists()){
                     room.setWindowStatus(true);
-                    //Change the text on the house representation.
-                    UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                            +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
                 }
             }
         }
@@ -50,9 +47,6 @@ public class WindowManager implements Observer {
                     continue;
                 if(room.getWindowExists()){
                     room.setWindowStatus(false);
-                    //Change the text on the house representation.
-                    UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                            +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
                 }
             }
         }
@@ -70,9 +64,6 @@ public class WindowManager implements Observer {
                     if(room.getWindowExists()){
                         room.setWindowStatus(true);
                         CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
-                        //Change the text on the house representation.
-                        UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                                +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
                     }
                     break;
                 }
@@ -91,9 +82,6 @@ public class WindowManager implements Observer {
                     if(room.getWindowExists()){
                         room.setWindowStatus(false);
                         CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
-                        //Change the text on the house representation.
-                        UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                                +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
                     }
                     break;
                 }
