@@ -18,7 +18,7 @@ public class OutsideTemperatureController extends Label{
     /**
      * Creating an instance of the OutsideTemperature class. There exists a single constant OutsideTemperature, so it must remain static.
      */
-    static OutsideTemperature outsideTemperature = new OutsideTemperature();
+    public static OutsideTemperature outsideTemperature = new OutsideTemperature();
     /**
      * The OutsideTemperature TextField input.
      * FXML element. The variable name matches the id of the fxml element and creates an association.

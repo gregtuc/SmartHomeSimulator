@@ -5,7 +5,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 import models.Room;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,12 +44,15 @@ public class RoomInformationController extends Label implements Initializable {
     public Text roomActiveUser = new Text();
     public Text roomPersonObject = new Text();
 
+    public static Timeline roomInformationTimeline;
+
     @Override
     public void initialize(URL location, ResourceBundle resources){
         selectedRoom = Main.roomSelectedFromLayout;
         roomNumber.setText(Integer.toString(selectedRoom.getGraphNumber()));
         roomName.setText(selectedRoom.getRoomName());
-        roomTemperature.setText(Double.toString(selectedRoom.getInitialTemp()));
+        String formattedTemperature = String.format("%.1f", selectedRoom.getInitialTemp());
+        roomTemperature.setText(formattedTemperature);
         // TODO: Create "Zone" attribute for Room objects, set it here.
         roomDoor.setText(Boolean.toString(selectedRoom.getDoorExists()));
         roomDoorOpen.setText(Boolean.toString(selectedRoom.getDoorStatus()));
@@ -53,6 +60,20 @@ public class RoomInformationController extends Label implements Initializable {
         roomWindowOpen.setText(Boolean.toString(selectedRoom.getWindowStatus()));
         roomActiveUser.setText(Boolean.toString(selectedRoom.getActiveProfileIsHere()));
         roomPersonObject.setText(Boolean.toString(selectedRoom.getPersonIsHere()));
+
+        roomInformationTimeline = new Timeline(
+                // Every second, check if the temperature of the room is different than the displayed temperature.
+                // If it is different, update the displayed temperature.
+                new KeyFrame(Duration.seconds(1), e -> {
+                    if (!roomTemperature.equals(selectedRoom.getInitialTemp())) {
+                        roomTemperature.setText(String.format("%.1f", selectedRoom.getInitialTemp()));
+                    }
+                })
+        );
+        //Run the timeline indefinitely or until paused/stopped manually.
+        roomInformationTimeline.setCycleCount(Animation.INDEFINITE);
+        //Play the timeline.
+        roomInformationTimeline.play();
     }
 
 

@@ -13,13 +13,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.util.Duration;
+import jdk.nashorn.internal.ir.WithNode;
 import models.Room;
 import Main.Main;
 import Main.LayoutParser;
 import models.ActiveUser;
 import security.AlarmSystem;
+import security.WindowWatcher;
 import utility.*;
 
 /**
@@ -30,6 +33,7 @@ import utility.*;
 public class HomeController extends Label implements Initializable {
     //Instantiating the alarm system for the home.
     public static AlarmSystem alarmSystem = new AlarmSystem();
+    public static WindowWatcher windowWatcher = new WindowWatcher();
 
     //Creating a timeline object to loop in intervals.
     Timeline timeline;
@@ -61,8 +65,10 @@ public class HomeController extends Label implements Initializable {
     public ListView<String> temperatureRoomList = new ListView<>();
     ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
-    //Old Profiles.
+    // Old Profiles.
     public static int oldNumberOfProfiles = ProfileController.profileList.size();
+    // Old simulator start/stop button label:
+    public String oldSimulatorButton = startStopButton.getText();
 
     //Panes matching up with the house layout file.
     TextArea[][] panes = new TextArea[4][4];
@@ -132,6 +138,9 @@ public class HomeController extends Label implements Initializable {
         DoorManager.initialize();
         LightManager.initialize();
 
+        // Subscribing the necessary elements to the temperature regulation system.
+        TemperatureManager.initialize();
+
         //Populating rooms container in SHC.
         allRooms();
 
@@ -168,6 +177,10 @@ public class HomeController extends Label implements Initializable {
                     //Change active user location if the name has been changed.
                     if(!ActiveUser.getActiveUserLocation().equals(locationLabel.getText())){
                         locationLabel.setText(ActiveUser.getActiveUserLocation());
+                    }
+
+                    if(!startStopButton.getText().equals(oldSimulatorButton)){
+                        oldSimulatorButton = startStopButton.getText();
                     }
                 })
         );
@@ -215,6 +228,7 @@ public class HomeController extends Label implements Initializable {
         //Pause Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
+            // TODO: Freeze the change in temperature if a window is open.
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has paused the simulator.");
@@ -305,6 +319,8 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
+                    // TODO: Something with the TemperatureManager class
+                    windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText()) ;
                     break;
                 case "Doors":
                     DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem());
@@ -337,6 +353,8 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem());
+                    // TODO: Something with the TemperatureManager class
+                    windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem());

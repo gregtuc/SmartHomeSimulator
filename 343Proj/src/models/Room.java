@@ -1,11 +1,13 @@
 package models;
 
-import security.Observer;
+import security.WindowObserver;
 import utility.CommandLogger;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Room{
+public class Room {
     //Room property variables
     public String roomName = "Unnamed";
     public int graphNumber = 0;
