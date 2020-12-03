@@ -421,6 +421,7 @@ public class HomeController extends Label implements Initializable {
                 //Lock all windows and doors.
                 WindowManager.lockAllWindows();
                 DoorManager.lockAllDoors();
+                LightManager.turnOffAllLights();
 
                 //Change the label text.
                 awayModeButton.setText("Deactivate");

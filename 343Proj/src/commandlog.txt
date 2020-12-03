@@ -359,3 +359,35 @@
 [Core] Adrien has set Doors in Kitchen to open/on.
 [Core] Adrien has set Doorsin Kitchen to closed/off.
 [SHC] Window unlocked in Main Entrance
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHC] Light turned on in Kitchen
+[Core] Adrien has set Lights in Kitchen to open/on.
+[SHC] Light turned on in Dining Room
+[Core] Adrien has set Lights in Dining Room to open/on.
+[SHC] Light turned on in Main Entrance
+[Core] Adrien has set Lights in Main Entrance to open/on.
+[SHC] Light turned on in Main Entrance
+[Core] Adrien has set Lights in Main Entrance to open/on.
+[SHC] Light turned off in Main Entrance
+[Core] Adrien has set Lightsin Main Entrance to closed/off.
+[SHC] Light turned on in Living Room
+[Core] Adrien has set Lights in Living Room to open/on.
+[SHC] Light turned on in Master Bedroom
+[Core] Adrien has set Lights in Master Bedroom to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHP]  failed to edit away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Light turned on in Kitchen
+[Core] Adrien has set Lights in Kitchen to open/on.
+[SHC] Light turned on in Dining Room
+[Core] Adrien has set Lights in Dining Room to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHC] All lights turned off in the house
+[SHP] Adrien activated away mode.
