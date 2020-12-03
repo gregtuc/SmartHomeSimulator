@@ -13,13 +13,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.util.Duration;
+import jdk.nashorn.internal.ir.WithNode;
 import models.Room;
 import Main.Main;
 import Main.LayoutParser;
 import models.ActiveUser;
 import security.AlarmSystem;
+import security.WindowWatcher;
 import utility.*;
 
 /**
@@ -30,6 +33,7 @@ import utility.*;
 public class HomeController extends Label implements Initializable {
     //Instantiating the alarm system for the home.
     public static AlarmSystem alarmSystem = new AlarmSystem();
+    public static WindowWatcher windowWatcher = new WindowWatcher();
 
     //Creating a timeline object to loop in intervals.
     Timeline timeline;
@@ -58,10 +62,13 @@ public class HomeController extends Label implements Initializable {
     public ListView<String> itemList = new ListView<>();
     public ListView<String> roomList = new ListView<>();
     public ListView<String> allRoomList = new ListView<>();
+    public ListView<String> temperatureRoomList = new ListView<>();
     ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
-    //Old Profiles.
+    // Old Profiles.
     public static int oldNumberOfProfiles = ProfileController.profileList.size();
+    // Old simulator start/stop button label:
+    public String oldSimulatorButton = startStopButton.getText();
 
     //Panes matching up with the house layout file.
     TextArea[][] panes = new TextArea[4][4];
@@ -131,6 +138,9 @@ public class HomeController extends Label implements Initializable {
         DoorManager.initialize();
         LightManager.initialize();
 
+        // Subscribing the necessary elements to the temperature regulation system.
+        TemperatureManager.initialize();
+
         //Populating rooms container in SHC.
         allRooms();
 
@@ -168,6 +178,10 @@ public class HomeController extends Label implements Initializable {
                     if(!ActiveUser.getActiveUserLocation().equals(locationLabel.getText())){
                         locationLabel.setText(ActiveUser.getActiveUserLocation());
                     }
+
+                    if(!startStopButton.getText().equals(oldSimulatorButton)){
+                        oldSimulatorButton = startStopButton.getText();
+                    }
                 })
         );
         //Run the timeline indefinitely or until paused/stopped manually.
@@ -181,9 +195,10 @@ public class HomeController extends Label implements Initializable {
      * Handles the button for starting and stopping the simulator.
      * @param mouseEvent the mouse event
      */
-    public void startStopSimulator(MouseEvent mouseEvent){
+    public void startStopSimulator(MouseEvent mouseEvent) throws IOException{
         //If the simulator is stopped, button click will start the simulator.
         if(startStopButton.getText().equals("Start Simulator")){
+
             startStopButton.setText("Stop Simulator");
             clockController.beginTime(timeLabel);
             //Logging.
@@ -195,6 +210,7 @@ public class HomeController extends Label implements Initializable {
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
+            windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
             clockController.stopTime(timeLabel);
             //Logging.
             try {
@@ -210,10 +226,12 @@ public class HomeController extends Label implements Initializable {
      *
      * @param mouseEvent the mouse event
      */
-    public void pauseSimulation(MouseEvent mouseEvent){
+    public void pauseSimulation(MouseEvent mouseEvent) throws IOException {
         //Pause Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
+            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
+            // TODO: Freeze the change in temperature if a window is open.
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has paused the simulator.");
@@ -228,10 +246,11 @@ public class HomeController extends Label implements Initializable {
      *
      * @param mouseEvent the mouse event
      */
-    public void resumeSimulation(MouseEvent mouseEvent){
+    public void resumeSimulation(MouseEvent mouseEvent) throws IOException{
         //Resume Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")){
             clockController.resumeTime();
+            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has resumed the simulator.");
@@ -304,6 +323,8 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
+                    // TODO: Something with the TemperatureManager class
+                    windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem());
@@ -328,6 +349,8 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem());
+                    // TODO: Something with the TemperatureManager class
+                    windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem());
@@ -345,6 +368,31 @@ public class HomeController extends Label implements Initializable {
             }
         }
     }
+
+    // This opens the "Edit Room Temperature" window, for the room selected in the SHH tab.
+    @FXML
+    public void editRoomTempButtonClicked(MouseEvent mouseEvent) throws IOException {
+        // Permission Validation. If active user does not have permission, an alert box will appear.
+        if(PermissionChecker.checkCorePerms(temperatureRoomList.getSelectionModel().getSelectedItem())){
+            // Open the editRoomTemperature window:
+            Main.showEditRoomTemperature(temperatureRoomList.getSelectionModel().getSelectedItem());
+            //Logging.
+            try {
+                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" is editing the "+temperatureRoomList.getSelectionModel().getSelectedItem()+"'s temperature.");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        } else {
+            AlertManager.badPermissionsAlert();
+            //Logging.
+            try {
+                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" tried to edit the "+temperatureRoomList.getSelectionModel().getSelectedItem()+"'s temperature but was denied!");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
+    }
+
     @FXML
     public void awayModeButtonClicked(MouseEvent mouseEvent) throws IOException {
         //TODO: Make it so that this button can only be clicked when users are not at home.
@@ -475,8 +523,6 @@ public class HomeController extends Label implements Initializable {
         }
         roomList.getItems().addAll(rooms);
     }
-    
-    
 
     //Method to fill the rooms container in the SHC tab.
     public void allRooms() {
@@ -490,6 +536,7 @@ public class HomeController extends Label implements Initializable {
         }
         allRoomList.getItems().addAll(rooms);
         roomList.getItems().addAll(rooms);
+        temperatureRoomList.getItems().addAll(rooms);
     }
 
     public void manageAutomaticLights() throws IOException {

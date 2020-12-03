@@ -1,11 +1,13 @@
 package models;
 
-import security.Observer;
+import security.WindowObserver;
 import utility.CommandLogger;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Room{
+public class Room {
     //Room property variables
     public String roomName = "Unnamed";
     public int graphNumber = 0;
@@ -38,6 +40,8 @@ public class Room{
         this.window = new Window(false);
         this.door = new Door(false);
     }
+
+    public Room(){};
 
     // Complete constructor for Room class.
     public Room(String roomName, int graphNumber, int gridCol, int gridRow, Boolean door, Boolean windowExists, Boolean lights, double initialTemp) {

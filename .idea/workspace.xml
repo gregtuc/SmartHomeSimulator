@@ -23,23 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Adrien.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Deep.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Greg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/profiles/Greg.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Nicolas.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Todd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/profiles/Todd.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/profiles/Yeet.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/views/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/views/Profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,6 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1j45Pre63LOuG6hhrDztyczQmrl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -62,28 +60,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-20200518.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/343Proj/src/views" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="utilities" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Greg\Desktop\SmartHomeSimulator" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="utilities" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="security" />
+      <recent name="controllers" />
+      <recent name="utility" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\akama\Documents\GitHub\SmartHomeSimulator\343Proj\src\views" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="SmartHomeSimulator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -93,6 +92,13 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="SmartHomeSimulator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,10 +149,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1603051195604" />
-    <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604326186085">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="570" y="151" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606851765851">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604326186085" />
+    <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606851765851" />
     <state x="830" y="285" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604325748349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -168,10 +175,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="554" y="169" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512032131" />
-    <state x="1163" y="408" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604330454370">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1551" y="549" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606960148311">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1163" y="408" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604330454370" />
+    <state x="1551" y="549" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606960148311" />
     <state x="1003" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604331093955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -181,54 +189,62 @@
     </state>
     <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
     <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
-    <state width="2517" height="571" key="GridCell.Tab.0.bottom" timestamp="1604947295985">
+    <state width="1634" height="225" key="GridCell.Tab.0.bottom" timestamp="1606967587744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1577" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
+    <state width="1634" height="225" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="571" key="GridCell.Tab.0.center" timestamp="1604947295985">
+    <state width="1634" height="225" key="GridCell.Tab.0.center" timestamp="1606967587744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1577" height="407" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
+    <state width="1634" height="225" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="571" key="GridCell.Tab.0.left" timestamp="1604947295985">
+    <state width="1634" height="225" key="GridCell.Tab.0.left" timestamp="1606967587744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1577" height="407" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
+    <state width="1634" height="225" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="571" key="GridCell.Tab.0.right" timestamp="1604947295985">
+    <state width="1634" height="225" key="GridCell.Tab.0.right" timestamp="1606967587744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1577" height="407" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
+    <state width="1634" height="225" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="484" key="GridCell.Tab.1.bottom" timestamp="1604945528553">
+    <state width="1634" height="238" key="GridCell.Tab.1.bottom" timestamp="1606964136358">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="2517" height="484" key="GridCell.Tab.1.center" timestamp="1604945528553">
+    <state width="1634" height="238" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136358" />
+    <state width="1634" height="238" key="GridCell.Tab.1.center" timestamp="1606964136357">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="2517" height="484" key="GridCell.Tab.1.left" timestamp="1604945528553">
+    <state width="1634" height="238" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
+    <state width="1634" height="238" key="GridCell.Tab.1.left" timestamp="1606964136357">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157498" />
     <state width="2517" height="484" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="2517" height="484" key="GridCell.Tab.1.right" timestamp="1604945528553">
+    <state width="1634" height="238" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
+    <state width="1634" height="238" key="GridCell.Tab.1.right" timestamp="1606964136357">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
+    <state width="1634" height="238" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
     <state x="514" y="166" key="SettingsEditor" timestamp="1604512063613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -242,10 +258,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="983" y="453" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604940190498" />
-    <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1604334131486">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1119" y="268" width="896" height="913" key="search.everywhere.popup" timestamp="1606854483377">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604334131486" />
+    <state x="1119" y="268" width="896" height="913" key="search.everywhere.popup/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606854483377" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jgrapht$All_in_SmartHomeSimulator__1_.ic" NAME="All in SmartHomeSimulator (1) Coverage Results" MODIFIED="1603052563090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

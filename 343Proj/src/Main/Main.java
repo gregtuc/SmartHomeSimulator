@@ -1,6 +1,7 @@
 
 
 package Main;
+import controllers.RoomInformationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,9 @@ import utility.CommandLogger;
 import utility.DoorManager;
 import utility.LightManager;
 import utility.WindowManager;
+import models.Room;
+
+import java.util.ArrayList;
 
 /**
  * The type Main.
@@ -38,6 +42,23 @@ public class Main extends Application{
     static Stage editLocationStage;
 
     static Stage editLightStage;
+
+    /**
+     * The Room Information stage.
+     */
+    static Stage roomInformationStage;
+
+    /**
+     * The Room Temperature stage.
+     */
+    static Stage editRoomTemperatureStage;
+
+    // REFACTORING
+    public static Room roomSelectedFromLayout = new Room();
+    public static Room roomSelectedFromSHH = new Room();
+    public static Room getRoomSelectedFromLayout() {
+        return roomSelectedFromLayout;
+    }
     
     //Create and display the primary application window (Home.fxml).
     @Override
@@ -185,7 +206,73 @@ public class Main extends Application{
         }
     }
 
-    
+    // REFACTORING
+    /**
+     * Display the window that lets users see the clicked room's information (RoomInformation.fxml).
+     * This method is called from HomeController.
+     */
+    public static void showRoomInformation(Room clickedRoom){
+        try {
+            roomSelectedFromLayout = clickedRoom;
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/RoomInformation.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage roomInformationStage = new Stage();
+            Main.roomInformationStage = roomInformationStage;
+            roomInformationStage.setScene(new Scene(root));
+            // TODO: Get the selected room object the layout to the room information controller.
+            roomInformationStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Close the window that lets users see the clicked room's information (RoomInformation.fxml).
+     * This method is called from LocationController.
+     */
+    public static void closeRoomInformation(){
+        try {
+            Main.roomInformationStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Display the window that lets users edit the outside temperature parameter (OutsideTemperature.fxml).
+     * This method is called from HomeController.
+     */
+    public static void showEditRoomTemperature(String roomName){
+        try {
+            ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
+            for (int row = 0; row < 4; row++) {
+                for (int col = 0; col < 4; col++) {
+                    if (roomGrid.get(row).get(col).roomName.equals(roomName)) {
+                        roomSelectedFromSHH = roomGrid.get(row).get(col);
+                    }
+                }
+            }
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/RoomTemperature.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editRoomTemperatureStage = new Stage();
+            Main.editRoomTemperatureStage = editRoomTemperatureStage;
+            editRoomTemperatureStage.setScene(new Scene(root));
+            editRoomTemperatureStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Close the window that lets users edit the temperature parameter (OutsideTemperature.fxml).
+     * This method is called from TemperatureController.
+     */
+    public static void closeEditRoomTemperature(){
+        try {
+            Main.editRoomTemperatureStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     /**
      * Display the window that lets users edit the profile parameter (Profile.fxml).
