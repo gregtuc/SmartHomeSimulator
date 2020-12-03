@@ -339,7 +339,6 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            AlertManager.successfulPermissionsAlert();
         } else {
             AlertManager.badPermissionsAlert();
             //Logging.
@@ -373,7 +372,6 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            AlertManager.successfulPermissionsAlert();
         } else {
             AlertManager.badPermissionsAlert();
             //Logging.

@@ -34,5 +34,13 @@ public class AlertManager {
          alert.setHeaderText(null);
          Optional<ButtonType> result = alert.showAndWait();
     }
+    
+    public static void ItemDoesNotExist (String roomName, String item) {
+   	 Alert alert = new Alert(Alert.AlertType.WARNING,
+                "ERROR: The " + roomName + " does Not have a " + item,
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+   }
 
 }

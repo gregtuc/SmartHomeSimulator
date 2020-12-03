@@ -338,3 +338,24 @@
 [Core] Adrien has set Windowsin Kitchen to closed/off.
 [SHC] Window unlocked in Kitchen
 [Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[SHP] Adrien deactivated away mode.
+[SHC] Door unlocked in Dining Room
+[Core] Adrien has set Doors in Dining Room to open/on.
+[SHC] Door unlocked in Kitchen
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Core]  tried to set Doors in Kitchen to closed/off but was denied!
+[Core]  tried to set Doors in Kitchen to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Core] Adrien has set Doorsin Kitchen to closed/off.
+[SHC] Window unlocked in Main Entrance
