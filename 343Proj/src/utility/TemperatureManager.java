@@ -19,9 +19,10 @@ import java.io.IOException;
 
 public class TemperatureManager implements WindowObserver {
     private static volatile TemperatureManager instance = null;
+
     public static TemperatureManager getInstance() {
         if (instance == null) {
-            synchronized(TemperatureManager.class) {
+            synchronized (TemperatureManager.class) {
                 if (instance == null) {
                     instance = new TemperatureManager();
                 }
@@ -29,10 +30,14 @@ public class TemperatureManager implements WindowObserver {
         }
         return instance;
     }
-    private TemperatureManager() {}
+
+    private TemperatureManager() {
+    }
+
     //Creating a timeline object to loop in intervals.
     public static Timeline temperatureTimeline;
-    public static void initialize(){
+
+    public static void initialize() {
         HomeController.windowWatcher.subscribe(TemperatureManager.getInstance());
     }
 
@@ -52,10 +57,9 @@ public class TemperatureManager implements WindowObserver {
                                 // Adjust upwards or downwards by 0.1 degrees Celsius every second until they're both equal.
                                 new KeyFrame(Duration.seconds(1), e -> {
                                     if (targetTemperature > room.getInitialTemp()) {
-                                        room.setInitialTemp(room.getInitialTemp()+0.1);
-                                    }
-                                    else if (targetTemperature < room.getInitialTemp()) {
-                                        room.setInitialTemp(room.getInitialTemp()-0.1);
+                                        room.setInitialTemp(room.getInitialTemp() + 0.1);
+                                    } else if (targetTemperature < room.getInitialTemp()) {
+                                        room.setInitialTemp(room.getInitialTemp() - 0.1);
                                     }
                                 })
                         );
@@ -68,19 +72,32 @@ public class TemperatureManager implements WindowObserver {
                 }
             }
         }
-        else {
+        else if (simulator.equals("Paused")){
+            // This doesn't work as intended...
+            temperatureTimeline.pause();
+        }
+        else if (simulator.equals("Resume")){
+            // This doesn't work as intended...
+            temperatureTimeline.play();
+        }
+        else if (simulator.equals("Start Simulator")){
+            // This doesn't work as intended...
+            for (int row = 0; row < 4; row++) {
+                for (int col = 0; col < 4; col++) {
+                    Room room = LayoutParser.grid.get(row).get(col);
+                    if (roomName.equals(room.roomName)) {
+                        room.setInitialTemp(23.5);
+                    }
+                }
+            }
             temperatureTimeline.stop();
         }
+
     }
 
     @Override
     public void alarm(String status, String roomName, String simulator) throws IOException {
         //TODO: WHEN THE TEMPERATURE DROPS TO 0 DEGREES CELSIUS, TRIGGER ALARM
-        if (status.equals("open")) {
-            TemperatureManager.changeTemperature(roomName, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
-        }
-        if (status.equals("close")) {
-            // different or same method?
-        }
+        TemperatureManager.changeTemperature(roomName, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
     }
 }

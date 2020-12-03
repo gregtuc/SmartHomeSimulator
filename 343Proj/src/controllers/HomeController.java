@@ -195,9 +195,10 @@ public class HomeController extends Label implements Initializable {
      * Handles the button for starting and stopping the simulator.
      * @param mouseEvent the mouse event
      */
-    public void startStopSimulator(MouseEvent mouseEvent){
+    public void startStopSimulator(MouseEvent mouseEvent) throws IOException{
         //If the simulator is stopped, button click will start the simulator.
         if(startStopButton.getText().equals("Start Simulator")){
+
             startStopButton.setText("Stop Simulator");
             clockController.beginTime(timeLabel);
             //Logging.
@@ -209,6 +210,7 @@ public class HomeController extends Label implements Initializable {
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
+            windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
             clockController.stopTime(timeLabel);
             //Logging.
             try {
@@ -224,10 +226,11 @@ public class HomeController extends Label implements Initializable {
      *
      * @param mouseEvent the mouse event
      */
-    public void pauseSimulation(MouseEvent mouseEvent){
+    public void pauseSimulation(MouseEvent mouseEvent) throws IOException {
         //Pause Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
+            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
             // TODO: Freeze the change in temperature if a window is open.
             //Logging.
             try {
@@ -243,10 +246,11 @@ public class HomeController extends Label implements Initializable {
      *
      * @param mouseEvent the mouse event
      */
-    public void resumeSimulation(MouseEvent mouseEvent){
+    public void resumeSimulation(MouseEvent mouseEvent) throws IOException{
         //Resume Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")){
             clockController.resumeTime();
+            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has resumed the simulator.");
@@ -320,7 +324,7 @@ public class HomeController extends Label implements Initializable {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
                     // TODO: Something with the TemperatureManager class
-                    windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText()) ;
+                    windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem());
