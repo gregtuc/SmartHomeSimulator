@@ -81,47 +81,43 @@ public class WindowManager implements Observer {
 
     //Method for unlocking a single window in the house.
     public static void unlockWindow(String location) throws IOException {
-        if(!checkLockdownMode()){
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    if(location.equals(room.roomName)){
-                        if(room.getWindowExists()){
-                            room.setWindowStatus(true);
-                            CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
-                            AlertManager.successfulPermissionsAlert();
-                        }
-                        break;
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(location.equals(room.roomName)){
+                    if(room.getWindowExists()){
+                        room.setWindowStatus(true);
+                        CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        AlertManager.successfulPermissionsAlert();
+                    }
+                    else {
+                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                 }
             }
-        } else {
-            AlertManager.badPermissionsAlert();
         }
     }
 
     //Method for locking a single window in the house.
     public static void lockWindow(String location) throws IOException {
-        if(!checkLockdownMode()){
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    if(location.equals(room.roomName)){
-                        if(room.getWindowExists()){
-                            room.setWindowStatus(false);
-                            CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
-                            AlertManager.successfulPermissionsAlert();
-                        }
-                        break;
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(location.equals(room.roomName)){
+                    if(room.getWindowExists()){
+                        room.setWindowStatus(false);
+                        CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        AlertManager.successfulPermissionsAlert();
+                    }
+                    else {
+                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                 }
             }
-        } else {
-            AlertManager.badPermissionsAlert();
         }
     }
 

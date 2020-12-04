@@ -66,7 +66,8 @@ public class RoomInformationController extends Label implements Initializable {
                 // If it is different, update the displayed temperature.
                 new KeyFrame(Duration.seconds(1), e -> {
                     if (!roomTemperature.equals(selectedRoom.getInitialTemp())) {
-                        roomTemperature.setText(String.format("%.1f", selectedRoom.getInitialTemp()));
+                        //roomTemperature.setText(String.format("%.1f", selectedRoom.getInitialTemp()));
+                        roomTemperature.setText(Double.toString(selectedRoom.getInitialTemp()));
                     }
                 })
         );

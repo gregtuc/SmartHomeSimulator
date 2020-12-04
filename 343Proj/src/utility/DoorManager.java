@@ -52,14 +52,13 @@ public class DoorManager implements Observer {
 
     //Method for unlocking all doors in the house.
     public static void unlockAllDoors() throws IOException {
-        if (!checkLockdownMode()) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    room.setDoorStatus(true);
-                    //Change the text on the house representation.
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(room.getDoorExists() == true){
+                	room.setDoorStatus(true);
                 }
             }
             CommandLogger.logCommand("SHC", "All doors in the house unlocked.");
@@ -68,59 +67,60 @@ public class DoorManager implements Observer {
 
     //Method for locking all doors in the house.
     public static void lockAllDoors() throws IOException {
-        if (!checkLockdownMode()) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    room.setDoorStatus(false);
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(room.getDoorExists() == true){
+                	room.setDoorStatus(false);
                 }
-                CommandLogger.logCommand("SHC", "All doors locked in the house");
             }
+                
         }
     }
 
     //Method for unlocking a single door in the house.
     public static void unlockDoor(String location) throws IOException {
-        if (!checkLockdownMode()) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    if (!location.equals(room.roomName)) {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(location.equals(room.roomName)){
+                	if(room.getDoorExists() == true){
                         room.setDoorStatus(true);
-                        CommandLogger.logCommand("SHC", "Door unlocked in " + room.roomName);
-                        //Change the text on the house representation.
+                        CommandLogger.logCommand("SHC","Door unlocked in "+room.roomName);
                         AlertManager.successfulPermissionsAlert();
                         break;
-                    }
+                	}
+                	else {
+                		AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
+                	}
                 }
             }
-        } else {
-            AlertManager.badPermissionsAlert();
         }
     }
 
     //Method for locking a single door in the house.
     public static void lockDoor(String location) throws IOException {
-        if (!checkLockdownMode()) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (room.graphNumber == 0)
-                        continue;
-                    if (location.equals(room.roomName)) {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if(location.equals(room.roomName)){
+                	if(room.getDoorExists() == true){
                         room.setDoorStatus(false);
-                        CommandLogger.logCommand("SHC", "Door locked in " + room.roomName);
+                        CommandLogger.logCommand("SHC","Door locked in "+room.roomName);
                         AlertManager.successfulPermissionsAlert();
                         break;
-                    }
+                	}
+                	else {
+                		AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
+                	}
                 }
             }
-        } else {
-            AlertManager.badPermissionsAlert();
         }
     }
 

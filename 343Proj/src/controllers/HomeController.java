@@ -451,6 +451,7 @@ public class HomeController extends Label implements Initializable {
                 LightManager.turnOffAllLights();
                 WindowManager.lockAllWindows();
                 DoorManager.lockAllDoors();
+                LightManager.turnOffAllLights();
 
                 //Prevent further commands to windows and doors!
                 WindowManager.turnOnLockdownMode();
