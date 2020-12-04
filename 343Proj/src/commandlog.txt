@@ -209,3 +209,185 @@
 [Dashboard] Adrien has started the simulator.
 [SHC] Window unlocked in Kitchen
 [Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has started the simulator.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windowsin Kitchen to closed/off.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Kitchen
+[SHP] Motion detectors have been triggered! Alarm activated. Authorities and Home-Owner have been contacted.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHC] All lights turned on in the house
+[SHP] Adrien deactivated away mode.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[SHP] Adrien deactivated away mode.
+[SHP]  failed to edit away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit location button.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Dining Room
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Kitchen
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Dining Room
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Dining Room
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Kitchen
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Active User has moved to Kitchen.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit location button.
+[SHC] Person added to Kitchen
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[Dashboard] Adrien has started the simulator.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard]  has pressed the edit location button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has started the simulator.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has started the simulator.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[SHC] Window unlocked in Kitchen
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.0°C.
+[SHC] Window unlocked in Kitchen
+[SHC] Window unlocked in Kitchen
+[Dashboard] Adrien has started the simulator.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windowsin Kitchen to closed/off.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[SHC] Window unlocked in Kitchen
+[SHC] Window unlocked in Kitchen
+[Dashboard] Adrien has started the simulator.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has resumed the simulator.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windowsin Kitchen to closed/off.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 2.0°C.
+[Dashboard] Adrien has started the simulator.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windowsin Kitchen to closed/off.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has started the simulator.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 3.0°C.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windowsin Kitchen to closed/off.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[SHP] Adrien deactivated away mode.
+[SHC] Door unlocked in Dining Room
+[Core] Adrien has set Doors in Dining Room to open/on.
+[SHC] Door unlocked in Kitchen
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Core]  tried to set Doors in Kitchen to closed/off but was denied!
+[Core]  tried to set Doors in Kitchen to closed/off but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Window unlocked in Kitchen
+[Core] Adrien has set Doors in Kitchen to open/on.
+[Core] Adrien has set Doorsin Kitchen to closed/off.
+[SHC] Window unlocked in Main Entrance
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHC] Light turned on in Kitchen
+[Core] Adrien has set Lights in Kitchen to open/on.
+[SHC] Light turned on in Dining Room
+[Core] Adrien has set Lights in Dining Room to open/on.
+[SHC] Light turned on in Main Entrance
+[Core] Adrien has set Lights in Main Entrance to open/on.
+[SHC] Light turned on in Main Entrance
+[Core] Adrien has set Lights in Main Entrance to open/on.
+[SHC] Light turned off in Main Entrance
+[Core] Adrien has set Lightsin Main Entrance to closed/off.
+[SHC] Light turned on in Living Room
+[Core] Adrien has set Lights in Living Room to open/on.
+[SHC] Light turned on in Master Bedroom
+[Core] Adrien has set Lights in Master Bedroom to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Adrien activated away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHP]  failed to edit away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHC] Light turned on in Kitchen
+[Core] Adrien has set Lights in Kitchen to open/on.
+[SHC] Light turned on in Dining Room
+[Core] Adrien has set Lights in Dining Room to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHC] All lights turned off in the house
+[SHP] Adrien activated away mode.

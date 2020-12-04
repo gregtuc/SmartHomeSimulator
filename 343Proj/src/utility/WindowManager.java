@@ -64,6 +64,10 @@ public class WindowManager implements Observer {
                     if(room.getWindowExists()){
                         room.setWindowStatus(true);
                         CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        AlertManager.successfulPermissionsAlert();
+                    }
+                    else {
+                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                     break;
                 }
@@ -82,6 +86,10 @@ public class WindowManager implements Observer {
                     if(room.getWindowExists()){
                         room.setWindowStatus(false);
                         CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        AlertManager.successfulPermissionsAlert();
+                    }
+                    else {
+                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                     break;
                 }

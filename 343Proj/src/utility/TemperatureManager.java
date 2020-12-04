@@ -43,8 +43,8 @@ public class TemperatureManager implements WindowObserver {
 
     // Method for changing the temperature of a single room in the house.
     // Variable targetTemperature will be the outside temperature of the house, usually.
-    public static void changeTemperature(String roomName, double targetTemperature, String simulator) throws IOException {
-        if (simulator.equals("Stop Simulator")) {
+    public static void changeTemperature(String status, String roomName, double targetTemperature, String simulator) throws IOException {
+        if (simulator.equals("Stop Simulator") && status.equals("open")) {
             for (int row = 0; row < 4; row++) {
                 for (int col = 0; col < 4; col++) {
                     Room room = LayoutParser.grid.get(row).get(col);
@@ -64,6 +64,9 @@ public class TemperatureManager implements WindowObserver {
                                         String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()-0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }
+                                    else if(room.getInitialTemp() == 0.0) {
+                                    	//AlertManager.freezingTemperatureAlert();
+                                    }
                                 })
                         );
                         //Run the timeline indefinitely or until paused/stopped manually.
@@ -75,7 +78,7 @@ public class TemperatureManager implements WindowObserver {
                 }
             }
         }
-        else if (simulator.equals("Paused")){
+        else if (simulator.equals("Paused") || status.contentEquals("close")){
             // This doesn't work as intended...
             temperatureTimeline.pause();
         }
@@ -101,6 +104,7 @@ public class TemperatureManager implements WindowObserver {
     @Override
     public void alarm(String status, String roomName, String simulator) throws IOException {
         //TODO: WHEN THE TEMPERATURE DROPS TO 0 DEGREES CELSIUS, TRIGGER ALARM
-        TemperatureManager.changeTemperature(roomName, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
+    	TemperatureManager.changeTemperature(status, roomName, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
+
     }
 }

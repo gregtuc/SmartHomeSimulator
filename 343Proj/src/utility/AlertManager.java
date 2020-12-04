@@ -26,5 +26,21 @@ public class AlertManager {
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
     }
+    
+    public static void freezingTemperatureAlert() {
+    	 Alert alert = new Alert(Alert.AlertType.WARNING,
+                 "Warning! The Room temperture has reached 0 Degrees Celsius. Please increase the Temperture.",
+                 ButtonType.CLOSE);
+         alert.setHeaderText(null);
+         Optional<ButtonType> result = alert.showAndWait();
+    }
+    
+    public static void ItemDoesNotExist (String roomName, String item) {
+   	 Alert alert = new Alert(Alert.AlertType.WARNING,
+                "ERROR: The " + roomName + " does Not have a " + item,
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+   }
 
 }

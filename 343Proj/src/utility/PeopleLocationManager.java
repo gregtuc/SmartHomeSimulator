@@ -21,18 +21,12 @@ public class PeopleLocationManager{
                     continue;
                 //Revert the old room back to normal.
                 if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
-                    room.setActiveProfileIsHere(false);
-                    //Change the text on the house representation.
-                    UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                            +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
+                    room.setActiveProfileIsHere(false);              
                 }
                 //Update the room with the active users presence.
                 if(location.equals(room.roomName)){
                     room.activeProfileIsHere = true;
                     CommandLogger.logCommand("SHC","Active User has moved to "+room.roomName+".");
-                    //Change the text on the house representation.
-                    UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                            +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
                 }
 
             }
@@ -48,13 +42,11 @@ public class PeopleLocationManager{
                     continue;
                 if(location.equals(room.roomName)){
                     //Insert a person object.
-                    CommandLogger.logCommand("SHC","Person added to "+room.roomName);
                     if(ActiveUser.getActiveUserAwayMode()){
                         HomeController.alarmSystem.triggerAlarm();
                     }
-                    //Change the text on the house representation.
-                    UniversalElements.getPanes()[col][row].setText("Room #: "+room.graphNumber+"\nRoom name: "+room.roomName
-                            +"\nDoor: "+room.getDoorExists()+" Door Open: "+room.door.getDoorIsOpen()+"\nWindow: "+room.getWindowExists()+" Window Open: "+room.window.getWindowIsOpen()+"\nActive User: "+room.getActiveProfileIsHere()+"\nPerson Object: "+room.getPersonIsHere());
+                    room.setPersonIsHere(true);
+                    CommandLogger.logCommand("SHC","Person added to "+room.roomName);
                     break;
                 }
             }

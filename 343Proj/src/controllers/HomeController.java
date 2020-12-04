@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.util.Duration;
-import jdk.nashorn.internal.ir.WithNode;
+//import jdk.nashorn.internal.ir.WithNode;
 import models.Room;
 import Main.Main;
 import Main.LayoutParser;
@@ -339,7 +339,6 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            AlertManager.successfulPermissionsAlert();
         } else {
             AlertManager.badPermissionsAlert();
             //Logging.
@@ -373,7 +372,6 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            AlertManager.successfulPermissionsAlert();
         } else {
             AlertManager.badPermissionsAlert();
             //Logging.
@@ -423,6 +421,7 @@ public class HomeController extends Label implements Initializable {
                 //Lock all windows and doors.
                 WindowManager.lockAllWindows();
                 DoorManager.lockAllDoors();
+                LightManager.turnOffAllLights();
 
                 //Change the label text.
                 awayModeButton.setText("Deactivate");
