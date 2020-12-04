@@ -2,12 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -161,20 +163,46 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="411.0">
                             <children>
-                        <TitledPane animated="false" layoutX="11.0" layoutY="14.0" prefHeight="180.0" prefWidth="341.0" text="Set Temperature">
+                        <TitledPane animated="false" layoutX="11.0" layoutY="130.0" prefHeight="144.0" prefWidth="341.0" text="Rooms">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="168.0" prefWidth="339.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="105.0" prefWidth="339.0">
                                  <children>
-                                    <VBox layoutX="19.6" layoutY="19.6" prefHeight="107.0" prefWidth="320.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <VBox layoutX="64.6" layoutY="19.6" prefHeight="110.0" prefWidth="244.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
                                        <children>
-                                          <ListView fx:id="temperatureRoomList" />
+                                          <ListView fx:id="temperatureRoomList" prefHeight="91.0" prefWidth="274.0" />
                                        </children>
                                     </VBox>
-                                    <Button fx:id="editRoomTempButton" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#editRoomTempButtonClicked" text="Select" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
+                        <TitledPane animated="false" layoutX="11.0" layoutY="286.0" prefHeight="145.0" prefWidth="341.0" text="Zones">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="339.0">
+                                 <children>
+                                    <VBox layoutX="36.6" layoutY="18.6" prefHeight="109.0" prefWidth="293.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="9.0">
+                                       <children>
+                                          <ListView fx:id="zoneTemperatureRoomList" prefHeight="91.0" prefWidth="274.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="10.0" layoutY="14.0" prefHeight="103.0" prefWidth="342.0" text="Create a Zone">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="340.0">
+                                 <children>
+                                    <TextField fx:id="zoneInputTextField" layoutX="14.0" layoutY="12.0" prefHeight="25.0" prefWidth="152.0" promptText="Zone Name" />
+                                    <ComboBox fx:id="zoneTypeInputComboBox" layoutX="178.0" layoutY="12.0" prefHeight="25.0" prefWidth="151.0" promptText="Zone Type" />
+                                    <Button fx:id="createZoneInputButton" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#createZoneButtonClicked" text="Create" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <Button fx:id="editRoomTempButton" layoutX="20.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#editRoomTempButtonClicked" prefHeight="25.0" prefWidth="128.0" text="Change Room Temp" />
+                        <Button fx:id="editZoneTempButton" layoutX="118.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#editZoneTempClicked" prefHeight="25.0" prefWidth="126.0" text="Modify Zone" />
+                        <Button layoutX="204.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#addRoomToZone" prefHeight="25.0" prefWidth="129.0" text="Add Room to Zone" />
                             </children></AnchorPane>
                     </content>
                 </Tab>

@@ -197,3 +197,115 @@
 [Dashboard] Greg has paused the simulator.
 [Dashboard] Greg has resumed the simulator.
 [Dashboard] Greg has stopped the simulator.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the null's temperature.
+[SHH]  tried to edit the null's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called .
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called .
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Frasdsad.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Test.
+[SHH] Greg has created a new Zone called Test2.
+[SHH] Greg has created a new Zone called Test2TEst.
+[SHC] Light turned on in Kitchen
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called TEst.
+[SHH] Greg has created a new Zone called TEst2.
+[SHH] Greg has created a new Zone called TEst23.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Test1.
+[SHH] Greg has created a new Zone called Test2.
+[SHH] Greg has created a new Zone called Test3.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Zone1.
+[SHH]  tried to edit the null's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Cooling.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[SHH]  tried to edit the Kitchen's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[SHH] Greg is editing the Dining Room's temperature.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg added the Dining Room to the Yeet zone.
+[Dashboard] Greg added the Dining Room to the Yeet zone.
+[Dashboard] Greg added the Living Room to the Yeet zone.
+[Dashboard]  has pressed the edit location button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Yeet of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg has created a new Zone called Yeet of type Heating.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 35.0°C.
+[Dashboard] Greg has started the simulator.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 20.0°C.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 30.0°C.
