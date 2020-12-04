@@ -28,14 +28,21 @@ public class TemperatureManager implements WindowObserver {
         return instance;
     }
 
-    private TemperatureManager() {
-    }
+    private TemperatureManager() {}
 
     //Creating a timeline object to loop in intervals.
     public static Timeline temperatureTimeline;
 
     public static void initialize() {
         HomeController.windowWatcher.subscribe(TemperatureManager.getInstance());
+    }
+    public static void checkFreezingTemperature(Room room) {
+    	if(room.getInitialTemp() <= 0.0) {
+        	AlertManager.freezingTemperatureAlert(room.getRoomName());
+        }
+        else {
+        	AlertManager.numberOfAlertSent = 0;
+        }
     }
 
     // Method for changing the temperature of a single room in the house.
@@ -62,9 +69,8 @@ public class TemperatureManager implements WindowObserver {
                                         String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()-0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }
-                                    else if(room.getInitialTemp() == 0.0) {
-                                    	//AlertManager.freezingTemperatureAlert();
-                                    }
+                                    // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
+                                    checkFreezingTemperature(room);
                                 })
                         );
                         //Run the timeline indefinitely or until paused/stopped manually.
