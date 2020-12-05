@@ -29,7 +29,7 @@ public class ZoneController implements Initializable {
     }
     @FXML
     public void setPeriods(MouseEvent mouseEvent) throws IOException {
-        ZoneManager.addPeriodsToZone(UniversalElements.getSelectedZone(), Double.parseDouble(periodOneTemp.getText()), Double.parseDouble(periodTwoTemp.getText()), Double.parseDouble(periodThreeTemp.getText()));
+        ZoneManager.setZoneTemperatures(UniversalElements.getSelectedZone(), Double.parseDouble(periodOneTemp.getText()), Double.parseDouble(periodTwoTemp.getText()), Double.parseDouble(periodThreeTemp.getText()));
     }
     @FXML
     public void removeRoom(MouseEvent mouseEvent) throws IOException {

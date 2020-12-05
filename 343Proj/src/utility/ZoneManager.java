@@ -41,7 +41,7 @@ public class ZoneManager {
         }
     }
 
-    public static void addPeriodsToZone(String zoneName, double periodOneTemp, double periodTwoTemp, double periodThreeTemp){
+    public static void setZoneTemperatures(String zoneName, double periodOneTemp, double periodTwoTemp, double periodThreeTemp){
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
                 zone.setFirstPeriodTemp(periodOneTemp);
@@ -108,6 +108,15 @@ public class ZoneManager {
             }
         }
         return false;
+    }
+
+    public static String getZoneOfRoom(String roomName){
+        for (Zone zone : zones) {
+            if (zone.getRooms().contains(roomName)) {
+                return zone.getZoneName();
+            }
+        }
+        return "";
     }
 
     //Get a list of all zones

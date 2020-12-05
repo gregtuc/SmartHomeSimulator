@@ -23,19 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/models/Zone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/src/views/Zone.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/AlertManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/AlertManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/UniversalElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/UniversalElements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/views/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/views/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +69,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/343Proj/src/views" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simulator-packages/javafx-sdk-15.0.1/lib" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -102,17 +95,20 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="SmartHomeSimulator" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Greg\Desktop\simulator-packages\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,9 +159,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1603051195604" />
-    <state x="570" y="151" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606851765851">
+    <state x="570" y="151" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607206536969">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206536969" />
     <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604326186085" />
     <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606851765851" />
     <state x="830" y="285" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604325748349">
@@ -199,41 +196,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1003" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604331093955" />
-    <state x="417" y="125" key="FileChooserDialogImpl" timestamp="1604328298452">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
-    <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
-    <state width="2517" height="49" key="GridCell.Tab.0.bottom" timestamp="1607111626056">
+    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1607206441146">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="556" y="168" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206441146" />
+    <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
+    <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
+    <state width="2517" height="505" key="GridCell.Tab.0.bottom" timestamp="1607206763956">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="505" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
     <state width="2517" height="49" key="GridCell.Tab.0.bottom/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="49" key="GridCell.Tab.0.center" timestamp="1607111626056">
+    <state width="2517" height="505" key="GridCell.Tab.0.center" timestamp="1607206763956">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="505" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
     <state width="2517" height="49" key="GridCell.Tab.0.center/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="49" key="GridCell.Tab.0.left" timestamp="1607111626056">
+    <state width="2517" height="505" key="GridCell.Tab.0.left" timestamp="1607206763956">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="505" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
     <state width="2517" height="49" key="GridCell.Tab.0.left/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="49" key="GridCell.Tab.0.right" timestamp="1607111626056">
+    <state width="2517" height="505" key="GridCell.Tab.0.right" timestamp="1607206763956">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2517" height="505" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
     <state width="2517" height="49" key="GridCell.Tab.0.right/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
@@ -264,9 +266,10 @@
     <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
     <state width="1634" height="238" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
-    <state x="514" y="166" key="SettingsEditor" timestamp="1604512063613">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="685" y="223" key="SettingsEditor" timestamp="1607206448217">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="685" y="223" key="SettingsEditor/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206448217" />
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603052494952" />
     <state x="514" y="166" key="SettingsEditor/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512063613" />
     <state x="1010" y="395" key="extract.method.dialog" timestamp="1607106153959">
