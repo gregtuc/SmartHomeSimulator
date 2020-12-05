@@ -53,7 +53,7 @@ public class RoomTemperatureController extends Label implements Initializable{
         //Logging.
         try {
             CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" has changed the temperature of the "
-                    +selectedRoom.getRoomName()+" from " + oldTemperature + "Â°C to " + selectedRoom.getInitialTemp() + "Â°C.");
+                    +selectedRoom.getRoomName()+" from " + oldTemperature + " °C to " + selectedRoom.getInitialTemp() + " °C.");
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

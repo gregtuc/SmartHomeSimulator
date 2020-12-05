@@ -50,67 +50,83 @@ public class TemperatureManager implements WindowObserver {
 
     // Method for changing the temperature of a single room in the house.
     // Variable targetTemperature will be the outside temperature of the house, usually.
-    public static void changeTemperature(String status, String roomName, double targetTemperature, String simulator) throws IOException {
-        if (simulator.equals("Stop Simulator") && status.equals("open")) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (roomName.equals(room.roomName)) {
-                        // TODO: Math formula to adjust temperature of room towards target, gradually, every second.
-                        // Timeline that runs in intervals of 1 second.
-                        // It is used for a variety of things from updating fxml elements to checking for new values.
-                        temperatureTimeline = new Timeline(
-                                // Every second, check if the current room temp is smaller/greater than the target temp.
-                                // Adjust upwards or downwards by 0.1 degrees Celsius every second until they're both equal.
-                                new KeyFrame(Duration.seconds(1), e -> {
-                                    if (targetTemperature > room.getInitialTemp()) {
-                                        //room.setInitialTemp(room.getInitialTemp() + 0.1);
-                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()+0.1));
-                                        room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    } else if (targetTemperature < room.getInitialTemp()) {
-                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()-0.1));
-                                        room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    }
-                                    // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
-                                    checkFreezingTemperature(room);
-                                })
-                        );
-                        //Run the timeline indefinitely or until paused/stopped manually.
-                        temperatureTimeline.setCycleCount(Animation.INDEFINITE);
-                        //Play the timeline.
-                        temperatureTimeline.play();
-                        break;
-                    }
-                }
-            }
-        }
-        else if (simulator.equals("Paused") || status.contentEquals("close")){
-            // This doesn't work as intended...
+    public static void changeTemperature(Room room, double targetTemperature, String simulator) throws IOException {
+        if (simulator.equals("Stop Simulator")) {
+        	// TODO: Math formula to adjust temperature of room towards target, gradually, every second.
+            // Timeline that runs in intervals of 1 second.
+        	// It is used for a variety of things from updating fxml elements to checking for new values.
+            temperatureTimeline = new Timeline(
+                    // Every second, check if the current room temp is smaller/greater than the target temp.
+            		// Adjust upwards or downwards by 0.1 degrees Celsius every second until they're both equal.
+            		new KeyFrame(Duration.seconds(1), e -> {
+            			// When HAVC is OFF or paused
+            			if(room.getHAVCstatus().equals("OFF") || room.getHAVCstatus().equals("Paused")) {                         
+            				if (targetTemperature > room.getInitialTemp()) {
+            					//room.setInitialTemp(room.getInitialTemp() + 0.1);
+            					String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()+0.05));
+            					room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+            				} 
+            				else if (targetTemperature < room.getInitialTemp()) {
+            					String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()-0.05));
+            					room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+            				}
+            				if ((targetTemperature - room.getInitialTemp() == 0.25 || 
+            					targetTemperature - room.getInitialTemp() == -0.25) &&
+            					room.getHAVCstatus().equals("Paused")){
+            					room.setHAVCstatus("ON");
+            				}
+                                			                   
+            			}  
+            			//When HAVC is ON
+            			else if(room.getHAVCstatus().equals("ON")){                    
+            				if (targetTemperature > room.getInitialTemp()) {
+                            //room.setInitialTemp(room.getInitialTemp() + 0.1);
+                            String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()+0.10));
+                            room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+            				} 
+            				else if (targetTemperature < room.getInitialTemp()) {
+            					String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()-0.10));
+                                room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                            }             
+                            else if(targetTemperature == room.getInitialTemp()) {
+                            	room.setHAVCstatus("Paused");
+                            }
+            			}
+                        // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
+            			checkFreezingTemperature(room);
+            		})
+            	);
+            //Run the timeline indefinitely or until paused/stopped manually.
+            temperatureTimeline.setCycleCount(Animation.INDEFINITE);
+            //Play the timeline.
+            temperatureTimeline.play();
+        } 
+        else if (simulator.equals("Paused")){
             temperatureTimeline.pause();
         }
         else if (simulator.equals("Resume")){
-            // This doesn't work as intended...
             temperatureTimeline.play();
         }
         else if (simulator.equals("Start Simulator")){
-            // This doesn't work as intended...
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 4; col++) {
-                    Room room = LayoutParser.grid.get(row).get(col);
-                    if (roomName.equals(room.roomName)) {
-                        room.setInitialTemp(23.5);
-                    }
-                }
-            }
+        	room.setInitialTemp(23.5);
             temperatureTimeline.stop();
         }
-
     }
 
     @Override
-    public void alarm(String status, String roomName, String simulator) throws IOException {
-        //TODO: WHEN THE TEMPERATURE DROPS TO 0 DEGREES CELSIUS, TRIGGER ALARM
-    	TemperatureManager.changeTemperature(status, roomName, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
-
+    public void alarm(String roomName, String simulator) throws IOException {
+    	 for (int row = 0; row < 4; row++) {
+             for (int col = 0; col < 4; col++) {
+                 Room room = LayoutParser.grid.get(row).get(col);
+                 if (roomName.equals(room.roomName)) {
+                	 TemperatureManager.changeTemperature(room, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
+                	 break;
+                	
+             		//TODO: Wait to get zone 
+             		//TemperatureManager.changeTemperature(HAVCstatus, roomName, zoneTemperture, simulator);
+             	
+                 }
+             }
+    	 }
     }
 }

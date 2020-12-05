@@ -210,7 +210,7 @@ public class HomeController extends Label implements Initializable {
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
-            windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
+            windowWatcher.triggerAlarm(roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
             clockController.stopTime(timeLabel);
             //Logging.
             try {
@@ -230,7 +230,7 @@ public class HomeController extends Label implements Initializable {
         //Pause Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
-            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
+            windowWatcher.triggerAlarm(roomList.getSelectionModel().getSelectedItem(), "Paused");
             // TODO: Freeze the change in temperature if a window is open.
             //Logging.
             try {
@@ -250,7 +250,7 @@ public class HomeController extends Label implements Initializable {
         //Resume Time only if the simulation has started.
         if(!timeLabel.getText().equals("HH:MM:SS")){
             clockController.resumeTime();
-            windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
+            windowWatcher.triggerAlarm(roomList.getSelectionModel().getSelectedItem(), "Resume");
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername()+" has resumed the simulator.");
@@ -324,7 +324,6 @@ public class HomeController extends Label implements Initializable {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
                     // TODO: Something with the TemperatureManager class
-                    windowWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem());
@@ -356,8 +355,7 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem());
-                    // TODO: Something with the TemperatureManager class
-                    windowWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(),startStopButton.getText());
+                    // TODO: Something with the TemperatureManager class            
                     break;
                 case "Doors":
                     DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem());

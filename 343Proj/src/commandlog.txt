@@ -518,3 +518,8 @@
 [SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 1.9°C.
 [Dashboard] Adrien pressed the edit profile button.
 [Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 2.0°C.

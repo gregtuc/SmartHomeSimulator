@@ -10,9 +10,9 @@ public class WindowWatcher {
     public void subscribe(WindowObserver observer){
         listeners.add(observer);
     }
-    public void triggerAlarm(String status, String roomName, String simulator) throws IOException {
+    public void triggerAlarm(String roomName, String simulator) throws IOException {
         for (WindowObserver listener : listeners) {
-            listener.alarm(status, roomName, simulator);
+            listener.alarm(roomName, simulator);
         }
     }
 }

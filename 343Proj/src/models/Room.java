@@ -19,6 +19,8 @@ public class Room {
 
     //Room window object
     public Window window;
+    
+    public String HAVCstatus = "OFF";
 
     //Room light Variables
     public boolean lights = false; // Lights off (false) or on (true) in the room.
@@ -62,7 +64,7 @@ public class Room {
     public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
-
+    
     //Graph methods.
     public int getGraphNumber() {
         return graphNumber;
@@ -117,6 +119,14 @@ public class Room {
     }
     public void setInitialTemp(double initialTemp) {
         this.initialTemp = initialTemp;
+    }
+    
+    //HAVCstatus
+    public String getHAVCstatus() {
+    	return HAVCstatus;
+    }
+    public void setHAVCstatus(String HAVCstatus) {
+    	this.HAVCstatus = HAVCstatus;
     }
 
     //toString method.
