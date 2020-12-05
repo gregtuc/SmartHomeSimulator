@@ -1,6 +1,7 @@
 package utility;
 
 import java.util.Optional;
+import Main.Main;
 
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
@@ -18,6 +19,7 @@ public class AlertManager {
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
     }
+
     /**
      * Opens a window to show if a command is unsuccessful
      */

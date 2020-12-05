@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import models.Room;
+import utility.LayoutFileException;
 import utility.UniversalElements;
 
 import java.io.File;
@@ -33,7 +34,7 @@ public class LayoutParser {
     This means that each split element in the "words" array is the column position (counted by j).
      */
 
-    public static void parseLayout(TextArea[][] panes) throws Exception {
+    public static void parseLayout(TextArea[][] panes) throws Exception, LayoutFileException {
         //*** INITIALIZE THE GRID ***//
         for (int row = 0; row < 4; row++) {
             grid.add(new ArrayList<Room>());
@@ -42,11 +43,18 @@ public class LayoutParser {
             }
             System.out.println("");
         }
-        File file =
-                new File("layout.txt");
+
+        File file;
+        try{
+            file = new File("layout.txt");
+        } catch(Exception e){
+            throw new LayoutFileException();
+        }
+
         Scanner sc = new Scanner(file);
         String currentLine = null;
         String[] words = new String[0];
+
 
         //*** PARSE THE GRID ***//
         int i = 0, j = 0; // Counters for the grid iteration.

@@ -2,6 +2,7 @@ package utility;
 
 
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
 public class UniversalElements {
@@ -13,6 +14,9 @@ public class UniversalElements {
     private static Label locationLabel = new Label();
     private static Label awayModeLabel = new Label();
     private static Label simulationSpeedLabel = new Label();
+
+    //ListView Elements
+    private static ListView<String> zoneTemperatureRoomList = new ListView<String>();
 
     //TextArea Elements
     private static TextArea outputConsoleText = new TextArea();
@@ -77,6 +81,14 @@ public class UniversalElements {
 
     public static void setSimulationSpeedLabel(Label simulationSpeedLabel) {
         UniversalElements.simulationSpeedLabel = simulationSpeedLabel;
+    }
+
+    public static String getSelectedZone() {
+        return zoneTemperatureRoomList.getSelectionModel().getSelectedItem();
+    }
+
+    public static void setZoneTemperatureRoomList(ListView<String> zoneTemperatureRoomList) {
+        UniversalElements.zoneTemperatureRoomList = zoneTemperatureRoomList;
     }
 
     public static TextArea getOutputConsoleText() {

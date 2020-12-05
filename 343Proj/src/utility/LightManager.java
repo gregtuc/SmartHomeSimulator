@@ -51,6 +51,7 @@ public class LightManager implements Observer {
 
     //Method for turning on a specific light.
     public static void turnOnLight(String location) throws IOException {
+        AlertManager.successfulPermissionsAlert();
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = LayoutParser.grid.get(row).get(col);
@@ -87,6 +88,7 @@ public class LightManager implements Observer {
 
     //Method for turning off a specific light.
     public static void turnOffLight(String location) throws IOException {
+        AlertManager.successfulPermissionsAlert();
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Room room = LayoutParser.grid.get(row).get(col);

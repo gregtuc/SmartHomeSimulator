@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * The type Main.
  */
 public class Main extends Application{
+
     /**
      * The Primary stage.
      */
@@ -42,6 +43,8 @@ public class Main extends Application{
     static Stage editLocationStage;
 
     static Stage editLightStage;
+
+    static Stage editZoneTemp;
 
     /**
      * The Room Information stage.
@@ -190,6 +193,25 @@ public class Main extends Application{
             Main.editLightStage = editLightStage;
             editLightStage.setScene(new Scene(root));
             editLightStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void closeEditZoneTemp(){
+        try {
+            Main.editZoneTemp.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void showEditZoneTemp(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Zone.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editZoneTemp = new Stage();
+            Main.editZoneTemp = editZoneTemp;
+            editZoneTemp.setScene(new Scene(root));
+            editZoneTemp.show();
         } catch(Exception e) {
             e.printStackTrace();
         }
