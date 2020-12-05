@@ -119,6 +119,15 @@ public class ZoneManager {
         return "";
     }
 
+    public static Zone getZone(String zoneName){
+        for (Zone zone : zones) {
+            if (zone.getZoneName().equals(zoneName)) {
+                return zone;
+            }
+        }
+        return null;
+    }
+
     //Get a list of all zones
     public static ArrayList<Zone> getZones() {
         return zones;

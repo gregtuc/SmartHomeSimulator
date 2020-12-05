@@ -23,11 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/AvoidOpeningWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/ChangeZoneTemperature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/CreateZone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/DetectDepartureLowerTemp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/DetectTemperatureAnomaly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/DisplayCurrentTemperature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/343Proj/tests/StopHVACOpenWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,33 +71,38 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simulator-packages/javafx-sdk-15.0.1/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/343Proj/tests/com/simulator" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Greg\Desktop\SmartHomeSimulator" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="utilities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\akama\Documents\GitHub\SmartHomeSimulator\343Proj\src\views" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="security" />
       <recent name="controllers" />
       <recent name="utility" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\akama\Documents\GitHub\SmartHomeSimulator\343Proj\src\views" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Greg\Desktop\SmartHomeSimulator\343Proj\tests\com\simulator" />
+      <recent name="C:\Users\Greg\Desktop\SmartHomeSimulator" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.All in SmartHomeSimulator">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="SmartHomeSimulator" />
@@ -100,19 +111,70 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in SmartHomeSimulator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SmartHomeSimulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChangeZoneTemperature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SmartHomeSimulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ChangeZoneTemperature" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateZone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SmartHomeSimulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateZone" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DetectDepartureLowerTemp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SmartHomeSimulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DetectDepartureLowerTemp" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DisplayCurrentTemperature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SmartHomeSimulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DisplayCurrentTemperature" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in SmartHomeSimulator" />
+        <item itemvalue="JUnit.DetectDepartureLowerTemp" />
+        <item itemvalue="JUnit.CreateZone" />
+        <item itemvalue="JUnit.DisplayCurrentTemperature" />
+        <item itemvalue="JUnit.ChangeZoneTemperature" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,6 +198,7 @@
       <workItem from="1604596341358" duration="7782000" />
       <workItem from="1604938921324" duration="8540000" />
       <workItem from="1604955674901" duration="5000" />
+      <workItem from="1607208334549" duration="2967000" />
     </task>
     <servers />
   </component>
@@ -165,19 +228,25 @@
     <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206536969" />
     <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604326186085" />
     <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606851765851" />
+    <state x="989" y="490" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607208410302">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="989" y="490" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208410302" />
     <state x="830" y="285" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604325748349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="830" y="285" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604325748349" />
-    <state x="1617" y="318" key="#com.intellij.ide.util.MemberChooser" timestamp="1607108445958">
+    <state x="1617" y="318" key="#com.intellij.ide.util.MemberChooser" timestamp="1607210360271">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1617" y="318" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607210360271" />
     <state x="1617" y="318" key="#com.intellij.ide.util.MemberChooser/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607108445958" />
     <state x="1213" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604332237055" />
     <state x="1617" y="318" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604944568770" />
-    <state x="1128" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1604330453251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1504" y="403" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1607208519885">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1504" y="403" key="#com.intellij.ide.util.PackageChooserDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208519885" />
     <state x="1128" y="299" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604330453251" />
     <state x="779" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604326181787">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -187,55 +256,56 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="554" y="169" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512032131" />
-    <state x="1551" y="549" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606960148311">
+    <state x="1551" y="549" width="469" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1607208521296">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1551" y="549" width="469" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208521296" />
     <state x="1163" y="408" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604330454370" />
     <state x="1551" y="549" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606960148311" />
     <state x="1003" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604331093955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1003" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604331093955" />
-    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1607206441146">
+    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1607208473791">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="556" y="168" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206441146" />
+    <state x="556" y="168" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208473791" />
     <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
     <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
-    <state width="2517" height="505" key="GridCell.Tab.0.bottom" timestamp="1607206763956">
+    <state width="2517" height="872" key="GridCell.Tab.0.bottom" timestamp="1607211137283">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="505" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
+    <state width="2517" height="872" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
     <state width="2517" height="49" key="GridCell.Tab.0.bottom/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="505" key="GridCell.Tab.0.center" timestamp="1607206763956">
+    <state width="2517" height="872" key="GridCell.Tab.0.center" timestamp="1607211137283">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="505" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
+    <state width="2517" height="872" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
     <state width="2517" height="49" key="GridCell.Tab.0.center/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="505" key="GridCell.Tab.0.left" timestamp="1607206763956">
+    <state width="2517" height="872" key="GridCell.Tab.0.left" timestamp="1607211137282">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="505" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
+    <state width="2517" height="872" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137282" />
     <state width="2517" height="49" key="GridCell.Tab.0.left/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
     <state width="1634" height="225" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
     <state width="2517" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="505" key="GridCell.Tab.0.right" timestamp="1607206763956">
+    <state width="2517" height="872" key="GridCell.Tab.0.right" timestamp="1607211137283">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="505" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206763956" />
+    <state width="2517" height="872" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
     <state width="2517" height="49" key="GridCell.Tab.0.right/-1920.811.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607111626056" />
     <state width="1577" height="407" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
@@ -272,6 +342,10 @@
     <state x="685" y="223" key="SettingsEditor/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206448217" />
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603052494952" />
     <state x="514" y="166" key="SettingsEditor/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512063613" />
+    <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607208570172">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208570172" />
     <state x="1010" y="395" key="extract.method.dialog" timestamp="1607106153959">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
