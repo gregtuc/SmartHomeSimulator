@@ -224,9 +224,9 @@
         <Label layoutX="262.0" layoutY="556.0" prefHeight="17.0" prefWidth="111.0" text="Output Console" />
         <TitledPane animated="false" layoutX="14.0" layoutY="13.0" prefHeight="542.0" prefWidth="195.0" text="Simulation">
             <AnchorPane accessibleRole="TITLED_PANE" minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="193.0">
-                <Button layoutX="13.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#editProfileClicked" text="Profile" />
-                <Button layoutX="139.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#editTimeClicked" prefHeight="25.0" prefWidth="49.0" text="Time" />
-                <GridPane hgap="2.0" layoutX="3.0" layoutY="2.0" prefHeight="125.0" prefWidth="186.0" style="-fx-background-color: #CDCDCD;" vgap="2.0">
+                <Button layoutX="12.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#editProfileClicked" text="Profile" />
+                <Button layoutX="138.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#editTimeClicked" prefHeight="25.0" prefWidth="49.0" text="Time" />
+                <GridPane hgap="2.0" layoutX="3.0" layoutY="2.0" prefHeight="164.0" prefWidth="186.0" style="-fx-background-color: #CDCDCD;" vgap="2.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="78.79999389648438" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="95.60000610351564" />
@@ -236,6 +236,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
@@ -250,7 +252,11 @@
                <Label text="Speed:" GridPane.rowIndex="4" />
                <Label fx:id="simulationSpeedLabel" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                <Label text="Away mode" GridPane.rowIndex="5" />
-               <Label fx:id="awayModeLabel" prefHeight="17.0" prefWidth="104.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               <Label fx:id="awayModeLabel" prefHeight="30.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               <Label text="Month:" GridPane.rowIndex="6" />
+               <Label fx:id="monthLabel" text="January" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               <Label text="Season:" GridPane.rowIndex="7" />
+               <Label fx:id="seasonLabel" text="Winter" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
@@ -258,9 +264,10 @@
                 <Button fx:id="startStopButton" layoutX="38.0" layoutY="381.0" mnemonicParsing="false" onMouseClicked="#startStopSimulator" prefHeight="25.0" prefWidth="118.0" text="Start Simulator" />
                 <Button layoutX="38.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#pauseSimulation" prefHeight="25.0" prefWidth="119.0" text="Pause Simulator" />
                 <Button layoutX="38.0" layoutY="462.0" mnemonicParsing="false" onMouseClicked="#resumeSimulation" prefHeight="25.0" prefWidth="120.0" text="Resume Simulator" />
-                <Button fx:id="tempButton" layoutX="73.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#editOutsideTemperatureClicked" text="Temp" />
-                <Button layoutX="7.0" layoutY="163.0" mnemonicParsing="false" onMouseClicked="#editLocationClicked" text="Location" />
-            <Button layoutX="87.0" layoutY="163.0" mnemonicParsing="false" onMouseClicked="#configureTimeClicked" text="Configure Lights" />
+                <Button fx:id="tempButton" layoutX="72.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#editOutsideTemperatureClicked" text="Temp" />
+                <Button layoutX="6.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#editLocationClicked" text="Location" />
+            <Button layoutX="86.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#configureTimeClicked" text="Configure Lights" />
+            <Button fx:id="monthButton" onMouseClicked="#editMonthClicked" layoutX="12.0" layoutY="232.0" mnemonicParsing="false" text="Month" />
             </AnchorPane>
         </TitledPane>
     </children>
