@@ -351,7 +351,13 @@ public class HomeController extends Label implements Initializable {
 
     @FXML
     public void openItemButtonClicked(MouseEvent mouseEvent) throws IOException {
-        //Permission Validation. If active user does not have permission, an alert box will appear.
+    	if ( ActiveUser.getActiveUserAwayMode()==true ) {
+
+   		 AlertManager.AwayModeRestrictionAlert();
+
+   	}
+   	else
+    	//Permission Validation. If active user does not have permission, an alert box will appear.
         if (PermissionChecker.checkCorePerms(roomList.getSelectionModel().getSelectedItem())) {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
