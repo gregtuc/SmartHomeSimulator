@@ -1,0 +1,8 @@
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[Dashboard] Aymen has started the simulator.
+[SHC] All lights turned off in the house
+[SHC] All windows in the house locked.
+[SHC] All lights turned off in the house
+[SHP] Aymen activated away mode.
