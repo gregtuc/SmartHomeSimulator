@@ -39,6 +39,7 @@ public class HomeController extends Label implements Initializable {
     ClockController clockController = new ClockController();
     OutsideTemperatureController OutsideTemperatureController = new OutsideTemperatureController();
     LocationController locationController = new LocationController();
+    MonthController monthController = new MonthController();
 
     //Labels found on home.fxml.
     public Label timeLabel = new Label();
@@ -47,6 +48,8 @@ public class HomeController extends Label implements Initializable {
     public Label locationLabel = new Label();
     public Label awayModeLabel = new Label();
     public Label simulationSpeedLabel = new Label();
+    public Label monthLabel = new Label();
+    public Label seasonLabel = new Label();
 
     //Buttons found on home.fxml.
     public Button startStopButton = new Button();
@@ -178,9 +181,17 @@ public class HomeController extends Label implements Initializable {
                     if (ProfileController.profileList.size() < oldNumberOfProfiles) {
                         oldNumberOfProfiles = ProfileController.profileList.size();
                     }
-                    //Change outside temperature if the name has been changed.
+                    //Change month if the month has been changed.
+                    if (!monthController.getMonth().equals(monthLabel.getText())) {
+                        monthLabel.setText(monthController.getMonth());
+                    }
+                    //Change outside temperature if the value has been changed.
                     if (!OutsideTemperatureController.getOutsideTemperature().equals(outsideTemperatureLabel.getText())) {
                         outsideTemperatureLabel.setText(OutsideTemperatureController.getOutsideTemperature());
+                    }
+                    //Change season if the season has been changed.
+                    if (!monthController.getSeason().equals(seasonLabel.getText())) {
+                        seasonLabel.setText(monthController.getSeason());
                     }
                     //Change the speed if the name has been changed.
                     if (!clockController.getSimulationSpeed().equals(simulationSpeedLabel.getText())) {
@@ -305,6 +316,15 @@ public class HomeController extends Label implements Initializable {
             ioException.printStackTrace();
         }
         Main.showEditOutsideTemperature();
+    }
+    public void editMonthClicked(MouseEvent mouseEvent) throws IOException {
+        //Logging.
+        try {
+            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + " has pressed the edit month button.");
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        Main.showEditMonth();
     }
 
     @FXML

@@ -55,6 +55,8 @@ public class Main extends Application{
      * The Room Temperature stage.
      */
     static Stage editRoomTemperatureStage;
+    
+    static Stage editMonthStage;
 
     // REFACTORING
     public static Room roomSelectedFromLayout = new Room();
@@ -97,6 +99,26 @@ public class Main extends Application{
     public static void closeEditTime(){
         try {
             Main.editTimeStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void showEditMonth(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Month.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editMonthStage = new Stage();
+            Main.editMonthStage = editMonthStage;
+            editMonthStage.setScene(new Scene(root));
+            editMonthStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    	
+    }
+    public static void closeEditMonth(){
+        try {
+            Main.editMonthStage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
