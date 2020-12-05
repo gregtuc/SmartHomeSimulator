@@ -209,3 +209,52 @@
 [Dashboard] Adrien has started the simulator.
 [SHC] Window unlocked in Kitchen
 [Core] Adrien has set Windows in Kitchen to open/on.
+[Dashboard]  has started the simulator.
+[SHP]  failed to edit away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called aymen.txt.
+[SHC] New profile created called aymen and it has been signed in.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] aymen activated away mode.
+[SHH] aymen is editing the Dining Room's temperature.
+[SHH] aymen has changed the temperature of the Dining Room from 23.5°C to 123.0°C.
+[SHC] Window unlocked in Kitchen
+[Core] aymen has set Windows in Kitchen to open/on.
+[Dashboard] aymen has stopped the simulator.
+[Dashboard]  has started the simulator.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Aymen activated away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[Dashboard] Aymen has started the simulator.
+[SHC] Light turned on in Kitchen
+[Core] Aymen has set Lights in Kitchen to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Aymen activated away mode.
+[SHP] Aymen deactivated away mode.
+[SHC] Light turned on in Dining Room
+[Core] Aymen has set Lights in Dining Room to open/on.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Aymen activated away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[Dashboard] Aymen has started the simulator.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Aymen activated away mode.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[Dashboard] Aymen has started the simulator.
+[SHC] All windows in the house locked.
+[SHC] All doors locked in the house
+[SHP] Aymen activated away mode.

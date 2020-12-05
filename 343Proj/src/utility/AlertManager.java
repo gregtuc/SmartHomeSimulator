@@ -27,4 +27,13 @@ public class AlertManager {
         Optional<ButtonType> result = alert.showAndWait();
     }
 
+    
+    
+    public static void AwayModeRestrictionAlert() {
+    	Alert alert = new Alert(Alert.AlertType.WARNING,
+                "You cannot open items when Away Mode is activated",
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+    }
 }

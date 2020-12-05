@@ -8,7 +8,11 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
+
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -319,6 +323,16 @@ public class HomeController extends Label implements Initializable {
     @FXML
     public void openItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
+    	
+    	if ( ActiveUser.getActiveUserAwayMode()==true ) {
+//    		Alert alert = new Alert(Alert.AlertType.WARNING);
+//    		alert.setTitle("Alert");
+//    	    ButtonType type = new ButtonType("Ok", ButtonData.OK_DONE);
+//    	    alert.setContentText("You cannot open items when Away Mode is activated");
+    		 AlertManager.AwayModeRestrictionAlert();
+
+    	}
+    	else
         if(PermissionChecker.checkCorePerms(roomList.getSelectionModel().getSelectedItem())){
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
