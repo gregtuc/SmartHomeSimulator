@@ -35,6 +35,18 @@ public class Zone {
         this.thirdPeriodTemp = thirdPeriodTemp;
     }
 
+    public double getFirstPeriodTemp() {
+        return firstPeriodTemp;
+    }
+
+    public double getSecondPeriodTemp() {
+        return secondPeriodTemp;
+    }
+
+    public double getThirdPeriodTemp() {
+        return thirdPeriodTemp;
+    }
+
     public String getZoneName() {
         return zoneName;
     }

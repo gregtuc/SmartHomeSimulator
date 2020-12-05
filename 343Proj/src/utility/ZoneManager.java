@@ -62,6 +62,7 @@ public class ZoneManager {
         }
     }
 
+    //Remove a room from a Zone
     public static void removeRoomFromZone(String zoneName, String roomName) {
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
@@ -71,6 +72,7 @@ public class ZoneManager {
         }
     }
 
+    //Get an Arraylist containing the names of all rooms in a specified zone.
     public static ArrayList<String> getRoomsInZone(String zoneName){
         ArrayList<String> rooms = new ArrayList<String>();
         for (Zone zone : zones) {
@@ -81,6 +83,34 @@ public class ZoneManager {
         return rooms;
     }
 
+    //Get the temperatures for the periods.
+    public static ArrayList<Double> zoneTemperatures(String zoneName){
+        ArrayList<Double> temperatures = new ArrayList<Double>();
+        for (Zone zone : zones) {
+            if (zone.getZoneName().equals(zoneName)) {
+                temperatures.add(zone.getFirstPeriodTemp());
+                temperatures.add(zone.getSecondPeriodTemp());
+                temperatures.add(zone.getThirdPeriodTemp());
+                return temperatures;
+            }
+        }
+        return temperatures;
+    }
+
+    //Extra Boolean method to check if a zone contains a room. Just in case it is needed for some
+    //unique situation.
+    public static Boolean checkRoomInZone(String zoneName, String roomName){
+        for (Zone zone : zones) {
+            if (zone.getZoneName().equals(zoneName)) {
+                if(zone.getRooms().contains(roomName)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //Get a list of all zones
     public static ArrayList<Zone> getZones() {
         return zones;
     }
