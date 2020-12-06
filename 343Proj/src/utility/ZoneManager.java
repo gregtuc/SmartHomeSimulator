@@ -31,7 +31,7 @@ public class ZoneManager {
     // Create a new zone and add it to the static list.
     public static void createZone(String zoneName, String zoneType) throws IOException {
         zones.add(new Zone(zoneName, zoneType));
-        CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created the " + zoneName + " Zone.");
+        //CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created the " + zoneName + " Zone.");
     }
 
     // When deleting a zone, remove it from the zones arraylist, and transfer all its rooms to the Default zone.

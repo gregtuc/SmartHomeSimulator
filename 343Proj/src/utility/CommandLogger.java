@@ -32,7 +32,6 @@ public class CommandLogger implements Observer {
     }
 
     public static void logCommand(String sender, String message) throws IOException {
-        System.out.println(message);
         //Creating log message.
         String output = "[" + sender + "] " + message;
         //Write to output file.

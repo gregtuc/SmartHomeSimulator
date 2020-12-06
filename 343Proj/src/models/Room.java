@@ -14,6 +14,7 @@ public class Room {
     public int gridCol = -1; // The column coordinate of the room in the grid.
     public int gridRow = -1; // The row coordinate of the room in the grid.
     public Boolean targetTempReached = false;
+    public Boolean manualOverrideActivated = false;
 
     //Room door variables
     public Door door;
@@ -139,5 +140,13 @@ public class Room {
 
     public void setPersonIsHere(Boolean personIsHere) throws IOException {
         this.personIsHere = personIsHere;
+    }
+
+    public Boolean getManualOverrideActivated() {
+        return manualOverrideActivated;
+    }
+
+    public void setManualOverrideActivated(Boolean manualOverrideActivated) {
+        this.manualOverrideActivated = manualOverrideActivated;
     }
 }

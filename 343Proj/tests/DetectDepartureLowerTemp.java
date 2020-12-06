@@ -24,7 +24,7 @@ public class DetectDepartureLowerTemp {
         }
 
         //Checking if the temp was changed.
-        System.out.println("Testing to see if the temperature was changed when away mode was activated...");
+        System.out.print("Testing to see if the temperature was changed when away mode was activated...");
         Assertions.assertEquals(15.00, room.getInitialTemp());
     }
 }

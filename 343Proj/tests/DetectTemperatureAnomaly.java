@@ -23,7 +23,7 @@ public class DetectTemperatureAnomaly {
         }
 
         //Test
-        System.out.println("Checking that temperature anomalies can be detected...");
+        System.out.print("Checking that temperature anomalies can be detected...");
         Assertions.assertTrue(userNotified);
 
     }

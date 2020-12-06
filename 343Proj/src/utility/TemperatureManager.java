@@ -55,6 +55,7 @@ public class TemperatureManager implements TemperatureObserver {
             for (int row = 0; row < 4; row++) {
                 for (int col = 0; col < 4; col++) {
                     Room room = LayoutParser.grid.get(row).get(col);
+                    room.setManualOverrideActivated(true);
                     if (roomName.equals(room.roomName)) {
                         temperatureTimeline = new Timeline(
                                 // Every second, check if the current room temp is smaller/greater than the target temp.
@@ -164,14 +165,16 @@ public class TemperatureManager implements TemperatureObserver {
                             for (Room matchingRoom : matchingRooms) {
                                 // If the target temperature hasn't been reached, change temp by 0.1 every second until reached.
                                 if (!matchingRoom.targetTempReached) {
-                                    if (targetTemperature > matchingRoom.getInitialTemp()) {
-                                        String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.1));
-                                        matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    } else if (targetTemperature < matchingRoom.getInitialTemp()) {
-                                        String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.1));
-                                        matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    } else if (targetTemperature == matchingRoom.getInitialTemp()) {
-                                        matchingRoom.targetTempReached = true;
+                                    if(!matchingRoom.getManualOverrideActivated()){
+                                        if (targetTemperature > matchingRoom.getInitialTemp()) {
+                                            String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.1));
+                                            matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                        } else if (targetTemperature < matchingRoom.getInitialTemp()) {
+                                            String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.1));
+                                            matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                        } else if (targetTemperature == matchingRoom.getInitialTemp()) {
+                                            matchingRoom.targetTempReached = true;
+                                        }
                                     }
                                 }
                                 // If the target temp has been reached, allow for gradual decay of current temp by 0.05 until threshold, then toggle targetTempReached.
