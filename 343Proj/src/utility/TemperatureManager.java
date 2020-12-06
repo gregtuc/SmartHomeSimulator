@@ -85,13 +85,10 @@ public class TemperatureManager implements TemperatureObserver {
             }
         }
         else if (simulator.equals("Paused") || status.contentEquals("close")){
-            // This doesn't work as intended...
             temperatureTimeline.pause();
         } else if (simulator.equals("Resume")) {
-            // This doesn't work as intended...
             temperatureTimeline.play();
         } else if (simulator.equals("Start Simulator")) {
-            // This doesn't work as intended...
             for (int row = 0; row < 4; row++) {
                 for (int col = 0; col < 4; col++) {
                     Room room = LayoutParser.grid.get(row).get(col);
@@ -147,45 +144,64 @@ public class TemperatureManager implements TemperatureObserver {
             }
         }
 
-        //Begin a new Timeline that will modify the temperature of the room every second according to the model given in the instructions.
-        zoneTemperatureTimeline = new Timeline(
-                //Check if the current room temp is smaller/greater than the target temp every second.
-                //Adjust upwards or downwards by 0.1 degrees celsius every second until they're both equal.
-                new KeyFrame(Duration.seconds(1), e -> {
-                    for (Room matchingRoom : matchingRooms) {
-                        // If the target temperature hasn't been reached, change temp by 0.1 every second until reached.
-                        if (!matchingRoom.targetTempReached) {
-                            if (targetTemperature > matchingRoom.getInitialTemp()) {
-                                String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.1));
-                                matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+        if (simulator.equals("Stop Simulator")) {
+            //Begin a new Timeline that will modify the temperature of the room every second according to the model given in the instructions.
+            zoneTemperatureTimeline = new Timeline(
+                    //Check if the current room temp is smaller/greater than the target temp every second.
+                    //Adjust upwards or downwards by 0.1 degrees celsius every second until they're both equal.
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        for (Room matchingRoom : matchingRooms) {
+                            // If the target temperature hasn't been reached, change temp by 0.1 every second until reached.
+                            if (!matchingRoom.targetTempReached) {
+                                if (targetTemperature > matchingRoom.getInitialTemp()) {
+                                    String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.1));
+                                    matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                } else if (targetTemperature < matchingRoom.getInitialTemp()) {
+                                    String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.1));
+                                    matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                } else if (targetTemperature == matchingRoom.getInitialTemp()) {
+                                    matchingRoom.targetTempReached = true;
+                                }
                             }
-                            else if (targetTemperature < matchingRoom.getInitialTemp()) {
-                                String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.1));
-                                matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                            }
-                            else if (targetTemperature == matchingRoom.getInitialTemp()) {
-                                matchingRoom.targetTempReached = true;
+                            // If the target temp has been reached, allow for gradual decay of current temp by 0.05 until threshold, then toggle targetTempReached.
+                            else {
+                                // If the outside of the house is hotter than the inside of the room:
+                                if (((OutsideTemperature.getTemperature() - matchingRoom.getInitialTemp())) > 0) {
+                                    String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.05));
+                                    matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                }
+                                // If the outside of the house is colder than the inside of the room:
+                                else if (((OutsideTemperature.getTemperature() - matchingRoom.getInitialTemp())) < 0) {
+                                    String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.05));
+                                    matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
+                                }
+                                if ((Math.abs(targetTemperature - matchingRoom.getInitialTemp()) >= 0.3)) {
+                                    matchingRoom.targetTempReached = false;
+                                }
                             }
                         }
-                        // If the target temp has been reached, allow for gradual decay of current temp by 0.05 until threshold, then toggle targetTempReached.
-                        else {
-                            // If the outside of the house is hotter than the inside of the room:
-                            if (((OutsideTemperature.getTemperature() - matchingRoom.getInitialTemp())) > 0 ) {
-                                String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() + 0.05));
-                                matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                            }
-                            // If the outside of the house is colder than the inside of the room:
-                            else if (((OutsideTemperature.getTemperature() - matchingRoom.getInitialTemp())) < 0 ) {
-                                String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp() - 0.05));
-                                matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                            }
-                            if ((Math.abs(targetTemperature - matchingRoom.getInitialTemp()) >= 0.3)) {
-                                matchingRoom.targetTempReached = false;
-                            }
-                        }
-                    }
-                })
-        );
+                    })
+            );
+            //Run the timeline indefinitely or until paused/stopped manually.
+            zoneTemperatureTimeline.setCycleCount(Animation.INDEFINITE);
+            //Play the timeline.
+            zoneTemperatureTimeline.play();
+        }
+        else if (simulator.equals("Paused")){
+            zoneTemperatureTimeline.pause();
+        }
+        else if (simulator.equals("Resume")) {
+            zoneTemperatureTimeline.play();
+        }
+        else if (simulator.equals("Start Simulator")) {
+            // Delete all non-default zones.
+            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                if (!ZoneManager.getZones().get(i).getZoneName().equals("Default")) {
+                    ZoneManager.deleteZone(ZoneManager.getZones().get(i).getZoneName());
+                }
+            }
+            zoneTemperatureTimeline.stop();
+        }
     }
 
     @Override
