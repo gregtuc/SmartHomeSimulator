@@ -7,8 +7,8 @@ public class AwayModeTemperature {
      * Declaring private temperature attributes.
      * Values are preset to avoid any calls when the values are null
      */
-	private static double summerTemperature = 10.0;
-	private static double winterTemperature = 22.0;
+	private static double summerTemperature = 22.0;
+	private static double winterTemperature = 10.0;
     /**
      * Instantiates a new temperature.
      */
