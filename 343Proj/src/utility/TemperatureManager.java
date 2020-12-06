@@ -83,9 +83,7 @@ public class TemperatureManager implements TemperatureObserver {
                                     } else if (targetTemperature < room.getInitialTemp()) {
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()-0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    }
-                                    // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
-                                    checkFreezingTemperature(room);
+                                    }                              
                                   //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
                                     checkRoomSummerTemp(room);
                                 })
@@ -137,7 +135,7 @@ public class TemperatureManager implements TemperatureObserver {
                 targetTemperature = zone.getThirdPeriodTemp();
                 break;
             }
-            default: targetTemperature = 0.0;
+            default: targetTemperature = OutsideTemperature.getTemperature();
         }
 
         //Get an ArrayList containing all rooms in the specified zone.
@@ -176,6 +174,10 @@ public class TemperatureManager implements TemperatureObserver {
                                     matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                 } else if (targetTemperature == matchingRoom.getInitialTemp()) {
                                     matchingRoom.targetTempReached = true;
+                                }
+                                // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
+                                if(matchingRoom.getInitialTemp() <= 0) {                            
+                                	checkFreezingTemperature(matchingRoom);
                                 }
                             }
                             // If the target temp has been reached, allow for gradual decay of current temp by 0.05 until threshold, then toggle targetTempReached.

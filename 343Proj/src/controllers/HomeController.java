@@ -276,6 +276,9 @@ public class HomeController extends Label implements Initializable {
         if (startStopButton.getText().equals("Start Simulator")) {
 
             startStopButton.setText("Stop Simulator");
+            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),0, startStopButton.getText());
+            }
             clockController.beginTime(timeLabel);
             //Logging.
             try {
@@ -307,6 +310,9 @@ public class HomeController extends Label implements Initializable {
     public void pauseSimulation(MouseEvent mouseEvent) throws IOException {
         //Pause Time only if the simulation has started.
         if (!timeLabel.getText().equals("HH:MM:SS")) {
+        	for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),0, "Paused");
+            }
             clockController.pauseTime();
             //temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
             // TODO: Freeze the change in temperature if a window is open.
@@ -327,6 +333,9 @@ public class HomeController extends Label implements Initializable {
     public void resumeSimulation(MouseEvent mouseEvent) throws IOException {
         //Resume Time only if the simulation has started.
         if (!timeLabel.getText().equals("HH:MM:SS")) {
+        	for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),0, "Resume");
+            }
             clockController.resumeTime();
             //temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
             //Logging.
