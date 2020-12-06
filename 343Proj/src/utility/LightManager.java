@@ -15,11 +15,12 @@ import java.io.IOException;
 
 public class LightManager implements Observer {
     private static volatile LightManager instance = null;
+
     //Only a singular instantiation of this class will be allowed.
     //This method will return that instance.
     public static LightManager getInstance() {
         if (instance == null) {
-            synchronized(LightManager.class) {
+            synchronized (LightManager.class) {
                 if (instance == null) {
                     instance = new LightManager();
                 }
@@ -27,8 +28,11 @@ public class LightManager implements Observer {
         }
         return instance;
     }
-    private LightManager() {}
-    public static void initialize(){
+
+    private LightManager() {
+    }
+
+    public static void initialize() {
         HomeController.alarmSystem.subscribe(LightManager.getInstance());
     }
 
@@ -46,7 +50,7 @@ public class LightManager implements Observer {
                 content.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         }
-        CommandLogger.logCommand("SHC","All lights turned on in the house");
+        CommandLogger.logCommand("SHC", "All lights turned on in the house");
     }
 
     //Method for turning on a specific light.
@@ -58,8 +62,8 @@ public class LightManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 //Turn the lights on in the room.
-                if(location.equals(room.roomName)){
-                    CommandLogger.logCommand("SHC","Light turned on in "+room.roomName);
+                if (location.equals(room.roomName)) {
+                    CommandLogger.logCommand("SHC", "Light turned on in " + room.roomName);
                     room.lights = true;
                     //Change the color on the house representation.
                     Region content = (Region) UniversalElements.getPanes()[col][row].lookup(".content");
@@ -83,7 +87,7 @@ public class LightManager implements Observer {
                 content.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         }
-        CommandLogger.logCommand("SHC","All lights turned off in the house");
+        CommandLogger.logCommand("SHC", "All lights turned off in the house");
     }
 
     //Method for turning off a specific light.
@@ -95,8 +99,8 @@ public class LightManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 //Turn the lights off in the room.
-                if(location.equals(room.roomName)){
-                    CommandLogger.logCommand("SHC","Light turned off in "+room.roomName);
+                if (location.equals(room.roomName)) {
+                    CommandLogger.logCommand("SHC", "Light turned off in " + room.roomName);
                     room.lights = false;
                     //Change the color on the house representation.
                     Region content = (Region) UniversalElements.getPanes()[col][row].lookup(".content");
@@ -114,8 +118,8 @@ public class LightManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 //Change the light setting attributes for the room object.
-                if(location.equals(room.roomName)){
-                    CommandLogger.logCommand("SHC","Lights configured. Lights on Time for "+room.roomName+" is "+lightsOnTime+" and lights off time is "+lightsOffTime+".");
+                if (location.equals(room.roomName)) {
+                    CommandLogger.logCommand("SHC", "Lights configured. Lights on Time for " + room.roomName + " is " + lightsOnTime + " and lights off time is " + lightsOffTime + ".");
                     //Change the color on the house representation.
                     room.setLightsOffTime(lightsOffTime);
                     room.setLightsOnTime(lightsOnTime);

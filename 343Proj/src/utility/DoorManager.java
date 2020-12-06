@@ -57,8 +57,8 @@ public class DoorManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.getDoorExists() == true){
-                	room.setDoorStatus(true);
+                if (room.getDoorExists()) {
+                    room.setDoorStatus(true);
                 }
             }
             CommandLogger.logCommand("SHC", "All doors in the house unlocked.");
@@ -72,11 +72,11 @@ public class DoorManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(room.getDoorExists() == true){
-                	room.setDoorStatus(false);
+                if (room.getDoorExists()) {
+                    room.setDoorStatus(false);
                 }
             }
-                
+
         }
     }
 
@@ -87,16 +87,15 @@ public class DoorManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
-                	if(room.getDoorExists() == true){
+                if (location.equals(room.roomName)) {
+                    if (room.getDoorExists()) {
                         room.setDoorStatus(true);
-                        CommandLogger.logCommand("SHC","Door unlocked in "+room.roomName);
+                        CommandLogger.logCommand("SHC", "Door unlocked in " + room.roomName);
                         AlertManager.successfulPermissionsAlert();
                         break;
-                	}
-                	else {
-                		AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
-                	}
+                    } else {
+                        AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
+                    }
                 }
             }
         }
@@ -109,16 +108,15 @@ public class DoorManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
-                	if(room.getDoorExists() == true){
+                if (location.equals(room.roomName)) {
+                    if (room.getDoorExists()) {
                         room.setDoorStatus(false);
-                        CommandLogger.logCommand("SHC","Door locked in "+room.roomName);
+                        CommandLogger.logCommand("SHC", "Door locked in " + room.roomName);
                         AlertManager.successfulPermissionsAlert();
                         break;
-                	}
-                	else {
-                		AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
-                	}
+                    } else {
+                        AlertManager.ItemDoesNotExist(room.getRoomName(), "Door");
+                    }
                 }
             }
         }

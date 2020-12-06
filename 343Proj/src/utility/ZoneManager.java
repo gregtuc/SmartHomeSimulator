@@ -31,7 +31,7 @@ public class ZoneManager {
     // Create a new zone and add it to the static list.
     public static void createZone(String zoneName, String zoneType) throws IOException {
         zones.add(new Zone(zoneName, zoneType));
-        CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername()+" has created the "+ zoneName +" Zone.");
+        //CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created the " + zoneName + " Zone.");
     }
 
     // When deleting a zone, remove it from the zones arraylist, and transfer all its rooms to the Default zone.
@@ -51,7 +51,7 @@ public class ZoneManager {
         }
     }
 
-    public static void setZoneTemperatures(String zoneName, double periodOneTemp, double periodTwoTemp, double periodThreeTemp) throws IOException{
+    public static void setZoneTemperatures(String zoneName, double periodOneTemp, double periodTwoTemp, double periodThreeTemp) throws IOException {
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
                 zone.setFirstPeriodTemp(periodOneTemp);
@@ -105,7 +105,7 @@ public class ZoneManager {
     }
 
     //Get the temperatures for the periods.
-    public static ArrayList<Double> zoneTemperatures(String zoneName){
+    public static ArrayList<Double> zoneTemperatures(String zoneName) {
         ArrayList<Double> temperatures = new ArrayList<Double>();
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
@@ -123,7 +123,7 @@ public class ZoneManager {
     public static Boolean checkRoomInZone(String zoneName, String roomName) {
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
-                if(zone.getRooms().contains(roomName)){
+                if (zone.getRooms().contains(roomName)) {
                     return true;
                 }
             }
@@ -140,7 +140,7 @@ public class ZoneManager {
         return "";
     }
 
-    public static Zone getZone(String zoneName){
+    public static Zone getZone(String zoneName) {
         for (Zone zone : zones) {
             if (zone.getZoneName().equals(zoneName)) {
                 return zone;

@@ -21,7 +21,7 @@ public class StopHVACOpenWindow {
         exteriorTemp.setTemperature(20);
 
         //Test
-        System.out.println("Checking that HVAC is turned off & windows are open if colder outside than inside (to be completed)...");
+        System.out.print("Checking that HVAC is turned off & windows are open if colder outside than inside (to be completed)...");
         //assertEquals(25.00, room.getInitialTemp());
     }
 }

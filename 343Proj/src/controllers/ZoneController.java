@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ZoneController implements Initializable {
@@ -70,7 +71,7 @@ public class ZoneController implements Initializable {
 
     @FXML
     public void transferRoom(MouseEvent mouseEvent) throws IOException {
-        if (zonesInHomeList.getSelectionModel().getSelectedItem()!=null && roomsInZoneList.getSelectionModel().getSelectedItem()!=null) {
+        if (zonesInHomeList.getSelectionModel().getSelectedItem() != null && roomsInZoneList.getSelectionModel().getSelectedItem() != null) {
             ZoneManager.transferRoomBetweenZones(
                     UniversalElements.getSelectedZone(), // The zone which is being modified.
                     zonesInHomeList.getSelectionModel().getSelectedItem(), // The zone which the room will be transferred to.
@@ -78,7 +79,7 @@ public class ZoneController implements Initializable {
             if (!HomeController.timeline.currentRateProperty().toString().equals("0")) {
                 temperatureWatcher.triggerAlarm("ZONE",
                         zonesInHomeList.getSelectionModel().getSelectedItem(), // The zone which the room will be transferred to.
-                        ZoneManager.getZone(zonesInHomeList.getSelectionModel().getSelectedItem()).getCurrentPeriod(),
+                        Objects.requireNonNull(ZoneManager.getZone(zonesInHomeList.getSelectionModel().getSelectedItem())).getCurrentPeriod(),
                         "Stop Simulator");
             }
             roomsInZoneList.getItems().clear();
