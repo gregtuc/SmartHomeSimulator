@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 import Main.Main;
 import models.OutsideTemperature;
+import utility.ZoneManager;
 
 /**
  * The type OutsideTemperature controller.
@@ -32,8 +33,13 @@ public class OutsideTemperatureController extends Label{
      * @throws IOException the io exception
      **/
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
-        //Set the temperature variable to the inputted value.
+        // Set the temperature variable to the inputted value.
     	outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
+    	// Set the Default zone temperatures for all 3 periods to the outside temperature.
+        ZoneManager.setZoneTemperatures("Default",
+                Double.parseDouble(outsideTemperatureInput.getText()), // Period 1 temperature.
+                Double.parseDouble(outsideTemperatureInput.getText()), // Period 2 temperature.
+                Double.parseDouble(outsideTemperatureInput.getText())); // Period 3 temperature.
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }

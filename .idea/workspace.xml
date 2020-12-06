@@ -23,18 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/AvoidOpeningWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/ChangeZoneTemperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/CreateZone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/DetectDepartureLowerTemp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/DetectTemperatureAnomaly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/DisplayCurrentTemperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/343Proj/tests/StopHVACOpenWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SmartHomeSimulator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Zone.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Zone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/security/WindowObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/security/TemperatureObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/security/WindowWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/security/TemperatureWatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/views/Zone.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/views/Zone.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/tests/ChangeZoneTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/tests/ChangeZoneTemperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/tests/CreateZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/tests/CreateZone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +51,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -71,16 +75,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/343Proj/tests/com/simulator" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/343Proj/javafx-sdk-15/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -102,15 +106,7 @@
       <recent name="C:\Users\Greg\Desktop\SmartHomeSimulator" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in SmartHomeSimulator">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="SmartHomeSimulator" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Greg\Desktop\simulator-packages\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -118,6 +114,14 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="SmartHomeSimulator" />
+      <option name="VM_PARAMETERS" value="--module-path \Users\akama\Documents\GitHub\SmartHomeSimulator\343Proj\javafx-sdk-15\lib --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,6 +170,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All in SmartHomeSimulator" />
+      <item itemvalue="JUnit.ChangeZoneTemperature" />
+      <item itemvalue="JUnit.CreateZone" />
+      <item itemvalue="JUnit.DetectDepartureLowerTemp" />
+      <item itemvalue="JUnit.DisplayCurrentTemperature" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in SmartHomeSimulator" />
@@ -222,12 +234,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1603051195604" />
-    <state x="570" y="151" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607206536969">
+    <state x="801" y="192" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607215443841">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206536969" />
     <state x="504" y="182" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604326186085" />
-    <state x="570" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606851765851" />
+    <state x="801" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607215443841" />
     <state x="989" y="490" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607208410302">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -266,13 +278,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1003" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604331093955" />
-    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1607208473791">
+    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1607215483908">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="556" y="168" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208473791" />
     <state x="278" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603052582434" />
     <state x="417" y="125" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604328298452" />
-    <state width="2517" height="872" key="GridCell.Tab.0.bottom" timestamp="1607211137283">
+    <state x="556" y="168" key="FileChooserDialogImpl/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607215483908" />
+    <state width="1694" height="176" key="GridCell.Tab.0.bottom" timestamp="1607228492995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="872" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
@@ -280,9 +293,9 @@
     <state width="1577" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
-    <state width="1634" height="225" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
+    <state width="1694" height="176" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607228492995" />
     <state width="2517" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="872" key="GridCell.Tab.0.center" timestamp="1607211137283">
+    <state width="1694" height="176" key="GridCell.Tab.0.center" timestamp="1607228492995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="872" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
@@ -290,9 +303,9 @@
     <state width="1577" height="407" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
-    <state width="1634" height="225" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
+    <state width="1694" height="176" key="GridCell.Tab.0.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607228492995" />
     <state width="2517" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="872" key="GridCell.Tab.0.left" timestamp="1607211137282">
+    <state width="1694" height="176" key="GridCell.Tab.0.left" timestamp="1607228492995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="872" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137282" />
@@ -300,9 +313,9 @@
     <state width="1577" height="407" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
-    <state width="1634" height="225" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
+    <state width="1694" height="176" key="GridCell.Tab.0.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607228492995" />
     <state width="2517" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="2517" height="872" key="GridCell.Tab.0.right" timestamp="1607211137283">
+    <state width="1694" height="176" key="GridCell.Tab.0.right" timestamp="1607228492995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="872" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607211137283" />
@@ -310,42 +323,44 @@
     <state width="1577" height="407" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512143676" />
     <state width="1877" height="86" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604603775027" />
     <state width="2517" height="571" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604947295985" />
-    <state width="1634" height="225" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606967587744" />
+    <state width="1694" height="176" key="GridCell.Tab.0.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607228492995" />
     <state width="2517" height="276" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604531358702" />
-    <state width="1634" height="238" key="GridCell.Tab.1.bottom" timestamp="1606964136358">
+    <state width="1633" height="801" key="GridCell.Tab.1.bottom" timestamp="1607222765338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="1634" height="238" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136358" />
-    <state width="1634" height="238" key="GridCell.Tab.1.center" timestamp="1606964136357">
+    <state width="1633" height="801" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607222765338" />
+    <state width="1633" height="801" key="GridCell.Tab.1.center" timestamp="1607222765338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="1634" height="238" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
-    <state width="1634" height="238" key="GridCell.Tab.1.left" timestamp="1606964136357">
+    <state width="1633" height="801" key="GridCell.Tab.1.center/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607222765338" />
+    <state width="1633" height="801" key="GridCell.Tab.1.left" timestamp="1607222765338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157498" />
     <state width="2517" height="484" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="1634" height="238" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
-    <state width="1634" height="238" key="GridCell.Tab.1.right" timestamp="1606964136357">
+    <state width="1633" height="801" key="GridCell.Tab.1.left/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607222765338" />
+    <state width="1633" height="801" key="GridCell.Tab.1.right" timestamp="1607222765338">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604344157499" />
     <state width="2517" height="484" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604945528553" />
-    <state width="1634" height="238" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606964136357" />
-    <state x="685" y="223" key="SettingsEditor" timestamp="1607206448217">
+    <state width="1633" height="801" key="GridCell.Tab.1.right/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607222765338" />
+    <state x="1084" y="236" key="SettingsEditor" timestamp="1607215492736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="685" y="223" key="SettingsEditor/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607206448217" />
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603052494952" />
     <state x="514" y="166" key="SettingsEditor/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604512063613" />
-    <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607208570172">
+    <state x="1084" y="236" key="SettingsEditor/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607215492736" />
+    <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607215535472">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1607208570172" />
+    <state x="984" y="588" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607215535472" />
     <state x="1010" y="395" key="extract.method.dialog" timestamp="1607106153959">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -355,11 +370,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="983" y="453" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1604940190498" />
-    <state x="1119" y="268" width="896" height="913" key="search.everywhere.popup" timestamp="1606854483377">
+    <state x="806" y="288" width="896" height="913" key="search.everywhere.popup" timestamp="1607219138579">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604334131486" />
-    <state x="1119" y="268" width="896" height="913" key="search.everywhere.popup/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1606854483377" />
+    <state x="806" y="288" width="896" height="913" key="search.everywhere.popup/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607219138579" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jgrapht$All_in_SmartHomeSimulator__1_.ic" NAME="All in SmartHomeSimulator (1) Coverage Results" MODIFIED="1603052563090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

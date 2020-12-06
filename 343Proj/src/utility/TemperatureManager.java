@@ -8,13 +8,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 import models.Room;
-import security.WindowObserver;
+import security.TemperatureObserver;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class TemperatureManager implements WindowObserver {
+public class TemperatureManager implements TemperatureObserver {
     private static volatile TemperatureManager instance = null;
 
     public static TemperatureManager getInstance() {
@@ -34,7 +34,7 @@ public class TemperatureManager implements WindowObserver {
     public static Timeline temperatureTimeline;
 
     public static void initialize() {
-        HomeController.windowWatcher.subscribe(TemperatureManager.getInstance());
+        HomeController.temperatureWatcher.subscribe(TemperatureManager.getInstance());
     }
     public static void checkFreezingTemperature(Room room) {
     	if(room.getInitialTemp() <= 0.0) {
@@ -63,10 +63,10 @@ public class TemperatureManager implements WindowObserver {
                                     System.out.println(room.getInitialTemp());
                                     if (targetTemperature > room.getInitialTemp()) {
                                         //room.setInitialTemp(room.getInitialTemp() + 0.1);
-                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()+0.1));
+                                        String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()+0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     } else if (targetTemperature < room.getInitialTemp()) {
-                                        String formattedIncrementedTemperature = String.format("%.1f", (room.getInitialTemp()-0.1));
+                                        String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp()-0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }
                                     // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
@@ -135,9 +135,11 @@ public class TemperatureManager implements WindowObserver {
                 new KeyFrame(Duration.seconds(1), e -> {
                     for (Room matchingRoom : matchingRooms) {
                         if (targetTemperature > matchingRoom.getInitialTemp()) {
-                            matchingRoom.setInitialTemp(matchingRoom.getInitialTemp() + 0.1);
+                            String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp()+0.1));
+                            matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                         } else if (targetTemperature < matchingRoom.getInitialTemp()) {
-                            matchingRoom.setInitialTemp(matchingRoom.getInitialTemp() - 0.1);
+                            String formattedIncrementedTemperature = String.format("%.2f", (matchingRoom.getInitialTemp()-0.1));
+                            matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                         }
                     }
                 })

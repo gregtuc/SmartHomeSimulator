@@ -63,6 +63,7 @@ public class RoomInformationController extends Label implements Initializable {
         roomPersonObject.setText(Boolean.toString(selectedRoom.getPersonIsHere()));
         roomZone.setText(ZoneManager.getZoneOfRoom(selectedRoom.getRoomName()));
 
+
         roomInformationTimeline = new Timeline(
                 // Every second, check if the temperature of the room is different than the displayed temperature.
                 // If it is different, update the displayed temperature.

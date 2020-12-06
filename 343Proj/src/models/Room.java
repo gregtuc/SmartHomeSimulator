@@ -1,6 +1,6 @@
 package models;
 
-import security.WindowObserver;
+import security.TemperatureObserver;
 import utility.CommandLogger;
 
 import java.io.IOException;

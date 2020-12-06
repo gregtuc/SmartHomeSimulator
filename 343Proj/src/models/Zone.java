@@ -10,7 +10,7 @@ public class Zone {
     private double secondPeriodTemp;
     private double thirdPeriodTemp;
     private Boolean temperatureRegulationActive;
-    private static ArrayList<String> rooms = new ArrayList<String>();
+    private ArrayList<String> rooms = new ArrayList<String>();
 
     public Zone(String zoneName, String zoneType) {
         this.zoneName = zoneName;
