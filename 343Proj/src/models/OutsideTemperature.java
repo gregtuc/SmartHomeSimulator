@@ -6,13 +6,13 @@ public class OutsideTemperature {
     /**
      * Declaring private temperature attributes.
      */
-    private double temperature;
+    private static double temperature;
 
     /**
      * Instantiates a new temperature.
      */
     public OutsideTemperature(){
-        this.temperature = 0.0;
+        OutsideTemperature.temperature = 0.0;
     }
     /**
      * Instantiates a new temperature.
@@ -20,14 +20,14 @@ public class OutsideTemperature {
      * @param customOutsideTemperature   the custom temperature
      */
     public OutsideTemperature(double customOutsideTemperature){
-        this.temperature = customOutsideTemperature;
+        OutsideTemperature.temperature = customOutsideTemperature;
     }
     /**
      * Gets the outside temperature.
      *
      * @return the temperature
      */
-	public double getTemperature() {
+	public static double getTemperature() {
 		return temperature;
 	}
     /**
@@ -36,6 +36,6 @@ public class OutsideTemperature {
      * @param second the outside temperature
      */
 	public void setTemperature(double temperature) {
-		this.temperature = temperature;
+		OutsideTemperature.temperature = temperature;
 	}
 }

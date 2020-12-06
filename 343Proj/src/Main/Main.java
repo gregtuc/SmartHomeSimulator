@@ -359,7 +359,6 @@ public class Main extends Application{
             e.printStackTrace();
         }
     }
-    
     /**
      * Display the window that lets users edit the profile parameter (Profile.fxml).
      * This method is called from HomeController.

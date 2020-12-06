@@ -7,6 +7,9 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
+import models.ActiveUser;
+import models.Month;
+import models.OutsideTemperature;
 import models.Room;
 import security.WindowObserver;
 
@@ -44,7 +47,17 @@ public class TemperatureManager implements WindowObserver {
         	AlertManager.numberOfAlertSent = 0;
         }
     }
-
+    //checks if room temperature is hotter than outside during summer, if it is, open window to cool it. Away mode has to be off 
+    public static void checkRoomSummerTemp(Room room) {
+    	if ( ActiveUser.getActiveUserAwayMode()==false ) {
+    		if(Month.getCurrentSeason().equals("Summer")){
+    			if(room.getInitialTemp()> OutsideTemperature.getTemperature()) {
+   		 			room.setWindowStatus(true);
+   		 			AlertManager.AutoWindowOpen(room.getRoomName());
+   		 		}
+   		 	}
+    	}
+    }
     // Method for changing the temperature of a single room in the house.
     // Variable targetTemperature will be the outside temperature of the house, usually.
     public static void changeTemperature(String status, String roomName, double targetTemperature, String simulator) throws IOException {
@@ -71,6 +84,8 @@ public class TemperatureManager implements WindowObserver {
                                     }
                                     // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
                                     checkFreezingTemperature(room);
+                                    //Checks if room temperature is hotter than outside during summer, if it is, open window to cool it.
+                                    checkRoomSummerTemp(room);
                                 })
                         );
                         //Run the timeline indefinitely or until paused/stopped manually.

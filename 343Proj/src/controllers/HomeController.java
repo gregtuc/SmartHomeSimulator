@@ -14,6 +14,7 @@ import models.ActiveUser;
 import models.Room;
 import models.Zone;
 import models.AwayModeTemperature;
+import models.OutsideTemperature;
 import security.AlarmSystem;
 import security.WindowWatcher;
 import utility.*;
@@ -40,10 +41,10 @@ public class HomeController extends Label implements Initializable {
     ClockController clockController = new ClockController();
     OutsideTemperatureController OutsideTemperatureController = new OutsideTemperatureController();
     LocationController locationController = new LocationController();
-    MonthController monthController = new MonthController();
+    static MonthController monthController = new MonthController();
 
     //Labels found on home.fxml.
-    public Label timeLabel = new Label();
+    public static Label timeLabel = new Label();
     public Label userLabel = new Label();
     public Label outsideTemperatureLabel = new Label();
     public Label locationLabel = new Label();
@@ -53,7 +54,7 @@ public class HomeController extends Label implements Initializable {
     public Label seasonLabel = new Label();
 
     //Buttons found on home.fxml.
-    public Button startStopButton = new Button();
+    public static Button startStopButton = new Button();
     public Button awayModeButton = new Button();
 
     //TextArea found on home.fxml.
@@ -65,7 +66,7 @@ public class HomeController extends Label implements Initializable {
     public ListView<String> allRoomList = new ListView<>();
     public ListView<String> temperatureRoomList = new ListView<>();
     public ListView<String> zoneTemperatureRoomList = new ListView<>();
-    ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
+    static ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
     //Zone name Input Field
     public TextField zoneInputTextField = new TextField();
@@ -160,6 +161,7 @@ public class HomeController extends Label implements Initializable {
         //Populating zones container in SHH.
         allZones();
 
+        
         //Timeline that runs in intervals of 1 second. It is used for a variety of things from updating fxml elements to checking for new values.
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
@@ -451,6 +453,7 @@ public class HomeController extends Label implements Initializable {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
+           
         } else {
             AlertManager.badPermissionsAlert();
             //Logging.
@@ -460,6 +463,7 @@ public class HomeController extends Label implements Initializable {
                 ioException.printStackTrace();
             }
         }
+        
     }
 
     @FXML
@@ -692,7 +696,7 @@ public class HomeController extends Label implements Initializable {
             }
         }
     }
-
+   
 
     public TextArea getHomeTextArea() {
         return outputConsoleText;
