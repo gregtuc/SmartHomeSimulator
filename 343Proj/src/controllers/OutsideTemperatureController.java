@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import Main.Main;
 import models.OutsideTemperature;
 import utility.ZoneManager;
+import Main.LayoutParser;
 
 /**
  * The type OutsideTemperature controller.
@@ -40,6 +41,14 @@ public class OutsideTemperatureController extends Label{
                 Double.parseDouble(outsideTemperatureInput.getText()), // Period 1 temperature.
                 Double.parseDouble(outsideTemperatureInput.getText()), // Period 2 temperature.
                 Double.parseDouble(outsideTemperatureInput.getText())); // Period 3 temperature.
+
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (!LayoutParser.grid.get(row).get(col).roomName.equals("Unnamed") && LayoutParser.grid.get(row).get(col) != null) {
+                    LayoutParser.grid.get(row).get(col).setInitialTemp(OutsideTemperature.getTemperature());
+                }
+            }
+        }
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }
