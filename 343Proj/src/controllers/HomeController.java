@@ -232,6 +232,27 @@ public class HomeController extends Label implements Initializable {
                     if (!startStopButton.getText().equals(oldSimulatorButton)) {
                         oldSimulatorButton = startStopButton.getText();
                     }
+
+                    // TODO: Send zone temperature change alarm  at different points in time (see period thresholds)
+                    try {
+                        if (timeLabel.getText().equals("08 : 00 : 00")) {
+                            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),2, startStopButton.getText());
+                            }
+                        }
+                        else if (timeLabel.getText().equals("04 : 00 : 00")) {
+                            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),3, startStopButton.getText());
+                            }
+                        }
+                        else if (timeLabel.getText().equals("12 : 00 : 00")) {
+                            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),1, startStopButton.getText());
+                            }
+                        }
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
                 })
         );
         //Run the timeline indefinitely or until paused/stopped manually.
@@ -262,7 +283,7 @@ public class HomeController extends Label implements Initializable {
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
-            temperatureWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
+            //temperatureWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
             clockController.stopTime(timeLabel);
             //Logging.
             try {
@@ -282,7 +303,7 @@ public class HomeController extends Label implements Initializable {
         //Pause Time only if the simulation has started.
         if (!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.pauseTime();
-            temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
+            //temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Paused");
             // TODO: Freeze the change in temperature if a window is open.
             //Logging.
             try {
@@ -302,7 +323,7 @@ public class HomeController extends Label implements Initializable {
         //Resume Time only if the simulation has started.
         if (!timeLabel.getText().equals("HH:MM:SS")) {
             clockController.resumeTime();
-            temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
+            //temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), "Resume");
             //Logging.
             try {
                 CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + " has resumed the simulator.");
@@ -418,8 +439,6 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.unlockWindow(roomList.getSelectionModel().getSelectedItem());
-                    // TODO: Something with the TemperatureManager class
-                    temperatureWatcher.triggerAlarm("open", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.unlockDoor(roomList.getSelectionModel().getSelectedItem());
@@ -445,8 +464,6 @@ public class HomeController extends Label implements Initializable {
             switch (itemList.getSelectionModel().getSelectedItem()) {
                 case "Windows":
                     WindowManager.lockWindow(roomList.getSelectionModel().getSelectedItem());
-                    // TODO: Something with the TemperatureManager class
-                    temperatureWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
                     break;
                 case "Doors":
                     DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem());

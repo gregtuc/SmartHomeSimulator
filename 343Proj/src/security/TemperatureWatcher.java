@@ -10,9 +10,9 @@ public class TemperatureWatcher {
     public void subscribe(TemperatureObserver observer){
         listeners.add(observer);
     }
-    public void triggerAlarm(String type, String name, String simulator) throws IOException {
+    public void triggerAlarm(String type, String name, int period, String simulator) throws IOException {
         for (TemperatureObserver listener : listeners) {
-            listener.alarm(type, name, simulator);
+            listener.alarm(type, name, period, simulator);
         }
     }
 }

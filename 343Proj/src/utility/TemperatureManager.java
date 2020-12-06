@@ -194,14 +194,14 @@ public class TemperatureManager implements TemperatureObserver {
     // This can be either "ROOM" or "ZONE", as the behaviour should change depending on whether multiple rooms are involved.
     // NAME: The String value of the room/zone we are passing.
     // SIMULATOR: The status (running, stopped, or paused) of the simulator.
-    public void alarm(String type, String name, String simulator) throws IOException {
+    public void alarm(String type, String name, int period, String simulator) throws IOException {
         // TODO: When the clock label hits the threshold of a period, trigger the alarm function for all zones that aren't default.
-    	TemperatureManager.changeTemperature(type, name, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
+        // TODO: When a zone is modified (rooms changed, zone deleted), trigger the alarm.
     	if (type.equals("ROOM")) {
             TemperatureManager.changeTemperature(type, name, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);
         }
     	else if (type.equals("ZONE")) {
-    	    //TemperatureManager.changeZoneTemperature(name, );
+    	    TemperatureManager.changeZoneTemperature(name, period, simulator);
         }
     }
 }
