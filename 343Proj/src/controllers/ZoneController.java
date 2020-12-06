@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import models.Zone;
+import security.TemperatureWatcher;
 import utility.UniversalElements;
 import utility.ZoneManager;
 import javafx.scene.control.TextField;
@@ -27,6 +28,7 @@ public class ZoneController implements Initializable {
     public Label periodThreeTempCurrent = new Label();
     public ListView<String> roomsInZoneList = new ListView<String>();
     public ListView<String> zonesInHomeList = new ListView<String>();
+    public static TemperatureWatcher temperatureWatcher = new TemperatureWatcher();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,6 +75,12 @@ public class ZoneController implements Initializable {
                     UniversalElements.getSelectedZone(), // The zone which is being modified.
                     zonesInHomeList.getSelectionModel().getSelectedItem(), // The zone which the room will be transferred to.
                     roomsInZoneList.getSelectionModel().getSelectedItem()); // The room which will be transferred.
+            if (!HomeController.timeline.currentRateProperty().toString().equals("0")) {
+                temperatureWatcher.triggerAlarm("ZONE",
+                        zonesInHomeList.getSelectionModel().getSelectedItem(), // The zone which the room will be transferred to.
+                        ZoneManager.getZone(zonesInHomeList.getSelectionModel().getSelectedItem()).getCurrentPeriod(),
+                        "Stop Simulator");
+            }
             roomsInZoneList.getItems().clear();
             roomsInZoneList.getItems().addAll(ZoneManager.getRoomsInZone(UniversalElements.getSelectedZone()));
         }

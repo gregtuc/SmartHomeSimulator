@@ -198,6 +198,13 @@ public class TemperatureManager implements TemperatureObserver {
             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                 if (!ZoneManager.getZones().get(i).getZoneName().equals("Default")) {
                     ZoneManager.deleteZone(ZoneManager.getZones().get(i).getZoneName());
+                    for (int row = 0; row < 4; row++) {
+                        for (int col = 0; col < 4; col++) {
+                            if (!LayoutParser.grid.get(row).get(col).roomName.equals("Unnamed") && LayoutParser.grid.get(row).get(col) != null) {
+                                LayoutParser.grid.get(row).get(col).setInitialTemp(OutsideTemperature.getTemperature());
+                            }
+                        }
+                    }
                 }
             }
             zoneTemperatureTimeline.stop();
@@ -211,7 +218,6 @@ public class TemperatureManager implements TemperatureObserver {
     // NAME: The String value of the room/zone we are passing.
     // SIMULATOR: The status (running, stopped, or paused) of the simulator.
     public void alarm(String type, String name, int period, String simulator) throws IOException {
-        // TODO: When the clock label hits the threshold of a period, trigger the alarm function for all zones that aren't default.
         // TODO: When a zone is modified (rooms changed, zone deleted), trigger the alarm.
     	if (type.equals("ROOM")) {
             TemperatureManager.changeTemperature(type, name, OutsideTemperatureController.outsideTemperature.getTemperature(), simulator);

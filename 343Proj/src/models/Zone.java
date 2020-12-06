@@ -9,6 +9,7 @@ public class Zone {
     private double firstPeriodTemp;
     private double secondPeriodTemp;
     private double thirdPeriodTemp;
+    private int currentPeriod;
     private Boolean temperatureRegulationActive;
     private ArrayList<String> rooms = new ArrayList<String>();
 
@@ -62,6 +63,10 @@ public class Zone {
     public ArrayList<String> getRooms() {
         return rooms;
     }
+
+    public int getCurrentPeriod() { return currentPeriod; }
+
+    public void setCurrentPeriod(int period) { this.currentPeriod = period; }
 
     public Boolean getTemperatureRegulationActive() {
         return temperatureRegulationActive;

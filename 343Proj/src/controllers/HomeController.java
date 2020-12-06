@@ -34,7 +34,7 @@ public class HomeController extends Label implements Initializable {
     public static TemperatureWatcher temperatureWatcher = new TemperatureWatcher();
 
     //Creating a timeline object to loop in intervals.
-    Timeline timeline;
+    public static Timeline timeline;
 
     //Instantiating controller classes.
     ClockController clockController = new ClockController();
@@ -238,16 +238,19 @@ public class HomeController extends Label implements Initializable {
                         if (timeLabel.getText().equals("08 : 00 : 00")) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),2, startStopButton.getText());
+                                ZoneManager.getZones().get(i).setCurrentPeriod(2);
                             }
                         }
                         else if (timeLabel.getText().equals("04 : 00 : 00")) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),3, startStopButton.getText());
+                                ZoneManager.getZones().get(i).setCurrentPeriod(3);
                             }
                         }
                         else if (timeLabel.getText().equals("12 : 00 : 00")) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),1, startStopButton.getText());
+                                ZoneManager.getZones().get(i).setCurrentPeriod(1);
                             }
                         }
                     } catch (IOException ioException) {
@@ -283,7 +286,9 @@ public class HomeController extends Label implements Initializable {
             //If the simulator is started, button click will stop the simulator.
         } else {
             startStopButton.setText("Start Simulator");
-            //temperatureWatcher.triggerAlarm("close", roomList.getSelectionModel().getSelectedItem(), startStopButton.getText());
+            for (int i = 0; i < ZoneManager.getZones().size(); i++) {
+                temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),0, startStopButton.getText());
+            }
             clockController.stopTime(timeLabel);
             //Logging.
             try {
