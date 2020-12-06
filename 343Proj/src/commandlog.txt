@@ -274,3 +274,124 @@
 [Dashboard] Adrien pressed the edit Zone Temperature button.
 [Dashboard] Adrien has started the simulator.
 [Dashboard] Adrien has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit Zone Temperature button..
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Kitchen's temperature.
+[Dashboard] Greg has started the simulator.
+[SHH]  tried to edit the Kitchen's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has pressed the edit month button.
+[Dashboard] Greg has pressed the edit location button.
+[SHC] Active User has moved to Kitchen.
+[Dashboard] Greg has started the simulator.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 50.0°C.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit location button.
+[SHC] Active User has moved to Kitchen.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has started the simulator.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 50.0°C.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit location button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has started the simulator.
+[SHH] Greg is editing the null's temperature.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 100.0°C.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[Dashboard]  has started the simulator.
+[SHH]  tried to edit the Kitchen's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 26.0°C.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has started the simulator.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 27.2°C.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 73.7°C.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has started the simulator.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg is editing the Kitchen's temperature.
+[SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 26.4°C.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard]  has started the simulator.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[Dashboard] A non-logged-in user pressed the edit Zone Temperature button..
+[Dashboard]  has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard]  has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[SHH] Greg is editing the null's temperature.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Greg.
+[Dashboard] Greg has pressed the edit time button.
+[Dashboard] Greg pressed the edit Zone Temperature button.
+[Dashboard] Greg has started the simulator.

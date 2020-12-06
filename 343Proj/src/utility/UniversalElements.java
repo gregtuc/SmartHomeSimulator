@@ -4,6 +4,7 @@ package utility;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import models.Clock;
 
 public class UniversalElements {
     private static volatile UniversalElements instance = null;
@@ -14,6 +15,7 @@ public class UniversalElements {
     private static Label locationLabel = new Label();
     private static Label awayModeLabel = new Label();
     private static Label simulationSpeedLabel = new Label();
+    private static Clock clock = new Clock();
 
     //ListView Elements
     private static ListView<String> zoneTemperatureRoomList = new ListView<String>();
@@ -97,6 +99,19 @@ public class UniversalElements {
 
     public static void setOutputConsoleText(TextArea outputConsoleText) {
         UniversalElements.outputConsoleText = outputConsoleText;
+    }
+
+    public static Clock getClock() {
+        return clock;
+    }
+
+
+    public static void setClock(Clock clock) {
+        UniversalElements.clock = clock;
+    }
+
+    public static String getCurrentTime(){
+        return String.format("%02d", clock.getHour()) + " : " + String.format("%02d", clock.getMinute()) + " : " + String.format("%02d", clock.getSecond());
     }
 
     public static TextArea[][] getPanes() {

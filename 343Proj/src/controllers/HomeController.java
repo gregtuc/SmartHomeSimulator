@@ -179,9 +179,9 @@ public class HomeController extends Label implements Initializable {
         //Populating zones container in SHH.
         allZones();
 
-        //Timeline that runs in intervals of 1 second. It is used for a variety of things from updating fxml elements to checking for new values.
         timeline = new Timeline(
-                new KeyFrame(Duration.seconds(1), e -> {
+                new KeyFrame(Duration.seconds(1/(UniversalElements.getClock().getSpeed())), e -> {
+
                     //Helper for configuring lights.
                     try {
                         manageAutomaticLights();
@@ -191,11 +191,7 @@ public class HomeController extends Label implements Initializable {
 
                     //Updating username label text.
                     if (!ActiveUser.getActiveUsername().equals(userLabel.getText())) {
-                        if (!ActiveUser.getActiveUsername().equals("")) {
-                            userLabel.setText(ActiveUser.getActiveUsername());
-                        } else {
-                            userLabel.setText(ActiveUser.getActiveUsername());
-                        }
+                        userLabel.setText(ActiveUser.getActiveUsername());
                     }
 
                     // TODO: Update the zones tab
@@ -235,19 +231,19 @@ public class HomeController extends Label implements Initializable {
 
                     // TODO: Send zone temperature change alarm  at different points in time (see period thresholds)
                     try {
-                        if (timeLabel.getText().equals("08 : 00 : 00")) {
+                        if (UniversalElements.getCurrentTime().compareTo("08 : 00 : 00")>=0 && UniversalElements.getCurrentTime().compareTo("16 : 00 : 00")<0) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),2, startStopButton.getText());
                                 ZoneManager.getZones().get(i).setCurrentPeriod(2);
                             }
                         }
-                        else if (timeLabel.getText().equals("04 : 00 : 00")) {
+                        else if (UniversalElements.getCurrentTime().compareTo("16 : 00 : 00")>=0 && UniversalElements.getCurrentTime().compareTo("11 : 59 : 59")<0) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),3, startStopButton.getText());
                                 ZoneManager.getZones().get(i).setCurrentPeriod(3);
                             }
                         }
-                        else if (timeLabel.getText().equals("12 : 00 : 00")) {
+                        else if (UniversalElements.getCurrentTime().compareTo("00 : 00 : 00")>=0 && UniversalElements.getCurrentTime().compareTo("8 : 00 : 00")<0) {
                             for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                                 temperatureWatcher.triggerAlarm("ZONE", ZoneManager.getZones().get(i).getZoneName(),1, startStopButton.getText());
                                 ZoneManager.getZones().get(i).setCurrentPeriod(1);
