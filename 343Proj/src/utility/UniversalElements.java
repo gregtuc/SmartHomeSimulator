@@ -25,10 +25,12 @@ public class UniversalElements {
     private static TextArea[][] panes = new TextArea[4][4];
 
     //Creating the singleton pattern.
-    private UniversalElements() {}
+    private UniversalElements() {
+    }
+
     public static UniversalElements getInstance() {
         if (instance == null) {
-            synchronized(UniversalElements.class) {
+            synchronized (UniversalElements.class) {
                 if (instance == null) {
                     instance = new UniversalElements();
                 }
@@ -110,7 +112,7 @@ public class UniversalElements {
         UniversalElements.clock = clock;
     }
 
-    public static String getCurrentTime(){
+    public static String getCurrentTime() {
         return String.format("%02d", clock.getHour()) + " : " + String.format("%02d", clock.getMinute()) + " : " + String.format("%02d", clock.getSecond());
     }
 

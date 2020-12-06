@@ -28,70 +28,55 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class LocationController extends Label implements Initializable {
 
-	 /**
-     * Creating an instance of the Location class. There exists a single constant PeopleLocation, so it must remain static.
-     */
-	static Location peopleLocation = new Location();
+    public ComboBox<String> userLocationInput = new ComboBox<String>();
+    public ComboBox<String> peopleLocationInput = new ComboBox<String>();
 
-	AtomicReference<String> currentPeopleLocation = new AtomicReference<>(peopleLocation.getLocation());
-	
-	/**
-     * The UserLocation TextField input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
-	public ComboBox<String> userLocationInput = new ComboBox<String>();
-
-	/**
-     * The PeopleLocation TextField input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
-	public ComboBox<String> peopleLocationInput = new ComboBox<String>();
-	
-	/**
-     * ArrayList to hold the grid from LayoutParser class
-     */
+    static Location peopleLocation = new Location();
     ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		//Populate userLocationInput ComboBox
-		ArrayList<String> rooms = new ArrayList<String>();
-		for (int row = 0; row < 4; row++) {
-    		for (int col = 0; col < 4; col++) {
-    			if (!roomGrid.get(row).get(col).roomName.equals("Unnamed")) {
-    				rooms.add(roomGrid.get(row).get(col).roomName);
-    			}
-    		}
-    	}
-		userLocationInput.getItems().addAll(rooms);
-		userLocationInput.getItems().add("None");
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //Populate userLocationInput ComboBox
+        ArrayList<String> rooms = new ArrayList<String>();
+        injectRooms(rooms, roomGrid);
+        userLocationInput.getItems().addAll(rooms);
+        userLocationInput.getItems().add("None");
 
-		//Populate peopleLocationInput ComboBox
-		peopleLocationInput.getItems().addAll(rooms);
+        //Populate peopleLocationInput ComboBox
+        peopleLocationInput.getItems().addAll(rooms);
 
-	}
+    }
 
-	public void editUserLocation(MouseEvent mouseEvent) throws IOException {
-		if(PermissionChecker.checkActiveUserIsLoggedIn()){
-			ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
-			AlertManager.successfulPermissionsAlert();
-		}
-		else {
-			AlertManager.badPermissionsAlert();
-		}
-		ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
-		PeopleLocationManager.insertProfile(ActiveUser.getActiveUserLocation());
-	    Main.closeEditLocation();
-	 }
-	public void editPeopleLocation(MouseEvent mouseEvent) throws IOException {
-		if(PermissionChecker.checkActiveUserIsLoggedIn()){
-			peopleLocation.setLocation((String) peopleLocationInput.getValue());
-			AlertManager.successfulPermissionsAlert();
-		}
-		else {
-			AlertManager.badPermissionsAlert();
-		}
-		PeopleLocationManager.insertPerson(peopleLocation.getLocation());
+    static void injectRooms(ArrayList<String> rooms, ArrayList<ArrayList<Room>> roomGrid) {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (!roomGrid.get(row).get(col).roomName.equals("Unnamed")) {
+                    rooms.add(roomGrid.get(row).get(col).roomName);
+                }
+            }
+        }
+    }
+
+    public void editUserLocation(MouseEvent mouseEvent) throws IOException {
+        if (PermissionChecker.checkActiveUserIsLoggedIn()) {
+            ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
+            AlertManager.successfulPermissionsAlert();
+        } else {
+            AlertManager.badPermissionsAlert();
+        }
+        ActiveUser.setActiveUserLocation((String) userLocationInput.getValue());
+        PeopleLocationManager.insertProfile(ActiveUser.getActiveUserLocation());
         Main.closeEditLocation();
-	}
+    }
+
+    public void editPeopleLocation(MouseEvent mouseEvent) throws IOException {
+        if (PermissionChecker.checkActiveUserIsLoggedIn()) {
+            peopleLocation.setLocation((String) peopleLocationInput.getValue());
+            AlertManager.successfulPermissionsAlert();
+        } else {
+            AlertManager.badPermissionsAlert();
+        }
+        PeopleLocationManager.insertPerson(peopleLocation.getLocation());
+        Main.closeEditLocation();
+    }
 }

@@ -47,7 +47,7 @@ public class ProfileController implements Initializable {
 
     //Initialize runs immediately when the page loads.
     @Override
-    public void initialize(URL location, ResourceBundle resources){
+    public void initialize(URL location, ResourceBundle resources) {
         //Populate createUserTypeInput ComboBox.
         createUserTypeInput.getItems().add("Parent");
         createUserTypeInput.getItems().add("Child");
@@ -61,8 +61,7 @@ public class ProfileController implements Initializable {
             refreshProfileList();
             editUserInput.setItems(ProfileController.profileList);
             loginUserInput.setItems(ProfileController.profileList);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("An error occurred during refreshProfileList.");
             e.printStackTrace();
         }
@@ -77,41 +76,37 @@ public class ProfileController implements Initializable {
      * @throws ClassNotFoundException the class not found exception
      */
     public void createProfile(MouseEvent mouseEvent) throws Exception, IOException, SQLException, ClassNotFoundException {
+        //Assign the active user's name to the singleton instance.
+        // Create profile text file and write its type.
+        //Assign the active user's name to the singleton instance.
+        // Create profile text file and write its type.
+        //Assign the active user's name to the singleton instance.
+        // Create profile text file and write its type.
+        //Assign the active user's name to the singleton instance.
+        // Create profile text file and write its type.
         switch (createUserTypeInput.getValue()) {
-            case "Parent":
+            case "Parent" -> {
                 Parent parent = new Parent(createUsernameInput.getText());
-                //Assign the active user's name to the singleton instance.
                 ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
-
-                // Create profile text file and write its type.
                 createProfileFile(createUsernameInput.getText(), "Parent");
-                break;
-            case "Child":
+            }
+            case "Child" -> {
                 Child child = new Child(createUsernameInput.getText());
-                //Assign the active user's name to the singleton instance.
                 ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
-
-                // Create profile text file and write its type.
                 createProfileFile(createUsernameInput.getText(), "Child");
-                break;
-            case "Guest":
+            }
+            case "Guest" -> {
                 Guest guest = new Guest(createUsernameInput.getText());
-                //Assign the active user's name to the singleton instance.
                 ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
-
-                // Create profile text file and write its type.
                 createProfileFile(createUsernameInput.getText(), "Guest");
-                break;
-            case "Stranger":
+            }
+            case "Stranger" -> {
                 Stranger stranger = new Stranger(createUsernameInput.getText());
-                //Assign the active user's name to the singleton instance.
                 ActiveUser.setActiveUser(createUsernameInput.getText(), createUserTypeInput.getValue());
-
-                // Create profile text file and write its type.
                 createProfileFile(createUsernameInput.getText(), "Stranger");
-                break;
+            }
         }
-        CommandLogger.logCommand("SHC","New profile created called "+ActiveUser.getActiveUsername()+" and it has been signed in.");
+        CommandLogger.logCommand("SHC", "New profile created called " + ActiveUser.getActiveUsername() + " and it has been signed in.");
         // Update the ComboBoxes with the new profiles.
         refreshProfileList();
         editUserInput.setItems(ProfileController.profileList);
@@ -138,7 +133,7 @@ public class ProfileController implements Initializable {
                 String filename = file.getName();
                 if (filename.equals(usernameToDelete + ".txt")) {
                     file.delete();
-                    System.out.println("File "+usernameToDelete+".txt has been successfully deleted!");
+                    System.out.println("File " + usernameToDelete + ".txt has been successfully deleted!");
                     break;
                 }
             }
@@ -151,73 +146,72 @@ public class ProfileController implements Initializable {
             refreshProfileList();
             editUserInput.setItems(ProfileController.profileList);
             loginUserInput.setItems(ProfileController.profileList);
-            CommandLogger.logCommand("SHC","Profile deleted called "+usernameToDelete+".");
-        }
-        catch (Exception e) {
+            CommandLogger.logCommand("SHC", "Profile deleted called " + usernameToDelete + ".");
+        } catch (Exception e) {
             System.out.println("An error occurred during when attempting to delete a profile.");
             e.printStackTrace();
         }
         //Call closeEditProfile from Main and return to the primary stage.
         Main.closeEditProfile();
     }
-    public static Boolean userHasCorePermissions(String name){
+
+    public static Boolean userHasCorePermissions(String name) {
         try {
             // Create file variable and scanner.
-            File f = new File("343Proj/src/profiles/"+name+".txt");
+            File f = new File("343Proj/src/profiles/" + name + ".txt");
             Scanner sc = new Scanner(f);
             StringBuilder buffer = new StringBuilder();
 
             //Assign existing text file to fileContents and close the scanner.
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-                if(line.contains("Core")){
+                if (line.contains("Core")) {
                     return true;
                 }
             }
             sc.close();
             return false;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
         return false;
     }
-    public static Boolean userHasSecurityPermissions(){
+
+    public static Boolean userHasSecurityPermissions() {
         String name = ActiveUser.getActiveUsername();
         try {
             // Create file variable and scanner.
-            File f = new File("343Proj/src/profiles/"+name+".txt");
+            File f = new File("343Proj/src/profiles/" + name + ".txt");
             Scanner sc = new Scanner(f);
             StringBuilder buffer = new StringBuilder();
 
             //Assign existing text file to fileContents and close the scanner.
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-                if(line.contains("Security")){
+                if (line.contains("Security")) {
                     return true;
                 }
             }
             sc.close();
             return false;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
         return false;
     }
 
-    public void removePermission(){
+    public void removePermission() {
         //Get the selected username value from the input form.
         String name = editUserInput.getValue();
         String permission = permissionInput.getValue();
         try {
             // Create file variable and scanner.
-            File f = new File("343Proj/src/profiles/"+name+".txt");
+            File f = new File("343Proj/src/profiles/" + name + ".txt");
             Scanner sc = new Scanner(f);
             StringBuilder buffer = new StringBuilder();
 
             //Assign existing text file to fileContents and close the scanner.
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 buffer.append(sc.nextLine()).append(System.lineSeparator());
             }
             String fileContents = buffer.toString();
@@ -227,29 +221,28 @@ public class ProfileController implements Initializable {
             String newFile = fileContents.replaceAll(permission, "");
 
             //Write the new contents to the file and close the writer.
-            FileWriter writer = new FileWriter("343Proj/src/profiles/"+name+".txt", false);
+            FileWriter writer = new FileWriter("343Proj/src/profiles/" + name + ".txt", false);
             writer.write(newFile);
             writer.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
         //Call closeEditProfile from Main and return to the primary stage.
         Main.closeEditProfile();
     }
 
-    public void addPermission(){
+    public void addPermission() {
         //Get the selected username value from the input form.
         String name = editUserInput.getValue();
         String permission = permissionInput.getValue();
         try {
             // Create file variable and scanner.
-            File f = new File("343Proj/src/profiles/"+name+".txt");
+            File f = new File("343Proj/src/profiles/" + name + ".txt");
             Scanner sc = new Scanner(f);
             StringBuilder buffer = new StringBuilder();
 
             //Assign existing text file to fileContents and close the scanner.
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 buffer.append(sc.nextLine()).append(System.lineSeparator());
             }
             String fileContents = buffer.toString();
@@ -257,15 +250,14 @@ public class ProfileController implements Initializable {
 
             //If it doesn't exist, add the specified permission from the text file and assign the new file to newFile.
             String newFile = "";
-            if(!fileContents.contains(permission)){
+            if (!fileContents.contains(permission)) {
                 newFile = fileContents + "\n" + permission;
                 //Write the new contents to the file and close the writer.
-                FileWriter writer = new FileWriter("343Proj/src/profiles/"+name+".txt", false);
+                FileWriter writer = new FileWriter("343Proj/src/profiles/" + name + ".txt", false);
                 writer.write(newFile);
                 writer.close();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
         //Call closeEditProfile from Main and return to the primary stage.
@@ -302,7 +294,7 @@ public class ProfileController implements Initializable {
                         break;
                     }
                 }
-                CommandLogger.logCommand("SHC","Profile logged in. Username is "+ActiveUser.getActiveUsername()+".");
+                CommandLogger.logCommand("SHC", "Profile logged in. Username is " + ActiveUser.getActiveUsername() + ".");
                 // Update the ComboBoxes with the new profiles.
                 refreshProfileList();
                 editUserInput.setItems(ProfileController.profileList);
@@ -329,33 +321,31 @@ public class ProfileController implements Initializable {
     public void createProfileFile(String name, String userType) throws IOException {
         try {
             // Create file variable.
-            File f = new File("343Proj/src/profiles/"+name+".txt");
+            File f = new File("343Proj/src/profiles/" + name + ".txt");
             // Create new file.
             // If the file does not exist yet...
             if (f.createNewFile()) // Create the file.
-                System.out.println("File "+name+".txt has been successfully created!");
+                System.out.println("File " + name + ".txt has been successfully created!");
             else // The file already exists, no action is taken.
-                System.out.println("File "+name+".txt already exists in this directory.");
+                System.out.println("File " + name + ".txt already exists in this directory.");
             // Write to newly created text file.
             try {
                 // Set append to "false" in order to overwrite permissions later.
-                FileWriter myWriter = new FileWriter("343Proj/src/profiles/"+createUsernameInput.getText()+".txt", false);
-                myWriter.write("Type "+createUserTypeInput.getValue()+"\n");
-                if(userType.equals("Parent")||userType.equals("Child")||userType.equals("Guest")){
-                    myWriter.write("Core"+"\n");
+                FileWriter myWriter = new FileWriter("343Proj/src/profiles/" + createUsernameInput.getText() + ".txt", false);
+                myWriter.write("Type " + createUserTypeInput.getValue() + "\n");
+                if (userType.equals("Parent") || userType.equals("Child") || userType.equals("Guest")) {
+                    myWriter.write("Core" + "\n");
                 }
-                if(userType.equals("Parent") || userType.equals("Child")){
-                    myWriter.write("Security"+"\n");
+                if (userType.equals("Parent") || userType.equals("Child")) {
+                    myWriter.write("Security" + "\n");
                 }
                 myWriter.close();
-                CommandLogger.logCommand("SHC","New profile file has been created called "+name+".txt.");
-            }
-            catch (IOException e) {
+                CommandLogger.logCommand("SHC", "New profile file has been created called " + name + ".txt.");
+            } catch (IOException e) {
                 System.out.println("An error occurred during the output process.");
                 e.printStackTrace();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
     }
@@ -365,6 +355,7 @@ public class ProfileController implements Initializable {
             File profilesFolder = new File("343Proj/src/profiles/");
             File[] listOfFiles = profilesFolder.listFiles();
             profileList.clear();
+            assert listOfFiles != null;
             for (File file : listOfFiles) {
                 if (file.isFile()) {
                     String[] words1 = (file.getName().split("/"));
@@ -372,18 +363,9 @@ public class ProfileController implements Initializable {
                     profileList.add(words2[0]);
                 }
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("An error occurred during refreshProfileList.");
             e.printStackTrace();
         }
-    }
-
-    public static ComboBox<String> getEditUserInput() {
-        return getEditUserInput();
-    }
-
-    public static ComboBox<String> getLoginUserInput() {
-        return getLoginUserInput();
     }
 }

@@ -24,11 +24,23 @@
   <component name="ChangeListManager">
     <list default="true" id="54c7ed79-0880-4d3f-9071-35db654f2187" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/commandlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/commandlog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/Main/LayoutParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/Main/LayoutParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/MonthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/MonthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/OutsideTemperatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/RoomInformationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/controllers/ZoneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/models/Zone.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/models/Zone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/TemperatureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/CommandLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/CommandLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/DoorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/LightManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/PeopleLocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/PeopleLocationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/PermissionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/UniversalElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/UniversalElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/WindowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/WindowManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,17 +109,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="SmartHomeSimulator" />
@@ -373,17 +374,6 @@
     </state>
     <state x="1061" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-782.1920.1040@0.0.1920.1040" timestamp="1604334131486" />
     <state x="806" y="288" width="896" height="913" key="search.everywhere.popup/0.0.2560.1400/2560.349.1920.1040@0.0.2560.1400" timestamp="1607219138579" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/343Proj/src/utility/ZoneManager.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jgrapht$All_in_SmartHomeSimulator__1_.ic" NAME="All in SmartHomeSimulator (1) Coverage Results" MODIFIED="1603052563090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

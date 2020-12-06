@@ -66,8 +66,6 @@ public class RoomInformationController extends Label implements Initializable {
         roomInformationTimeline.play();
     }
 
-
-
     // TODO: Get the selected room object the layout to the room information controller.
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
         //Set the temperature variable to the inputted value.

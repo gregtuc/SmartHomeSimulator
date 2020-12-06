@@ -1,6 +1,7 @@
 
 
 package Main;
+
 import controllers.RoomInformationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,61 +20,31 @@ import java.util.ArrayList;
 /**
  * The type Main.
  */
-public class Main extends Application{
+public class Main extends Application {
 
-    /**
-     * The Primary stage.
-     */
     static Stage primaryStage;
-    /**
-     * The Edit time stage.
-     */
     static Stage editTimeStage;
-    /**
-     * The Edit profile stage.
-     */
     static Stage editProfileStage;
-    /**
-     * The Edit outside temperature stage.
-     */
     static Stage editOutsideTemperatureStage;
-    /**
-     * The Edit Location stage.
-     */
     static Stage editLocationStage;
-
     static Stage editLightStage;
-
     static Stage editZoneTemp;
-
-    /**
-     * The Room Information stage.
-     */
     static Stage roomInformationStage;
-
-    /**
-     * The Room Temperature stage.
-     */
     static Stage editRoomTemperatureStage;
-    /**
-     * The Month stage.
-     */
     static Stage editMonthStage;
-    /**
-     * The Away Mode Temperature stage.
-     */
     static Stage editAwayModeTemperatureStage;
 
     // REFACTORING
     public static Room roomSelectedFromLayout = new Room();
     public static Room roomSelectedFromSHH = new Room();
+
     public static Room getRoomSelectedFromLayout() {
         return roomSelectedFromLayout;
     }
-    
+
     //Create and display the primary application window (Home.fxml).
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("../views/home.fxml"));
         primaryStage.setTitle("Smart Home Simulator");
@@ -81,11 +52,7 @@ public class Main extends Application{
         primaryStage.show();
     }
 
-    /**
-     * Display the window that lets users edit the time parameter (Clock.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditTime(){
+    public static void showEditTime() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Clock.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -93,27 +60,20 @@ public class Main extends Application{
             Main.editTimeStage = editTimeStage;
             editTimeStage.setScene(new Scene(root));
             editTimeStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Close the window that lets users edit the time parameter (Clock.fxml).
-     * This method is called from ClockController.
-     */
-    public static void closeEditTime(){
+    public static void closeEditTime() {
         try {
             Main.editTimeStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Display the window that lets users edit the month parameter (Month.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditMonth(){
+
+    public static void showEditMonth() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Month.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -121,27 +81,21 @@ public class Main extends Application{
             Main.editMonthStage = editMonthStage;
             editMonthStage.setScene(new Scene(root));
             editMonthStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    	
+
     }
-    /**
-     * Close the window that lets users edit the month parameter (Month.fxml).
-     * This method is called from MonthController.
-     */
-    public static void closeEditMonth(){
+
+    public static void closeEditMonth() {
         try {
             Main.editMonthStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Display the window that lets users edit the away mode temperature parameter (AwayTemperature.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditAwayModeTemperature(){
+
+    public static void showEditAwayModeTemperature() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/AwayTemperature.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -149,28 +103,21 @@ public class Main extends Application{
             Main.editAwayModeTemperatureStage = editAwayModeTemperatureStage;
             editAwayModeTemperatureStage.setScene(new Scene(root));
             editAwayModeTemperatureStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    	
+
     }
-    /**
-     * Close the window that lets users edit the away mode temperature parameter (AwayTemperature.fxml).
-     * This method is called from AwayModeTemperatureController.
-     */
-    public static void closeEditAwayModeTemperature(){
+
+    public static void closeEditAwayModeTemperature() {
         try {
             Main.editAwayModeTemperatureStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Display the window that lets users edit the profile parameter (Profile.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditProfile(){
+    public static void showEditProfile() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Profile.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -178,27 +125,20 @@ public class Main extends Application{
             Main.editProfileStage = editProfileStage;
             editProfileStage.setScene(new Scene(root));
             editProfileStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Close the window that lets users edit the profile parameter (Profile.fxml).
-     * This method is called from ProfileController.
-     */
-    public static void closeEditProfile(){
+    public static void closeEditProfile() {
         try {
             Main.editProfileStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Display the window that lets users edit the outside temperature parameter (OutsideTemperature.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditOutsideTemperature(){
+
+    public static void showEditOutsideTemperature() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/OutsideTemperature.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -206,27 +146,20 @@ public class Main extends Application{
             Main.editOutsideTemperatureStage = editOutsideTemperatureStage;
             editOutsideTemperatureStage.setScene(new Scene(root));
             editOutsideTemperatureStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Close the window that lets users edit the temperature parameter (OutsideTemperature.fxml).
-     * This method is called from TemperatureController.
-     */
-    public static void closeEditOutsideTemperature(){
+    public static void closeEditOutsideTemperature() {
         try {
             Main.editOutsideTemperatureStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Display the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditLocation(){
+
+    public static void showEditLocation() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Location.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -234,22 +167,20 @@ public class Main extends Application{
             Main.editLocationStage = editLocationStage;
             editLocationStage.setScene(new Scene(root));
             editLocationStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Close the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
-     * This method is called from LocationController.
-     */
-    public static void closeEditLocation(){
+
+    public static void closeEditLocation() {
         try {
             Main.editLocationStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void showConfigureTime(){
+
+    public static void showConfigureTime() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/LightConfigurer.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -257,18 +188,20 @@ public class Main extends Application{
             Main.editLightStage = editLightStage;
             editLightStage.setScene(new Scene(root));
             editLightStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void closeEditZoneTemp(){
+
+    public static void closeEditZoneTemp() {
         try {
             Main.editZoneTemp.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void showEditZoneTemp(){
+
+    public static void showEditZoneTemp() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Zone.fxml"));
             Parent root = (Parent) fxmlLoader.load();
@@ -276,28 +209,21 @@ public class Main extends Application{
             Main.editZoneTemp = editZoneTemp;
             editZoneTemp.setScene(new Scene(root));
             editZoneTemp.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    /**
-     * Close the window that lets users edit the currently logged-in User location and people's location(Location.fxml).
-     * This method is called from LocationController.
-     */
-    public static void closeConfigureTime(){
+
+    public static void closeConfigureTime() {
         try {
             Main.editLightStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     // REFACTORING
-    /**
-     * Display the window that lets users see the clicked room's information (RoomInformation.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showRoomInformation(Room clickedRoom){
+    public static void showRoomInformation(Room clickedRoom) {
         try {
             roomSelectedFromLayout = clickedRoom;
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/RoomInformation.fxml"));
@@ -307,27 +233,20 @@ public class Main extends Application{
             roomInformationStage.setScene(new Scene(root));
             // TODO: Get the selected room object the layout to the room information controller.
             roomInformationStage.show();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    /**
-     * Close the window that lets users see the clicked room's information (RoomInformation.fxml).
-     * This method is called from LocationController.
-     */
-    public static void closeRoomInformation(){
-        try {
-            Main.roomInformationStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Display the window that lets users edit the outside temperature parameter (OutsideTemperature.fxml).
-     * This method is called from HomeController.
-     */
-    public static void showEditRoomTemperature(String roomName){
+    public static void closeRoomInformation() {
+        try {
+            Main.roomInformationStage.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void showEditRoomTemperature(String roomName) {
         try {
             ArrayList<ArrayList<Room>> roomGrid = LayoutParser.getGridRooms();
             for (int row = 0; row < 4; row++) {
@@ -343,32 +262,19 @@ public class Main extends Application{
             Main.editRoomTemperatureStage = editRoomTemperatureStage;
             editRoomTemperatureStage.setScene(new Scene(root));
             editRoomTemperatureStage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Close the window that lets users edit the temperature parameter (OutsideTemperature.fxml).
-     * This method is called from TemperatureController.
-     */
-    public static void closeEditRoomTemperature(){
+    public static void closeEditRoomTemperature() {
         try {
             Main.editRoomTemperatureStage.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    /**
-     * Display the window that lets users edit the profile parameter (Profile.fxml).
-     * This method is called from HomeController.
-     */
-    /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     */
+
     public static void main(String[] args) {
         launch(args);
     }
