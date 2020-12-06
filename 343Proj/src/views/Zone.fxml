@@ -9,15 +9,17 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="542.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ZoneController">
    <children>
-      <AnchorPane layoutX="88.0" layoutY="89.0" prefHeight="393.0" prefWidth="688.0">
+      <AnchorPane layoutX="17.0" layoutY="35.0" prefHeight="447.0" prefWidth="835.0">
          <children>
-            <GridPane gridLinesVisible="true" layoutX="14.0" layoutY="38.0" prefHeight="304.0" prefWidth="338.0">
+            <GridPane gridLinesVisible="true" layoutX="14.0" layoutY="82.0" prefHeight="304.0" prefWidth="338.0">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="140.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="154.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="141.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="98.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="110.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -33,7 +35,7 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="periodOneTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="1">
+                  <TextField fx:id="periodOneTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin>
@@ -54,27 +56,49 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="periodTwoTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="periodTwoTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="periodThreeTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="periodThreeTemp" prefHeight="17.0" prefWidth="214.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin>
                   </TextField>
+                  <Label fx:id="periodOneTempCurrent" prefHeight="21.0" prefWidth="73.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="periodTwoTempCurrent" prefHeight="21.0" prefWidth="73.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="periodThreeTempCurrent" prefHeight="21.0" prefWidth="73.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                  </Label>
                </children>
                <padding>
                   <Insets left="2.0" />
                </padding>
             </GridPane>
-            <Button layoutX="114.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#setPeriods" prefHeight="25.0" prefWidth="138.0" text="Change Temperature" />
-            <Label fx:id="zoneNameText" layoutX="293.0" layoutY="2.0" prefHeight="25.0" prefWidth="103.0" textAlignment="CENTER" />
-            <ListView fx:id="roomsInZoneList" layoutX="390.0" layoutY="38.0" prefHeight="304.0" prefWidth="280.0" />
-            <Label layoutX="487.0" layoutY="19.0" prefHeight="17.0" prefWidth="87.0" text="Rooms in Zone" />
-            <Label layoutX="120.0" layoutY="19.0" prefHeight="17.0" prefWidth="127.0" text="Set Zone Temperature" />
-            <Button layoutX="446.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#removeRoom" prefHeight="25.0" prefWidth="155.0" text="Remove Room from Zone" />
+            <Button layoutX="114.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#setPeriods" prefHeight="25.0" prefWidth="138.0" text="Change Temperature" />
+            <ListView fx:id="roomsInZoneList" layoutX="391.0" layoutY="82.0" prefHeight="304.0" prefWidth="216.0" />
+            <Label layoutX="456.0" layoutY="48.0" prefHeight="17.0" prefWidth="87.0" text="Rooms in Zone" />
+            <Label layoutX="120.0" layoutY="48.0" prefHeight="17.0" prefWidth="127.0" text="Set Zone Temperature" />
+            <Button layoutX="530.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#transferRoom" prefHeight="25.0" prefWidth="155.0" text="Transfer Room to Zone" />
+            <Label fx:id="zoneNameText" layoutX="341.0" layoutY="-9.0" prefHeight="46.0" prefWidth="148.0" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ListView fx:id="zonesInHomeList" layoutX="607.0" layoutY="82.0" prefHeight="304.0" prefWidth="216.0" />
+            <Label layoutX="672.0" layoutY="48.0" prefHeight="17.0" prefWidth="87.0" text="Zones in Home" />
+            <Button layoutX="238.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#deleteZone" prefHeight="25.0" prefWidth="87.0" text="Delete Zone" />
          </children>
       </AnchorPane>
       <Button layoutX="724.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#returnToHome" prefHeight="25.0" prefWidth="115.0" text="Return" />

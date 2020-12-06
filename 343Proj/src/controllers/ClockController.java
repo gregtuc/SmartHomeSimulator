@@ -68,11 +68,11 @@ public class ClockController extends Label {
             timeline = new Timeline(
                     new KeyFrame(Duration.seconds(1/clock.getSpeed()), e -> {
                         //Condition blocks to manage the time variables.
-                        if (clock.getSecond() >= 60) {
+                        if (clock.getSecond() > 59) {
                             //At 60s, return seconds to 0.
                             clock.setSecond(0);
                             //If minutes is < 60, add a minute.
-                            if (clock.getMinute() < 60) {
+                            if (clock.getMinute() < 59) {
                                 clock.setMinute(clock.getMinute()+1);
                                 //Else at 60m, return minute to 0.
                             } else {

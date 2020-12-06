@@ -6,3 +6,271 @@
 [SHC] All windows in the house locked.
 [SHC] All lights turned off in the house
 [SHP] Aymen activated away mode.
+[SHH]  tried to edit the null's temperature but was denied!
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Aymen.
+[Dashboard] Aymen pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[SHH] Adrien has created a new Zone called Other of type Cooling.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type null.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[SHH] Adrien has created a new Zone called Dome of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit profile button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[SHH] Adrien has created a new Zone called Dome of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[SHH] Adrien has created a new Zone called Dome of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[SHH] Adrien has created a new Zone called Dome of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[SHH] Adrien has created a new Zone called Dome of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] A non-logged-in user pressed the edit Zone Temperature button..
+[Dashboard] A non-logged-in user pressed the edit Zone Temperature button..
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit month button.
+[Dashboard] A non-logged-in user pressed the edit Zone Temperature button..
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[Dashboard]  has started the simulator.
+[Dashboard]  has paused the simulator.
+[Dashboard]  has resumed the simulator.
+[Dashboard]  has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[Dashboard]  has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[Dashboard]  has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit time button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Cooling.
+[SHH] Adrien has created the Dome Zone.
+[SHH] Adrien has created a new Zone called Dome of type Heating.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit time button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has paused the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit time button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
+[Dashboard] Adrien has started the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien has pressed the edit time button.
+[SHH] Adrien has created the Bone Zone.
+[SHH] Adrien has created a new Zone called Bone of type Heating.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has started the simulator.
+[Dashboard] Adrien has stopped the simulator.
