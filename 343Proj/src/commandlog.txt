@@ -274,3 +274,26 @@
 [Dashboard] Adrien pressed the edit Zone Temperature button.
 [Dashboard] Adrien has started the simulator.
 [Dashboard] Adrien has stopped the simulator.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[Dashboard] Aymen has pressed the edit month button.
+[Dashboard] Aymen has started the simulator.
+[Dashboard] Aymen has pressed the edit outside temperature button.
+[SHH] Aymen is editing the Kitchen's temperature.
+[Dashboard] Aymen has pressed the edit outside temperature button.
+[SHH] Aymen is editing the Kitchen's temperature.
+[SHH] Aymen has changed the temperature of the Kitchen from 23.5°C to 24.0°C.
+[Dashboard] Aymen has pressed the edit away mode temperature button.
+[SHC] All lights turned off in the house
+[SHC] All windows in the house locked.
+[SHC] All lights turned off in the house
+[SHP] Aymen activated away mode.
+[SHH] Aymen is editing the Dining Room's temperature.
+[SHH] Aymen has changed the temperature of the Dining Room from 23.5°C to 23.0°C.
+[SHH] Aymen is editing the Dining Room's temperature.
+[SHH] Aymen has changed the temperature of the Dining Room from 23.5°C to 0.0°C.
+[Dashboard] Aymen has pressed the edit outside temperature button.
+[Dashboard] Aymen pressed the edit Zone Temperature button.
+[Dashboard] Aymen pressed the edit Zone Temperature button.
