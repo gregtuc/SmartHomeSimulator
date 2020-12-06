@@ -56,10 +56,19 @@ public class AlertManager {
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
    }
-
+    // restriction message for away mode item opening
     public static void AwayModeRestrictionAlert() {
     	Alert alert = new Alert(Alert.AlertType.WARNING,
                 "You cannot open items when Away Mode is activated",
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+    }
+    
+  //alert message for automatic window opening
+    public static void AutoWindowOpen(String location){
+        Alert alert = new Alert(Alert.AlertType.WARNING,
+                "The window of the room : "+location+" has automatically been opened to cool the room. ",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
