@@ -10,6 +10,7 @@ import models.Room;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import utility.ZoneManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -60,6 +61,7 @@ public class RoomInformationController extends Label implements Initializable {
         roomWindowOpen.setText(Boolean.toString(selectedRoom.getWindowStatus()));
         roomActiveUser.setText(Boolean.toString(selectedRoom.getActiveProfileIsHere()));
         roomPersonObject.setText(Boolean.toString(selectedRoom.getPersonIsHere()));
+        roomZone.setText(ZoneManager.getZoneOfRoom(selectedRoom.getRoomName()));
 
         roomInformationTimeline = new Timeline(
                 // Every second, check if the temperature of the room is different than the displayed temperature.
