@@ -86,10 +86,8 @@ public class TemperatureManager implements TemperatureObserver {
                                     } else if (targetTemperature < room.getInitialTemp()) {
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() - 0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    }
-                                    // This Check if roomTemperature drop below 0 degree celsius and sends a warning to the user about it.
-                                    checkFreezingTemperature(room);
-                                  //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
+                                    }                             
+                                    //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
                                     checkRoomSummerTemp(room);
                                 })
                         );
@@ -147,7 +145,7 @@ public class TemperatureManager implements TemperatureObserver {
                 assert zone != null;
                 targetTemperature = zone.getThirdPeriodTemp();
             }
-            default -> targetTemperature = 0.0;
+            default -> targetTemperature = OutsideTemperature.getTemperature();
         }
 
         //ArrayList roomsInZone for all rooms in the zone, and ArrayList matchingRooms for temporary storage.
@@ -166,7 +164,6 @@ public class TemperatureManager implements TemperatureObserver {
                 }
             }
         }
-
         //Begin a new Timeline that will modify the temperature of the room every second according to the model given in the instructions.
         //Run the timeline indefinitely or until paused/stopped manually.
         //Play the timeline.
@@ -189,6 +186,10 @@ public class TemperatureManager implements TemperatureObserver {
                                             matchingRoom.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                         } else if (targetTemperature == matchingRoom.getInitialTemp()) {
                                             matchingRoom.targetTempReached = true;
+                                        }
+                                        // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
+                                        if(matchingRoom.getInitialTemp() <= 0) {                            
+                                        	checkFreezingTemperature(matchingRoom);
                                         }
                                     }
                                 }
