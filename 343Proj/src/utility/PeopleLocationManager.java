@@ -3,12 +3,11 @@ package utility;
 import Main.LayoutParser;
 import controllers.HomeController;
 import models.ActiveUser;
-import models.Location;
 import models.Room;
 
 import java.io.IOException;
 
-public class PeopleLocationManager{
+public class PeopleLocationManager {
     //Instantiating the alarm system to monitor the location of individuals.
 
 
@@ -20,13 +19,13 @@ public class PeopleLocationManager{
                 if (room.graphNumber == 0)
                     continue;
                 //Revert the old room back to normal.
-                if(ActiveUser.getOldProfileLocation().equals(room.roomName)){
-                    room.setActiveProfileIsHere(false);              
+                if (ActiveUser.getOldProfileLocation().equals(room.roomName)) {
+                    room.setActiveProfileIsHere(false);
                 }
                 //Update the room with the active users presence.
-                if(location.equals(room.roomName)){
+                if (location.equals(room.roomName)) {
                     room.activeProfileIsHere = true;
-                    CommandLogger.logCommand("SHC","Active User has moved to "+room.roomName+".");
+                    CommandLogger.logCommand("SHC", "Active User has moved to " + room.roomName + ".");
                 }
 
             }
@@ -40,13 +39,13 @@ public class PeopleLocationManager{
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
+                if (location.equals(room.roomName)) {
                     //Insert a person object.
-                    if(ActiveUser.getActiveUserAwayMode()){
+                    if (ActiveUser.getActiveUserAwayMode()) {
                         HomeController.alarmSystem.triggerAlarm();
                     }
                     room.setPersonIsHere(true);
-                    CommandLogger.logCommand("SHC","Person added to "+room.roomName);
+                    CommandLogger.logCommand("SHC", "Person added to " + room.roomName);
                     break;
                 }
             }

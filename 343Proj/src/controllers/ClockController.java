@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import Main.Main;
 import models.Clock;
+import utility.UniversalElements;
 
 /**
  * The type Clock controller.
@@ -59,6 +60,9 @@ public class ClockController extends Label {
      * @param timeLabel the time label
      */
     public void beginTime(Label timeLabel){
+
+
+
         //If the user is resuming the existing clock session, redirect to resumeTime().
         //Otherwise, a new clock session will begin.
     	//This checks if the simulation speed is set to a very low number, zero or a negative number, it'll set it to 1.0
@@ -141,12 +145,17 @@ public class ClockController extends Label {
         clock.setMinute(Integer.parseInt(String.valueOf(minuteInput.getText())));
         clock.setSecond(Integer.parseInt(String.valueOf(secondInput.getText())));
         clock.setSpeed(Double.parseDouble(String.valueOf(simulationSpeedInput.getText())));
+
+        //Passing the clock object to UniversalElements to make it accessible everywhere.
+        UniversalElements.setClock(clock);
+
         //Call closeEditTime from Main and return to the primary stage.
         Main.closeEditTime();
     }
     public String getSimulationSpeed(){
         return String.valueOf(clock.getSpeed());
     }
+
     public static String getCurrentTime(){
         return String.format("%02d", clock.getHour()) + " : " + String.format("%02d", clock.getMinute()) + " : " + String.format("%02d", clock.getSecond());
     }

@@ -4,7 +4,7 @@ import controllers.ProfileController;
 import models.ActiveUser;
 
 public class PermissionChecker {
-    private static volatile PermissionChecker instance = null;
+    private static final PermissionChecker instance = null;
 
     public static Boolean checkCorePerms(String requestedRoom){
         if(ProfileController.userHasCorePermissions(ActiveUser.getActiveUsername())){

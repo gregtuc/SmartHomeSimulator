@@ -10,13 +10,15 @@ import java.io.PrintWriter;
 
 public class CommandLogger implements Observer {
     private static volatile CommandLogger instance = null;
-    private CommandLogger() {}
+
+    private CommandLogger() {
+    }
 
     //Only a singular instantiation of this class will be allowed.
     //This method will return that instance.
     public static CommandLogger getInstance() {
         if (instance == null) {
-            synchronized(CommandLogger.class) {
+            synchronized (CommandLogger.class) {
                 if (instance == null) {
                     instance = new CommandLogger();
                 }
@@ -25,25 +27,23 @@ public class CommandLogger implements Observer {
         return instance;
     }
 
-    public static void initialize(){
+    public static void initialize() {
         HomeController.alarmSystem.subscribe(CommandLogger.getInstance());
     }
 
     public static void logCommand(String sender, String message) throws IOException {
-        System.out.println(message);
         //Creating log message.
-        String output = "["+sender+"] "+message;
+        String output = "[" + sender + "] " + message;
         //Write to output file.
-        try(FileWriter fw = new FileWriter("343Proj/src/commandlog.txt", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw))
-        {
+        try (FileWriter fw = new FileWriter("343Proj/src/commandlog.txt", true);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter out = new PrintWriter(bw)) {
             out.println(output);
         } catch (IOException e) {
             e.printStackTrace();
         }
         //Write to visual console.
-        UniversalElements.getOutputConsoleText().setText(UniversalElements.getOutputConsoleText().getText()+"\n"+output);
+        UniversalElements.getOutputConsoleText().setText(UniversalElements.getOutputConsoleText().getText() + "\n" + output);
     }
 
     @Override

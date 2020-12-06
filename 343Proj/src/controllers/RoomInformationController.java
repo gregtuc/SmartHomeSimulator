@@ -10,30 +10,17 @@ import models.Room;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import utility.UniversalElements;
 import utility.ZoneManager;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * The type OutsideTemperature controller.
- * The OutsideTemperature class contains methods related to OutsideTemperature in the application. It controls the OutsideTemperature.fxml page.
- * The HomeController class can communicate with the OutsideTemperatureController class by creating an instance of OutsideTemperatureController and using the available public methods.
- * The static OutsideTemperature attribute creates a singular static OutsideTemperature for the whole system, as there can only be one active OutsideTemperature at a time.
- */
+
 public class RoomInformationController extends Label implements Initializable {
-    /**
-     * Creating an instance of the OutsideTemperature class. There exists a single constant OutsideTemperature, so it must remain static.
-     */
-    /**
-     * The OutsideTemperature TextField input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
 
     public Room selectedRoom = new Room();
-
-    //Initialize runs immediately when the page loads.
     public Text roomNumber = new Text();
     public Text roomName = new Text();
     public Text roomTemperature = new Text();
@@ -54,7 +41,6 @@ public class RoomInformationController extends Label implements Initializable {
         roomName.setText(selectedRoom.getRoomName());
         String formattedTemperature = String.format("%.1f", selectedRoom.getInitialTemp());
         roomTemperature.setText(formattedTemperature);
-        // TODO: Create "Zone" attribute for Room objects, set it here.
         roomDoor.setText(Boolean.toString(selectedRoom.getDoorExists()));
         roomDoorOpen.setText(Boolean.toString(selectedRoom.getDoorStatus()));
         roomWindow.setText(Boolean.toString(selectedRoom.getWindowExists()));
@@ -67,8 +53,8 @@ public class RoomInformationController extends Label implements Initializable {
         roomInformationTimeline = new Timeline(
                 // Every second, check if the temperature of the room is different than the displayed temperature.
                 // If it is different, update the displayed temperature.
-                new KeyFrame(Duration.seconds(1), e -> {
-                    if (!roomTemperature.equals(selectedRoom.getInitialTemp())) {
+                new KeyFrame(Duration.seconds(1/(UniversalElements.getClock().getSpeed())), e -> {
+                    if (!roomTemperature.getText().equals(selectedRoom.getInitialTemp())) {
                         //roomTemperature.setText(String.format("%.1f", selectedRoom.getInitialTemp()));
                         roomTemperature.setText(Double.toString(selectedRoom.getInitialTemp()));
                     }
@@ -80,25 +66,11 @@ public class RoomInformationController extends Label implements Initializable {
         roomInformationTimeline.play();
     }
 
-
-
     // TODO: Get the selected room object the layout to the room information controller.
-
-    /**
-     * Change the static outside temperature attribute according to user input.
-     *
-     * @param mouseEvent the mouse event
-     * @throws IOException the io exception
-     **/
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
         //Set the temperature variable to the inputted value.
     	//outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }
-    /**
-     * Get active outside temperature string.
-     *
-     * @return the string
-     */
 }

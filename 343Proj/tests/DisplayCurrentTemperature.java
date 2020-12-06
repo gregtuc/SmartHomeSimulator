@@ -12,7 +12,7 @@ public class DisplayCurrentTemperature {
     void test() {
         Room room = new Room();
         room.setInitialTemp(25.00);
-        System.out.println("Checking that room temperatures can be displayed when requested...");
+        System.out.print("Checking that room temperatures can be displayed when requested...");
         assertEquals(25.00, room.getInitialTemp());
     }
 }

@@ -3,10 +3,13 @@ package controllers;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
+
 import Main.Main;
 import models.OutsideTemperature;
+import utility.TemperatureManager;
 import utility.ZoneManager;
 import Main.LayoutParser;
 
@@ -16,48 +19,25 @@ import Main.LayoutParser;
  * The HomeController class can communicate with the OutsideTemperatureController class by creating an instance of OutsideTemperatureController and using the available public methods.
  * The static OutsideTemperature attribute creates a singular static OutsideTemperature for the whole system, as there can only be one active OutsideTemperature at a time.
  */
-public class OutsideTemperatureController extends Label{
-    /**
-     * Creating an instance of the OutsideTemperature class. There exists a single constant OutsideTemperature, so it must remain static.
-     */
+public class OutsideTemperatureController extends Label {
     public static OutsideTemperature outsideTemperature = new OutsideTemperature();
-    /**
-     * The OutsideTemperature TextField input.
-     * FXML element. The variable name matches the id of the fxml element and creates an association.
-     */
     public TextField outsideTemperatureInput = new TextField();
-    
-    /**
-     * Change the static outside temperature attribute according to user input.
-     *
-     * @param mouseEvent the mouse event
-     * @throws IOException the io exception
-     **/
+
     public void editOutsideTemperature(MouseEvent mouseEvent) throws IOException {
         // Set the temperature variable to the inputted value.
-    	outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
-    	// Set the Default zone temperatures for all 3 periods to the outside temperature.
+        outsideTemperature.setTemperature(Double.parseDouble(outsideTemperatureInput.getText()));
+        // Set the Default zone temperatures for all 3 periods to the outside temperature.
         ZoneManager.setZoneTemperatures("Default",
                 Double.parseDouble(outsideTemperatureInput.getText()), // Period 1 temperature.
                 Double.parseDouble(outsideTemperatureInput.getText()), // Period 2 temperature.
                 Double.parseDouble(outsideTemperatureInput.getText())); // Period 3 temperature.
 
-        for (int row = 0; row < 4; row++) {
-            for (int col = 0; col < 4; col++) {
-                if (!LayoutParser.grid.get(row).get(col).roomName.equals("Unnamed") && LayoutParser.grid.get(row).get(col) != null) {
-                    LayoutParser.grid.get(row).get(col).setInitialTemp(OutsideTemperature.getTemperature());
-                }
-            }
-        }
+        TemperatureManager.setRoomsToOutsideTemperature();
         //Call closeEditTemperature from Main and return to the primary stage.
         Main.closeEditOutsideTemperature();
     }
-    /**
-     * Get active outside temperature string.
-     *
-     * @return the string
-     */
-    public String getOutsideTemperature(){
+
+    public String getOutsideTemperature() {
         return String.valueOf(outsideTemperature.getTemperature());
     }
 }

@@ -12,14 +12,16 @@ public class WindowManager implements Observer {
 
     static Boolean lockdownMode = false;
 
-    public static void turnOnLockdownMode(){
+    public static void turnOnLockdownMode() {
         lockdownMode = true;
     }
-    public static void turnOffLockdownMode(){
+
+    public static void turnOffLockdownMode() {
         lockdownMode = false;
     }
+
     public static Boolean checkLockdownMode() throws IOException {
-        if(lockdownMode){
+        if (lockdownMode) {
             CommandLogger.logCommand("SHP", "Window manager was accessed but access is not permitted during lockdown mode!");
             return true;
         } else {
@@ -28,9 +30,10 @@ public class WindowManager implements Observer {
     }
 
     private static volatile WindowManager instance = null;
+
     public static WindowManager getInstance() {
         if (instance == null) {
-            synchronized(WindowManager.class) {
+            synchronized (WindowManager.class) {
                 if (instance == null) {
                     instance = new WindowManager();
                 }
@@ -38,44 +41,48 @@ public class WindowManager implements Observer {
         }
         return instance;
     }
-    private WindowManager() {}
-    public static void initialize(){
+
+    private WindowManager() {
+    }
+
+    public static void initialize() {
         HomeController.alarmSystem.subscribe(WindowManager.getInstance());
     }
+
     //Method for unlocking all windows in the house.
     public static void unlockAllWindows() throws IOException {
-        if(!checkLockdownMode()){
+        if (!checkLockdownMode()) {
             for (int row = 0; row < 4; row++) {
                 for (int col = 0; col < 4; col++) {
                     Room room = LayoutParser.grid.get(row).get(col);
                     if (room.graphNumber == 0)
                         continue;
-                    if(room.getWindowExists()){
+                    if (room.getWindowExists()) {
                         room.setWindowStatus(true);
                         //Change the text on the house representation.
                         AlertManager.successfulPermissionsAlert();
                     }
                 }
             }
-            CommandLogger.logCommand("SHC","All windows in the house unlocked.");
+            CommandLogger.logCommand("SHC", "All windows in the house unlocked.");
         }
     }
 
     //Method for locking all windows in the house.
     public static void lockAllWindows() throws IOException {
-        if(!checkLockdownMode()){
+        if (!checkLockdownMode()) {
             for (int row = 0; row < 4; row++) {
                 for (int col = 0; col < 4; col++) {
                     Room room = LayoutParser.grid.get(row).get(col);
                     if (room.graphNumber == 0)
                         continue;
-                    if(room.getWindowExists()){
+                    if (room.getWindowExists()) {
                         room.setWindowStatus(false);
                         //Change the text on the house representation.
                     }
                 }
             }
-            CommandLogger.logCommand("SHC","All windows in the house locked.");
+            CommandLogger.logCommand("SHC", "All windows in the house locked.");
         }
     }
 
@@ -86,14 +93,13 @@ public class WindowManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
-                    if(room.getWindowExists()){
+                if (location.equals(room.roomName)) {
+                    if (room.getWindowExists()) {
                         room.setWindowStatus(true);
-                        CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        CommandLogger.logCommand("SHC", "Window unlocked in " + room.roomName);
                         AlertManager.successfulPermissionsAlert();
-                    }
-                    else {
-                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
+                    } else {
+                        AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                 }
             }
@@ -107,14 +113,13 @@ public class WindowManager implements Observer {
                 Room room = LayoutParser.grid.get(row).get(col);
                 if (room.graphNumber == 0)
                     continue;
-                if(location.equals(room.roomName)){
-                    if(room.getWindowExists()){
+                if (location.equals(room.roomName)) {
+                    if (room.getWindowExists()) {
                         room.setWindowStatus(false);
-                        CommandLogger.logCommand("SHC","Window unlocked in "+room.roomName);
+                        CommandLogger.logCommand("SHC", "Window unlocked in " + room.roomName);
                         AlertManager.successfulPermissionsAlert();
-                    }
-                    else {
-                    	AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
+                    } else {
+                        AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
                 }
             }
