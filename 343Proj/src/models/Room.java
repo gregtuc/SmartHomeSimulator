@@ -13,6 +13,7 @@ public class Room {
     public int graphNumber = 0;
     public int gridCol = -1; // The column coordinate of the room in the grid.
     public int gridRow = -1; // The row coordinate of the room in the grid.
+    public Boolean targetTempReached = false;
 
     //Room door variables
     public Door door;

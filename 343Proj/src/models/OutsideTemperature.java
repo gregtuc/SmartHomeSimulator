@@ -6,7 +6,7 @@ public class OutsideTemperature {
     /**
      * Declaring private temperature attributes.
      */
-    private double temperature;
+    private static double temperature;
 
     /**
      * Instantiates a new temperature.
@@ -27,7 +27,7 @@ public class OutsideTemperature {
      *
      * @return the temperature
      */
-	public double getTemperature() {
+	public static double getTemperature() {
 		return temperature;
 	}
     /**

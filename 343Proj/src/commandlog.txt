@@ -111,3 +111,22 @@
 [SHC] Profile logged in. Username is Adrien.
 [Dashboard] Adrien has pressed the edit outside temperature button.
 [Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien has pressed the edit outside temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien pressed the edit Zone Temperature button.
+[SHH]  has created the Default Zone.
+[Dashboard]  has pressed the edit time button.
+[SHH]  has created the Default Zone.

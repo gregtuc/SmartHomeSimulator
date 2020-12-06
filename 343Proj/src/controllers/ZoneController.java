@@ -22,12 +22,16 @@ public class ZoneController implements Initializable {
     public TextField periodTwoTemp = new TextField();
     public TextField periodThreeTemp = new TextField();
     public Label zoneNameText = new Label();
+    public Label periodOneTempCurrent = new Label();
+    public Label periodTwoTempCurrent = new Label();
+    public Label periodThreeTempCurrent = new Label();
     public ListView<String> roomsInZoneList = new ListView<String>();
     public ListView<String> zonesInHomeList = new ListView<String>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         zoneNameText.setText(UniversalElements.getSelectedZone());
+        updateZonePeriodTemperatures();
         populateZoneControllerLists();
     }
 
@@ -45,6 +49,12 @@ public class ZoneController implements Initializable {
         }
     }
 
+    private void updateZonePeriodTemperatures() {
+        periodOneTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getFirstPeriodTemp()));
+        periodTwoTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getSecondPeriodTemp()));
+        periodThreeTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getThirdPeriodTemp()));
+    }
+
     @FXML
     public void setPeriods(MouseEvent mouseEvent) throws IOException {
         ZoneManager.setZoneTemperatures(
@@ -52,7 +62,10 @@ public class ZoneController implements Initializable {
                 Double.parseDouble(periodOneTemp.getText()),
                 Double.parseDouble(periodTwoTemp.getText()),
                 Double.parseDouble(periodThreeTemp.getText()));
+        updateZonePeriodTemperatures();
+        // TODO: Trigger the temperature change alarm (which should check if the period temp is different than the current room temp)
     }
+
     @FXML
     public void transferRoom(MouseEvent mouseEvent) throws IOException {
         if (zonesInHomeList.getSelectionModel().getSelectedItem()!=null && roomsInZoneList.getSelectionModel().getSelectedItem()!=null) {
