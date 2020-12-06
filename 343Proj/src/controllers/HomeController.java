@@ -13,6 +13,7 @@ import javafx.util.Duration;
 import models.ActiveUser;
 import models.Room;
 import models.Zone;
+import models.AwayModeTemperature;
 import security.AlarmSystem;
 import security.WindowWatcher;
 import utility.*;
@@ -302,7 +303,7 @@ public class HomeController extends Label implements Initializable {
     }
 
     /**
-     * Opens the edit time window. Calls method showEditTime from class Main.
+     * Opens the edit OutsideTemperature window. Calls method showEditOutsideTemperature from class Main.
      *
      * @param mouseEvent the mouse event
      * @throws IOException the io exception
@@ -317,6 +318,13 @@ public class HomeController extends Label implements Initializable {
         }
         Main.showEditOutsideTemperature();
     }
+    /**
+     * Opens the edit EditMonth. Calls method showEditMonth from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
+    @FXML
     public void editMonthClicked(MouseEvent mouseEvent) throws IOException {
         //Logging.
         try {
@@ -326,7 +334,28 @@ public class HomeController extends Label implements Initializable {
         }
         Main.showEditMonth();
     }
-
+    /**
+     * Opens the edit AwayModeTemperature. Calls method showEditAwayModeTemperature from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
+    @FXML
+    public void editAwayModeTemperatureClicked(MouseEvent mouseEvent) throws IOException {
+        //Logging.
+        try {
+            CommandLogger.logCommand("Dashboard", ActiveUser.getActiveUsername() + " has pressed the edit away mode temperature button.");            
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        Main.showEditAwayModeTemperature();
+    }
+    /**
+     * Opens the configure time. Calls method showConfigureTime from class Main.
+     *
+     * @param mouseEvent the mouse event
+     * @throws IOException the io exception
+     */
     @FXML
     public void configureTimeClicked(MouseEvent mouseEvent) throws IOException {
         Main.showConfigureTime();
@@ -486,6 +515,16 @@ public class HomeController extends Label implements Initializable {
                 //Change the label text.
                 awayModeButton.setText("Deactivate");
                 awayModeLabel.setText("Active");
+                
+                //Iterate through rooms in the house to change temperature, only changes the temperature is the room position contains a room
+                for (int row = 0; row < 4; row++) {
+                    for (int col = 0; col < 4; col++) {
+                        if (roomGrid.get(row).get(col)!= null) {
+                        	roomGrid.get(row).get(col).setInitialTemp(AwayModeTemperature.getAwayModeTemperature());
+                        }
+                    }
+                }
+
                 //Logging.
                 try {
                     CommandLogger.logCommand("SHP", ActiveUser.getActiveUsername() + " activated away mode.");

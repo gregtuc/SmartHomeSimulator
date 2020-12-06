@@ -55,8 +55,14 @@ public class Main extends Application{
      * The Room Temperature stage.
      */
     static Stage editRoomTemperatureStage;
-    
+    /**
+     * The Month stage.
+     */
     static Stage editMonthStage;
+    /**
+     * The Away Mode Temperature stage.
+     */
+    static Stage editAwayModeTemperatureStage;
 
     // REFACTORING
     public static Room roomSelectedFromLayout = new Room();
@@ -103,6 +109,10 @@ public class Main extends Application{
             e.printStackTrace();
         }
     }
+    /**
+     * Display the window that lets users edit the month parameter (Month.fxml).
+     * This method is called from HomeController.
+     */
     public static void showEditMonth(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/Month.fxml"));
@@ -116,9 +126,41 @@ public class Main extends Application{
         }
     	
     }
+    /**
+     * Close the window that lets users edit the month parameter (Month.fxml).
+     * This method is called from MonthController.
+     */
     public static void closeEditMonth(){
         try {
             Main.editMonthStage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Display the window that lets users edit the away mode temperature parameter (AwayTemperature.fxml).
+     * This method is called from HomeController.
+     */
+    public static void showEditAwayModeTemperature(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../views/AwayTemperature.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage editAwayModeTemperatureStage = new Stage();
+            Main.editAwayModeTemperatureStage = editAwayModeTemperatureStage;
+            editAwayModeTemperatureStage.setScene(new Scene(root));
+            editAwayModeTemperatureStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    	
+    }
+    /**
+     * Close the window that lets users edit the away mode temperature parameter (AwayTemperature.fxml).
+     * This method is called from AwayModeTemperatureController.
+     */
+    public static void closeEditAwayModeTemperature(){
+        try {
+            Main.editAwayModeTemperatureStage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
