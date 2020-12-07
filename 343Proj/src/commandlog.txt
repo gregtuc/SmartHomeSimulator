@@ -116,3 +116,11 @@
 [Dashboard] Greg has started the simulator.
 [SHH] Greg is editing the Kitchen's temperature.
 [SHH] Greg has changed the temperature of the Kitchen from 23.5°C to 11.8°C.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] Profile logged in. Username is Adrien.
+[Dashboard] Adrien has started the simulator.
+[SHH] Adrien is editing the null's temperature.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 23.6°C.
+[SHH] Adrien is editing the Kitchen's temperature.
+[SHH] Adrien has changed the temperature of the Kitchen from 23.5°C to 25.0°C.
