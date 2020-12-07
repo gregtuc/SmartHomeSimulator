@@ -8,7 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
 public class AlertManager {
-	public static int numberOfAlertSent = 0; 
+	public static int numberOfAlertSent = 0;
+
 	 /**
      * Opens a window to show if a command is successful
      */
@@ -79,7 +80,8 @@ public class AlertManager {
         Alert alert = new Alert(Alert.AlertType.WARNING,
                 "The window of the room : "+location+" has automatically been opened to cool the room. ",
                 ButtonType.CLOSE);
+        alert.setTitle(null);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
 }

@@ -54,9 +54,11 @@ public class TemperatureManager implements TemperatureObserver {
     public static void checkRoomSummerTemp(Room room) {
     	if ( ActiveUser.getActiveUserAwayMode()==false ) {
     		if(Month.getCurrentSeason().equals("Summer")){
-    			if(room.getInitialTemp()> OutsideTemperature.getTemperature()) {
+    			if(room.getInitialTemp()> OutsideTemperature.getTemperature()
+                        && room.numberOfAutoWindowOpenAlertSent == 0 ) {
    		 			room.setWindowStatus(true);
    		 			AlertManager.AutoWindowOpen(room.getRoomName());
+   		 			room.numberOfAutoWindowOpenAlertSent++;
    		 		}
    		 	}
     	}
