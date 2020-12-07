@@ -41,7 +41,7 @@ public class MonthController extends Label implements Initializable {
         return month.getMonth();
     }
 
-    public String getSeason() {
-        return month.getSeason(month.getMonth());
+    public static String getSeason() {
+        return Month.getSeason(Month.getMonth());
     }
 }

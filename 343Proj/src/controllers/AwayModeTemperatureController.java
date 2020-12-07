@@ -41,4 +41,12 @@ public class AwayModeTemperatureController extends Label{
         //Call closeEditMonth from Main and return to the primary stage.
         Main.closeEditAwayModeTemperature();
     }
+
+    public static double getAwayModeTemperature() {
+        return AwayModeTemperature.getAwayModeTemperature();
+    }
+
+    public static void setAwayModeTemperature(AwayModeTemperature awayModeTemperature) {
+        AwayModeTemperatureController.awayModeTemperature = awayModeTemperature;
+    }
 }

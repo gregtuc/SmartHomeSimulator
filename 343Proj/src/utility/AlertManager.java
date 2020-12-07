@@ -17,7 +17,7 @@ public class AlertManager {
                 "Success!",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
 
     /**
@@ -28,7 +28,7 @@ public class AlertManager {
                 "You do not have permission to execute this command.",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
     
     /**
@@ -54,7 +54,7 @@ public class AlertManager {
                 "ERROR: The " + roomName + " does Not have a " + item,
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
    }
     // restriction message for away mode item opening
     public static void AwayModeRestrictionAlert() {
@@ -62,7 +62,7 @@ public class AlertManager {
                 "You cannot open items when Away Mode is activated",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
 
     // restriction message for away mode item opening
@@ -71,7 +71,7 @@ public class AlertManager {
                 "You cannot open a window when an obstacle is in the way",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
     
   //alert message for automatic window opening
@@ -80,6 +80,6 @@ public class AlertManager {
                 "The window of the room : "+location+" has automatically been opened to cool the room. ",
                 ButtonType.CLOSE);
         alert.setHeaderText(null);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.show();
     }
 }

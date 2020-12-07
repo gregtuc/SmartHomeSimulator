@@ -33,6 +33,7 @@ public class RoomInformationController extends Label implements Initializable {
     public Text roomWindowOpen = new Text();
     public Text roomActiveUser = new Text();
     public Text roomPersonObject = new Text();
+    public Label overrideLabel = new Label();
     //public Image image = new Image(currentSkinClassName);
 
     public static Timeline roomInformationTimeline;
@@ -57,6 +58,11 @@ public class RoomInformationController extends Label implements Initializable {
                 // Every second, check if the temperature of the room is different than the displayed temperature.
                 // If it is different, update the displayed temperature.
                 new KeyFrame(Duration.seconds(1/(UniversalElements.getClock().getSpeed())), e -> {
+                    if(selectedRoom.getManualOverrideActivated()){
+                        overrideLabel.setText("OVERWRITTEN");
+                    } else{
+                        overrideLabel.setText("");
+                    }
                     if (!roomTemperature.getText().equals(selectedRoom.getInitialTemp())) {
                         //roomTemperature.setText(String.format("%.1f", selectedRoom.getInitialTemp()));
                         roomTemperature.setText(Double.toString(selectedRoom.getInitialTemp()));

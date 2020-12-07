@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -38,7 +39,7 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="39.0" layoutX="179.0" layoutY="103.0" stroke="BLACK" strokeType="INSIDE" width="396.0" />
-      <Text id="roomTemperature" fx:id="roomTemperature" layoutX="186.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="334.0">
+      <Text id="roomTemperature" fx:id="roomTemperature" layoutX="186.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="234.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -127,5 +128,6 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Label fx:id="overrideLabel" layoutX="430.0" layoutY="114.0" prefHeight="17.0" prefWidth="86.0" />
    </children>
 </AnchorPane>
