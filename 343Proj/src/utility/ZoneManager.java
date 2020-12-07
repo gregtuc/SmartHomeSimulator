@@ -29,8 +29,8 @@ public class ZoneManager {
     private static ArrayList<Zone> zones = new ArrayList<Zone>();
 
     // Create a new zone and add it to the static list.
-    public static void createZone(String zoneName, String zoneType) throws IOException {
-        zones.add(new Zone(zoneName, zoneType));
+    public static void createZone(String zoneName) throws IOException {
+        zones.add(new Zone(zoneName));
         //CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created the " + zoneName + " Zone.");
     }
 

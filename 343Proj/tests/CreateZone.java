@@ -13,7 +13,7 @@ public class CreateZone {
 
     @Test
     void test() throws IOException {
-        ZoneManager.createZone("newZone", "Heating");
+        ZoneManager.createZone("newZone");
         System.out.print("Testing if Zone can be created...");
         assertEquals("newZone", Objects.requireNonNull(ZoneManager.getZone("newZone")).getZoneName());
     }

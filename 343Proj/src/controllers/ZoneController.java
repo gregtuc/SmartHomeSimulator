@@ -53,9 +53,9 @@ public class ZoneController implements Initializable {
     }
 
     private void updateZonePeriodTemperatures() {
-        periodOneTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getFirstPeriodTemp()));
-        periodTwoTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getSecondPeriodTemp()));
-        periodThreeTempCurrent.setText(String.format("%.2f", ZoneManager.getZone(UniversalElements.getSelectedZone()).getThirdPeriodTemp()));
+        periodOneTempCurrent.setText(String.format("%.2f", Objects.requireNonNull(ZoneManager.getZone(UniversalElements.getSelectedZone())).getFirstPeriodTemp()));
+        periodTwoTempCurrent.setText(String.format("%.2f", Objects.requireNonNull(ZoneManager.getZone(UniversalElements.getSelectedZone())).getSecondPeriodTemp()));
+        periodThreeTempCurrent.setText(String.format("%.2f", Objects.requireNonNull(ZoneManager.getZone(UniversalElements.getSelectedZone())).getThirdPeriodTemp()));
     }
 
     @FXML

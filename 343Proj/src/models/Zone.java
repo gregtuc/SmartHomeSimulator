@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Zone {
 
     private String zoneName;
-    private String zoneType;
     private double firstPeriodTemp;
     private double secondPeriodTemp;
     private double thirdPeriodTemp;
@@ -13,9 +12,8 @@ public class Zone {
     private Boolean temperatureRegulationActive;
     private ArrayList<String> rooms = new ArrayList<String>();
 
-    public Zone(String zoneName, String zoneType) {
+    public Zone(String zoneName) {
         this.zoneName = zoneName;
-        this.zoneType = zoneType;
     }
 
     public void addRoomToZone(String room) {

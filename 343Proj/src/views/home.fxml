@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
@@ -123,6 +122,7 @@
                                                     </children></VBox>
                                                 <Button fx:id="openItemButton" layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#openItemButtonClicked" text="Open" />
                                                 <Button fx:id="closeItemButton" layoutX="73.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#closeItemButtonClicked" text="Close" />
+                                    <Button layoutX="124.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#blockWindowButtonClicked" text="Block" />
                                             </children></AnchorPane>
                                     </content>
                                 </TitledPane>
@@ -194,7 +194,6 @@
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="340.0">
                                  <children>
                                     <TextField fx:id="zoneInputTextField" layoutX="14.0" layoutY="12.0" prefHeight="25.0" prefWidth="152.0" promptText="Zone Name" />
-                                    <ComboBox fx:id="zoneTypeInputComboBox" layoutX="178.0" layoutY="12.0" prefHeight="25.0" prefWidth="151.0" promptText="Zone Type" />
                                     <Button fx:id="createZoneInputButton" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#createZoneButtonClicked" text="Create" />
                                  </children>
                               </AnchorPane>

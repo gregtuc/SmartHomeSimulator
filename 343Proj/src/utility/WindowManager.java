@@ -94,6 +94,10 @@ public class WindowManager implements Observer {
                 if (room.graphNumber == 0)
                     continue;
                 if (location.equals(room.roomName)) {
+                    if(room.window.isBlocked()){
+                        AlertManager.windowBlocked();
+                        break;
+                    }
                     if (room.getWindowExists()) {
                         room.setWindowStatus(true);
                         CommandLogger.logCommand("SHC", "Window unlocked in " + room.roomName);
@@ -101,6 +105,19 @@ public class WindowManager implements Observer {
                     } else {
                         AlertManager.ItemDoesNotExist(room.getRoomName(), "window");
                     }
+                }
+            }
+        }
+    }
+
+    public static void blockWindow(String location) throws Exception{
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Room room = LayoutParser.grid.get(row).get(col);
+                if (room.graphNumber == 0)
+                    continue;
+                if (location.equals(room.roomName)) {
+                    room.window.setBlocked(true);
                 }
             }
         }

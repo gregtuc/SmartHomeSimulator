@@ -13,7 +13,7 @@ public class ChangeZoneTemperature {
 
     @Test
     void test() throws IOException {
-        ZoneManager.createZone("newZone", "Heating");
+        ZoneManager.createZone("newZone");
         ZoneManager.setZoneTemperatures("newZone", 25, 30, 35);
 
         ArrayList<Double> temperatures = new ArrayList<Double>();

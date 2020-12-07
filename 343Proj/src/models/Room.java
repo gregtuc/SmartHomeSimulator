@@ -15,7 +15,7 @@ public class Room {
     public int gridRow = -1; // The row coordinate of the room in the grid.
     public Boolean targetTempReached = false;
     public Boolean manualOverrideActivated = false;
-    public String iconFile ;
+    //public String iconFile ;
 
     //Room door variables
     public Door door;
@@ -150,13 +150,4 @@ public class Room {
     public void setManualOverrideActivated(Boolean manualOverrideActivated) {
         this.manualOverrideActivated = manualOverrideActivated;
     }
-
-	public String getIconFile() {
-		// TODO Auto-generated method stub
-		return iconFile;
-	}
-	
-	public void setIconFile(String iconFile) {
-		this.iconFile = iconFile;
-	}
 }

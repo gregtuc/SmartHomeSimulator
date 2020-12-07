@@ -82,11 +82,9 @@ public class TemperatureManager implements TemperatureObserver {
                                     if (targetTemperature > room.getInitialTemp()) {
                                         //room.setInitialTemp(room.getInitialTemp() + 0.1);
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() + 0.1));
-                                        room.setIconFile("heater-icon.png");
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     } else if (targetTemperature < room.getInitialTemp()) {
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() - 0.1));
-                                        room.setIconFile("cooling-icon.png");
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }                             
                                     //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
@@ -223,7 +221,7 @@ public class TemperatureManager implements TemperatureObserver {
                 for (int i = 0; i < ZoneManager.getZones().size(); i++) {
                     if (!ZoneManager.getZones().get(i).getZoneName().equals("Default")) {
                         //Remove all zones.
-                        ZoneManager.deleteZone(ZoneManager.getZones().get(i).getZoneName());
+                        //ZoneManager.deleteZone(ZoneManager.getZones().get(i).getZoneName());
                         //Set all rooms to outside temperature.
                         setRoomsToOutsideTemperature();
                     }

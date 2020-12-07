@@ -64,6 +64,15 @@ public class AlertManager {
         alert.setHeaderText(null);
         Optional<ButtonType> result = alert.showAndWait();
     }
+
+    // restriction message for away mode item opening
+    public static void windowBlocked() {
+        Alert alert = new Alert(Alert.AlertType.WARNING,
+                "You cannot open a window when an obstacle is in the way",
+                ButtonType.CLOSE);
+        alert.setHeaderText(null);
+        Optional<ButtonType> result = alert.showAndWait();
+    }
     
   //alert message for automatic window opening
     public static void AutoWindowOpen(String location){

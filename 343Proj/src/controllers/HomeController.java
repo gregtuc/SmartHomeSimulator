@@ -70,9 +70,6 @@ public class HomeController extends Label implements Initializable {
     //Zone name Input Field
     public TextField zoneInputTextField = new TextField();
 
-    //Zone type ComboBox
-    public ComboBox<String> zoneTypeInputComboBox = new ComboBox<String>();
-
     // Old Profiles.
     public static int oldNumberOfProfiles = ProfileController.profileList.size();
 
@@ -151,16 +148,12 @@ public class HomeController extends Label implements Initializable {
         // Subscribing the necessary elements to the temperature regulation system.
         TemperatureManager.initialize();
 
-        //Initializing the Zone type ComboBox
-        zoneTypeInputComboBox.getItems().add("Heating");
-        zoneTypeInputComboBox.getItems().add("Cooling");
-
         //Populating rooms container in SHC.
         allRooms();
 
         // Create a default zone for all rooms to belong in when the program begins, add all rooms to that zone.
         try {
-            ZoneManager.createZone("Default", "Cooling");
+            ZoneManager.createZone("Default");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -403,6 +396,7 @@ public class HomeController extends Label implements Initializable {
             }
     }
 
+
     @FXML
     public void closeItemButtonClicked(MouseEvent mouseEvent) throws IOException {
         //Permission Validation. If active user does not have permission, an alert box will appear.
@@ -412,13 +406,15 @@ public class HomeController extends Label implements Initializable {
                 case "Doors" -> DoorManager.lockDoor(roomList.getSelectionModel().getSelectedItem());
                 case "Lights" -> LightManager.turnOffLight(roomList.getSelectionModel().getSelectedItem());
             }
-        } else {
-            //Logging.
-            try {
-                CommandLogger.logCommand("Core", ActiveUser.getActiveUsername() + " tried to set " + itemList.getSelectionModel().getSelectedItem() + " in " + roomList.getSelectionModel().getSelectedItem() + " to closed/off but was denied!");
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+        }
+    }
+
+
+    @FXML
+    public void blockWindowButtonClicked(MouseEvent mouseEvent) throws Exception {
+        //Permission Validation. If active user does not have permission, an alert box will appear.
+        if (PermissionChecker.checkCorePerms(roomList.getSelectionModel().getSelectedItem())) {
+            WindowManager.blockWindow(roomList.getSelectionModel().getSelectedItem());
         }
     }
 
@@ -451,7 +447,7 @@ public class HomeController extends Label implements Initializable {
         // Permission Validation. If active user does not have permission, an alert box will appear.
         if (PermissionChecker.checkSecurityPerms()) {
             //Create a new zone.
-            ZoneManager.createZone(zoneInputTextField.getText(), zoneTypeInputComboBox.getValue());
+            ZoneManager.createZone(zoneInputTextField.getText());
 
             //Update the ListView element in the SHH tab to show the changes.
             allZones();
@@ -460,7 +456,7 @@ public class HomeController extends Label implements Initializable {
             AlertManager.successfulPermissionsAlert();
             //Logging.
             try {
-                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created a new Zone called " + zoneInputTextField.getText() + " of type " + zoneTypeInputComboBox.getValue() + ".");
+                CommandLogger.logCommand("SHH", ActiveUser.getActiveUsername() + " has created a new Zone called " + zoneInputTextField.getText());
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }

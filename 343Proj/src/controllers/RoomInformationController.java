@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class RoomInformationController extends Label implements Initializable {
 
-    private static final String currentSkinClassName = null; // variable to initialize the image attribute
+    //private static final String currentSkinClassName = null; // variable to initialize the image attribute
 	public Room selectedRoom = new Room();
     public Text roomNumber = new Text();
     public Text roomName = new Text();
@@ -33,7 +33,7 @@ public class RoomInformationController extends Label implements Initializable {
     public Text roomWindowOpen = new Text();
     public Text roomActiveUser = new Text();
     public Text roomPersonObject = new Text();
-    public Image image = new Image(currentSkinClassName);
+    //public Image image = new Image(currentSkinClassName);
 
     public static Timeline roomInformationTimeline;
 
@@ -51,7 +51,7 @@ public class RoomInformationController extends Label implements Initializable {
         roomActiveUser.setText(Boolean.toString(selectedRoom.getActiveProfileIsHere()));
         roomPersonObject.setText(Boolean.toString(selectedRoom.getPersonIsHere()));
         roomZone.setText(ZoneManager.getZoneOfRoom(selectedRoom.getRoomName()));
-        image = new Image(selectedRoom.getIconFile());
+        //image = new Image(selectedRoom.getIconFile());
 
         roomInformationTimeline = new Timeline(
                 // Every second, check if the temperature of the room is different than the displayed temperature.
