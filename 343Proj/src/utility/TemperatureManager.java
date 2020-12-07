@@ -50,14 +50,16 @@ public class TemperatureManager implements TemperatureObserver {
 
     //checks if room temperature is hotter than outside during summer, if it is, open window to cool it. Away mode has to be off
     public static void checkRoomSummerTemp(Room room) {
-        if (!ActiveUser.getActiveUserAwayMode()) {
-            if (Month.getCurrentSeason().equals("Summer")) {
-                if (room.getInitialTemp() > OutsideTemperature.getTemperature()) {
-                    room.setWindowStatus(true);
-                    AlertManager.AutoWindowOpen(room.getRoomName());
-                }
-            }
-        }
+    	if ( ActiveUser.getActiveUserAwayMode()==false ) {
+    		if(Month.getCurrentSeason().equals("Summer")){
+    			if(room.getInitialTemp()> OutsideTemperature.getTemperature()
+                        && room.numberOfAutoWindowOpenAlertSent == 0 ) {
+   		 			room.setWindowStatus(true);
+   		 			AlertManager.AutoWindowOpen(room.getRoomName());
+   		 			room.numberOfAutoWindowOpenAlertSent++;
+   		 		}
+   		 	}
+    	}
     }
 
     // Method for changing the temperature of a single room in the house.
