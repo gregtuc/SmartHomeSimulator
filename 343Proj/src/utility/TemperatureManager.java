@@ -86,7 +86,11 @@ public class TemperatureManager implements TemperatureObserver {
                                     } else if (targetTemperature < room.getInitialTemp()) {
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() - 0.1));
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
-                                    }                             
+                                    }
+                                    // This Check if roomTemperture drop below 0 degree celcius and sents a warning to the user about it.
+                                    if(room.getInitialTemp() <= 0) {
+                                        checkFreezingTemperature(room);
+                                    }
                                     //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
                                     checkRoomSummerTemp(room);
                                 })
