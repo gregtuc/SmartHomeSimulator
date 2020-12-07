@@ -82,9 +82,11 @@ public class TemperatureManager implements TemperatureObserver {
                                     if (targetTemperature > room.getInitialTemp()) {
                                         //room.setInitialTemp(room.getInitialTemp() + 0.1);
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() + 0.1));
+                                        room.setIconFile("heater-icon.png");
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     } else if (targetTemperature < room.getInitialTemp()) {
                                         String formattedIncrementedTemperature = String.format("%.2f", (room.getInitialTemp() - 0.1));
+                                        room.setIconFile("cooling-icon.png");
                                         room.setInitialTemp((Double.parseDouble(formattedIncrementedTemperature)));
                                     }                             
                                     //Checks if room temperature is hotter than outside during summer, if it is, open window automatically to cool it.
