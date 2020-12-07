@@ -1,0 +1,6 @@
+[Dashboard]  has pressed the edit outside temperature button.
+[Dashboard] A non-logged-in user pressed the edit profile button.
+[SHC] New profile file has been created called Aymen.txt.
+[SHC] New profile created called Aymen and it has been signed in.
+[SHH] Aymen has created a new Zone called Zone1  of type null.
+[SHH] Aymen has created a new Zone called Zone1  of type null.
