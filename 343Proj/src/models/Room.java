@@ -28,6 +28,7 @@ public class Room {
     public String lightsOnTime = "";
     public String lightsOffTime = "";
 
+    public int numberOfAutoWindowOpenAlertSent = 0;
     //Temperature variables
     public double initialTemp = 23.5; // The starting temperature of the room in Celsius.
 
